@@ -186,6 +186,8 @@ Các ngưỡng dưới đây là mục tiêu đề xuất để nhóm kiểm th�
 - Không có tích hợp email, SMS, Zalo hoặc cổng thanh toán bên ngoài.
 - Nhóm ưu tiên quy tắc nghiệp vụ cốt lõi thay vì chức năng nâng cao.
 - Khả năng chịu tải và độ an toàn chỉ được đánh giá trong phạm vi môi trường kiểm thử của đồ án.
+- Thời gian thực hiện dự án giới hạn trong 9 tuần, vì vậy nhóm cần ưu tiên các chức năng cốt lõi và kiểm soát phạm vi để bảo đảm tiến độ.
+- Nguồn lực của nhóm gồm 8 thành viên, với thời gian và năng lực kỹ thuật có giới hạn; các chức năng cần được lựa chọn phù hợp với khả năng thực hiện của nhóm.
 
 ### 9.2. Giả định nghiệp vụ
 
