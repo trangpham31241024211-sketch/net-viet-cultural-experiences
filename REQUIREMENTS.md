@@ -104,8 +104,6 @@ Cấu trúc website gồm: Trang chủ, Khám phá vùng miền, Loại trải n
 | Đăng nhập mạng xã hội, OTP, xác thực hai lớp | Chỉ đăng nhập bằng email và mật khẩu. | Phụ thuộc nhà cung cấp ngoài. | Sử dụng cơ chế xác thực nội bộ (F02). |
 | Gợi ý cá nhân hóa, tích điểm thành viên, báo giá riêng cho đoàn lớn, chat trực tuyến, ứng dụng di động riêng | Không triển khai trong phiên bản hiện tại. | Các chức năng này đòi hỏi thêm cơ chế xử lý dữ liệu và nghiệp vụ, làm tăng độ phức tạp trong quá trình phát triển, kiểm thử và vận hành. Nhóm ưu tiên hoàn thiện các chức năng cốt lõi của website trong phạm vi thời gian và nguồn lực của dự án. | Đặt theo nhóm bằng cách chọn số người trong giới hạn sức chứa (F16, F17). |
 
-# REQUIREMENTS — Website Nét Việt
-
 ## 7. Yêu cầu chức năng (Functional Requirements)
 
 **Quy ước mức ưu tiên**
