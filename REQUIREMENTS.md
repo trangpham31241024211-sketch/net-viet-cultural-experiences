@@ -147,7 +147,7 @@ Cấu trúc website gồm: Trang chủ, Khám phá vùng miền, Loại trải n
 | --- | --- | --- | --- | --- | --- |
 | FR-15 | Đánh giá trải nghiệm | Cho phép đánh giá sau khi booking hoàn thành. | Khách hàng | Trung bình | Chỉ booking hoàn thành mới được đánh giá; mỗi booking có tối đa một đánh giá; kiểm tra nội dung và điểm trước khi lưu; liên kết đánh giá với booking và trải nghiệm. |
 | FR-16 | Quản lý hiển thị đánh giá | Admin có thể ẩn hoặc gỡ đánh giá không phù hợp; đánh giá hợp lệ được hiển thị sau khi gửi. | Admin, hệ thống | Trung bình | Đánh giá hợp lệ được hiển thị; admin có thể ẩn hoặc gỡ; đánh giá đã ẩn/gỡ không xuất hiện công khai; lưu trạng thái kiểm duyệt. |
-| FR-17 | Thông báo trong website | Hiển thị thông báo khi booking được xác nhận, booking bị hủy hoặc lịch bị hủy. | Hệ thống, khách hàng | Trung bình | Thông báo gắn đúng tài khoản và sự kiện; nội dung khớp trạng thái đã lưu; khách không xem được thông báo của người khác; không yêu cầu tích hợp email, SMS hoặc Zalo. |
+| FR-17 | Thông báo trong website | Hệ thống tạo và hiển thị thông báo cho khách hàng khi booking được xác nhận, booking bị hủy hoặc lịch trải nghiệm đã đặt bị hủy. Thông báo giúp khách hàng cập nhật các thay đổi quan trọng liên quan đến hoạt động đặt chỗ của mình. | Hệ thống, khách hàng | Trung bình | Hệ thống tạo thông báo tương ứng khi xảy ra sự kiện; mỗi thông báo được liên kết với đúng tài khoản khách hàng và booking hoặc lịch liên quan; nội dung thông báo phản ánh chính xác sự kiện và trạng thái đã được lưu; khách hàng chỉ xem được thông báo thuộc tài khoản của mình; thông báo được lưu để khách hàng có thể xem lại; nếu tạo thông báo thất bại, hệ thống xử
 
 ### 7.5. Quản trị
 
@@ -160,6 +160,20 @@ Cấu trúc website gồm: Trang chủ, Khám phá vùng miền, Loại trải n
 | FR-22 | Xem kết quả thanh toán mô phỏng | Xem kết quả các lần thanh toán mô phỏng và booking tương ứng. | Admin | Trung bình | Xem được mã giao dịch mô phỏng, booking, kết quả và thời điểm; hiển thị riêng kết quả thanh toán với trạng thái booking; không thu tiền, hoàn tiền hoặc sửa kết quả tùy ý. |
 | FR-23 | Quản lý nội dung văn hóa | Tạo, chỉnh sửa, công khai hoặc ngừng công khai bài viết giới thiệu văn hóa. | Admin, khách hàng | Thấp | Admin quản lý được tiêu đề, nội dung, hình ảnh và trạng thái; khách chỉ xem bài viết công khai; bài viết không bắt buộc liên kết với booking. |
 | FR-24 | Xem thống kê cơ bản | Hiển thị số booking theo trạng thái, số trải nghiệm công khai và số lịch sắp diễn ra. | Admin | Thấp | Số liệu lấy từ dữ liệu hiện có; định nghĩa rõ để tránh đếm trùng; hiển thị 0/trạng thái trống khi chưa có dữ liệu; không thống kê giao dịch tài chính thật. |
+
+### 7.6. Khám phá văn hóa và địa điểm
+
+| ID | Tên chức năng | Mô tả | Người dùng | Ưu tiên | Tiêu chí nghiệm thu |
+| --- | --- | --- | --- | --- | --- |
+| FR-25 | Bản đồ văn hóa | Hiển thị bản đồ giúp người dùng khám phá các địa điểm văn hóa và trải nghiệm thuộc Nét Việt. | Khách hàng, khách truy cập | Trung bình | Bản đồ hiển thị các địa điểm đã được công khai và có dữ liệu hợp lệ; người dùng có thể chọn địa điểm để xem thông tin liên quan; nếu chưa có dữ liệu hoặc bản đồ không tải được, hệ thống hiển thị trạng thái phù hợp. |
+
+### 7.7. Liên hệ và thông tin hỗ trợ
+
+| ID | Tên chức năng | Mô tả | Người dùng | Ưu tiên | Tiêu chí nghiệm thu |
+| --- | --- | --- | --- | --- | --- |
+| FR-26 | Gửi yêu cầu liên hệ | Cho phép khách hàng hoặc khách truy cập gửi câu hỏi, góp ý hoặc yêu cầu hỗ trợ thông qua biểu mẫu liên hệ trên website. | Khách hàng, khách truy cập | Trung bình | Kiểm tra các trường bắt buộc và định dạng dữ liệu; chỉ lưu yêu cầu hợp lệ; thông báo kết quả gửi; yêu cầu được lưu để admin xem và xử lý; không thông báo gửi thành công nếu xảy ra lỗi lưu dữ liệu. |
+| FR-27 | Xem câu hỏi thường gặp (FAQ) | Cung cấp trang câu hỏi thường gặp về cách sử dụng website, đặt chỗ và các quy định liên quan. | Khách hàng, khách truy cập | Thấp | Người dùng xem được FAQ mà không cần đăng nhập; chỉ hiển thị nội dung đã được công khai; nội dung dễ đọc; hiển thị trạng thái phù hợp nếu chưa có câu hỏi và câu trả lời. |
+| FR-28 | Xem chính sách và điều khoản | Cung cấp các trang chính sách và điều khoản liên quan đến sử dụng website, đặt chỗ và hủy đặt chỗ. | Khách hàng, khách truy cập | Trung bình | Người dùng xem được nội dung mà không cần đăng nhập; chỉ hiển thị nội dung đã được công khai; chính sách đặt chỗ và hủy đặt chỗ nhất quán với quy tắc nghiệp vụ; hiển thị trạng thái phù hợp nếu chưa có nội dung. |
 
 ## 8. Yêu cầu phi chức năng (Non-functional Requirements)
 
