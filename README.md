@@ -1,18 +1,13 @@
-# 🇻🇳 Nét Việt – Nền Tảng Khám Phá & Đặt Lịch Trải Nghiệm Văn Hóa Bản Địa Việt Nam
+# THIẾT KẾ VÀ XÂY DỰNG WEBSITE NÉT VIỆT HỖ TRỢ ĐẶT LỊCH TRẢI NGHIỆM VĂN HÓA BẢN ĐỊA VIỆT NAM 
 
-[![GitHub Requirements](https://img.shields.io/badge/Requirements-REQUIREMENTS.md-blue?logo=github)](https://github.com/trangpham31241024211-sketch/net-viet-cultural-experiences/blob/main/REQUIREMENTS.md)
-[![GitHub Project Plan](https://img.shields.io/badge/Project_Plan-PROJECT__PLAN.md-green?logo=github)](https://github.com/trangpham31241024211-sketch/net-viet-cultural-experiences/blob/main/PROJECT_PLAN.md)
+## 1. Giới Thiệu Dự Án
 
----
+Nét Việt là nền tảng website hỗ trợ người dùng khám phá và đặt lịch tham gia các trải nghiệm văn hóa bản địa tại Việt Nam, bao gồm: tham quan làng nghề truyền thống, thực hành làm đồ thủ công, trải nghiệm ẩm thực vùng miền, tìm hiểu phong tục và đời sống địa phương.
 
-## 📌 1. Giới Thiệu Dự Án
-
-**Nét Việt** là nền tảng website hỗ trợ người dùng khám phá và đặt lịch tham gia các trải nghiệm văn hóa bản địa độc đáo tại Việt Nam, bao gồm: tham quan làng nghề truyền thống, thực hành làm đồ thủ công, trải nghiệm ẩm thực vùng miền, tìm hiểu phong tục và đời sống địa phương.
-
-### 🎯 Vấn Đề Cần Giải Quyết
+### Vấn Đề Cần Giải Quyết
 Hiện nay, thông tin về các hoạt động trải nghiệm văn hóa còn nằm phân tán trên nhiều website và nền tảng mạng xã hội khác nhau. Điều này làm người dùng mất nhiều thời gian tìm kiếm, so sánh và kiểm tra lịch tổ chức. Việc thiếu thống nhất về giá cả, thời lượng, sức chứa cũng như điều kiện tham gia gây nhiều rào cản trong việc đưa ra quyết định đặt chỗ.
 
-### 💡 Giải Pháp Nét Việt Mang Lại
+### Giải Pháp Nét Việt Mang Lại
 Nét Việt cung cấp một nền tảng tập trung giúp:
 * **Khám phá dễ dàng:** Phân loại theo vùng miền, tỉnh thành và loại hình hoạt động.
 * **Thông tin minh bạch:** Cung cấp chi tiết nội dung, giá cả, thời lượng, sức chứa và kiểm tra số chỗ khả dụng theo thời gian thực.
@@ -20,15 +15,15 @@ Nét Việt cung cấp một nền tảng tập trung giúp:
 
 ---
 
-## 👥 2. Khách Hàng Mục Tiêu
+## 2. Khách Hàng Mục Tiêu
 
-* 🧑‍🎓 **Người trẻ & Nhóm bạn (18–30 tuổi):** Sinh viên, người mới đi làm đam mê du lịch trải nghiệm, khám phá văn hóa và chụp ảnh lưu niệm.
-* 👨‍👩‍👧‍👦 **Khách đi theo nhóm (25–50 tuổi):** Đại diện gia đình, trường học, doanh nghiệp có nhu cầu tổ chức hoạt động ngoại khóa, giáo dục trải nghiệm hoặc gắn kết tập thể (teambuilding).
-* 🌍 **Khách du lịch nước ngoài (20–60 tuổi):** Du khách quốc tế mong muốn tìm hiểu sâu về đời sống, làng nghề và ẩm thực truyền thống Việt Nam.
+* **Người trẻ & Nhóm bạn (18–30 tuổi):** Sinh viên, người mới đi làm đam mê du lịch trải nghiệm, khám phá văn hóa và chụp ảnh lưu niệm.
+* **Khách đi theo nhóm (25–50 tuổi):** Đại diện gia đình, trường học, doanh nghiệp có nhu cầu tổ chức hoạt động ngoại khóa, giáo dục trải nghiệm hoặc gắn kết tập thể (teambuilding).
+* **Khách du lịch nước ngoài (20–60 tuổi):** Du khách quốc tế mong muốn tìm hiểu sâu về đời sống, làng nghề và ẩm thực truyền thống Việt Nam.
 
 ---
 
-## ⚡ 3. Chức Năng Hệ Thống
+## 3. Chức Năng Hệ Thống
 
 ### 3.1. Dành Cho Khách Hàng (Customer Features)
 * **Tài khoản & Hồ sơ:** Đăng ký, đăng nhập, khôi phục mật khẩu, quản lý thông tin cá nhân, danh sách yêu thích, nhận thông báo hệ thống.
@@ -39,10 +34,10 @@ Nét Việt cung cấp một nền tảng tập trung giúp:
   * Chọn ngày, khung giờ, số lượng người, kiểm tra số chỗ còn trống.
   * Tạo booking, áp dụng mã ưu đãi (voucher) và ghi nhận thanh toán.
   * Quản lý danh sách/lịch sử đặt chỗ, xem trạng thái đơn và gửi yêu cầu hủy booking theo chính sách.
-* **Tương tác & Đánh giá:** Gửi đánh giá/bình luận sau khi hoàn thành trải nghiệm, chia sẻ *Dấu ấn Việt*.
+* **Tương tác & Đánh giá:** Gửi đánh giá/bình luận sau khi hoàn thành trải nghiệm, chia sẻ Dấu ấn Việt.
 * **Thông tin chung:** Tra cứu câu hỏi thường gặp (FAQ), điều khoản, chính sách và liên hệ hỗ trợ.
 
-### 3.2. Dành Cho Quản Trị Viên (Admin Features)
+### 3.2. Dành Cho Quản Trị Viên 
 * **Dashboard:** Thống kê tổng quan về doanh thu, lượt đặt chỗ và người dùng.
 * **Quản lý danh mục:** Trải nghiệm, vùng miền, tỉnh thành, địa điểm và loại hình văn hóa.
 * **Quản lý vận hành:** Lịch tổ chức, sức chứa, danh sách booking và xử lý trạng thái đặt chỗ.
@@ -51,19 +46,19 @@ Nét Việt cung cấp một nền tảng tập trung giúp:
 
 ---
 
-## 🛠 4. Công Nghệ Sử Dụng
+## 4. Công Nghệ Sử Dụng
 
 | Hạng mục | Công nghệ | Mục đích sử dụng |
 | :--- | :--- | :--- |
-| **UI/UX Design** | ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white) | Thiết kế giao diện, wireframe và prototype tương tác |
-| **Frontend** | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Xây dựng giao diện người dùng và xử lý logic phía client |
-| **Backend** | ![NodeJS](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![ExpressJS](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white) | Xây dựng RESTful API và xử lý logic nghiệp vụ |
-| **Database** | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) | Lưu trữ dữ liệu hệ thống (người dùng, booking, trải nghiệm...) |
-| **Quản lý dự án** | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white) | Quản lý mã nguồn, phân công nhiệm vụ qua Issues & Projects |
+| **UI/UX Design** | Figma | Thiết kế giao diện, wireframe và prototype tương tác |
+| **Frontend** | HTML, CSS, JavaScript | Xây dựng giao diện người dùng và xử lý logic phía client |
+| **Backend** | Node.js, Express | Xây dựng RESTful API và xử lý logic nghiệp vụ |
+| **Database** | MySQL | Lưu trữ dữ liệu hệ thống (người dùng, booking, trải nghiệm...) |
+| **Quản lý dự án** | GitHub | Quản lý mã nguồn, phân công nhiệm vụ qua Issues & Projects |
 
 ---
 
-## 👥 5. Thành Viên Dự Án & Phân Công
+## 5. Phân công công việc
 
 | STT | Họ và Tên | Vai Trò | Phân Công Nhiệm Vụ |
 | :---: | :--- | :--- | :--- |
@@ -78,13 +73,21 @@ Nét Việt cung cấp một nền tảng tập trung giúp:
 
 ---
 
-## 📅 6. Lộ Trình Thực Hiện (Project Roadmap)
+## 6. Kế hoạch thực hiện
 
-Dự án được triển khai từ ngày **18/10/2026** đến **16/12/2026**:
+### Chi Tiết Từng Giai Đoạn
 
-```text
-[Giai đoạn 1] 18/10 - 21/10/2026 ──► Khảo sát & Xác định yêu cầu
-[Giai đoạn 2] 22/10 - 08/11/2026 ──► Thiết kế giao diện UI/UX (Figma)
-[Giai đoạn 3] 09/11 - 29/11/2026 ──► Phát triển Frontend & Backend/Database
-[Giai đoạn 4] 30/11 - 10/12/2026 ──► Tích hợp hệ thống & Kiểm thử (Testing)
-[Giai đoạn 5] 11/12 - 16/12/2026 ──► Hoàn thiện, nghiệm thu & Bàn giao dự án
+1. **Khảo sát & Xác định yêu cầu (18/10 – 21/10/2026):** Khảo sát các trang web tham khảo, chốt phạm vi, tính năng và lập tài liệu yêu cầu hệ thống.
+2. **Thiết kế UI/UX (22/10 – 08/11/2026):** Xây dựng Wireframe, thiết kế giao diện chi tiết và tạo Prototype trên Figma.
+3. **Phát triển Frontend & Backend (09/11 – 29/11/2026):** 
+   * Frontend: Dựng giao diện bằng HTML/CSS/JS.
+   * Backend: Xây dựng cơ sở dữ liệu MySQL, viết API bằng Node.js & Express.
+4. **Tích hợp & Kiểm thử (30/11 – 10/12/2026):** Ghép nối API với Frontend, kiểm thử toàn bộ tính năng và sửa lỗi.
+5. **Hoàn thiện & Bàn giao (11/12 – 16/12/2026):** Rà soát sản phẩm cuối cùng, đóng gói tài liệu và chuẩn bị báo cáo.
+
+---
+
+## 7. Liên Kết Tài Liệu
+
+* [Tài liệu Bảng yêu cầu (REQUIREMENTS.md)](https://github.com/trangpham31241024211-sketch/net-viet-cultural-experiences/blob/main/REQUIREMENTS.md)
+* [Tài liệu Kế hoạch thực hiện (PROJECT_PLAN.md)](https://github.com/trangpham31241024211-sketch/net-viet-cultural-experiences/blob/main/PROJECT_PLAN.md)
