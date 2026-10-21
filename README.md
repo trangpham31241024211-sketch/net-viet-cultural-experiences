@@ -78,7 +78,7 @@ Nét Việt cung cấp một nền tảng tập trung giúp:
 ### Chi Tiết Từng Giai Đoạn
 
 1. **Khảo sát & Xác định yêu cầu (18/10 – 21/10/2026):** Khảo sát các trang web tham khảo, chốt phạm vi, tính năng và lập tài liệu yêu cầu hệ thống.
-2. **Thiết kế UI/UX (22/10 – 08/11/2026):** Xây dựng Wireframe, thiết kế giao diện chi tiết và tạo Prototype trên Figma.
+2. **Thiết kế UI/UX (22/10 – 08/11/2026):** Thiết kế giao diện chi tiết và tạo Prototype trên Figma.
 3. **Phát triển Frontend & Backend (09/11 – 29/11/2026):** 
    * Frontend: Dựng giao diện bằng HTML/CSS/JS.
    * Backend: Xây dựng cơ sở dữ liệu MySQL, viết API bằng Node.js & Express.
