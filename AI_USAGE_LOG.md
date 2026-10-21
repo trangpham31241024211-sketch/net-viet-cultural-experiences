@@ -1,3 +1,50 @@
+
+## Quy ước ghi nhật ký
+- Ghi nhận các lần sử dụng AI có ảnh hưởng đến kết quả dự án.
+- Ghi đúng công cụ và prompt đã thực sự sử dụng.
+- Tóm tắt kết quả theo nội dung thực tế nhận được.
+- Phân biệt rõ nội dung AI đề xuất và quyết định của nhóm.
+- Ghi cách kiểm chứng, kể cả khi kết quả chưa được xác minh đầy đủ.
+- Cập nhật nhật ký xuyên suốt dự án.
+
+## Lần sử dụng [MÃ SỐ]
+
+### 1. Thông tin chung
+- Thành viên thực hiện: [Tên thành viên]
+- Ngày sử dụng: [YYYY-MM-DD]
+- Công cụ AI: [Tên công cụ thực tế]
+- Mục đích: [Công việc cần hỗ trợ]
+
+### 2. Prompt chính
+[ Ghi prompt thực tế đã sử dụng hoặc tóm tắt trung thực nội dung prompt. ]
+
+### 3. Kết quả nhận được
+[ Tóm tắt các đề xuất hoặc kết quả thực tế từ AI. ]
+
+### 4. Kiểm chứng
+- Phương pháp kiểm chứng: [Nguồn đối chiếu, chạy thử, kiểm thử hoặc rà soát]
+- Kết quả kiểm chứng: [Kết quả thực tế]
+- Nội dung chưa xác minh: [Ghi rõ nếu có; nếu không có, nêu căn cứ xác nhận]
+
+### 5. Phản biện
+- Công cụ hoặc người phản biện: [Tên thực tế; ghi rõ vai trò]
+- Ý kiến phản biện: [Nội dung thực tế hoặc "Chưa thực hiện"]
+- Cách xử lý ý kiến: [Giữ lại, điều chỉnh, bác bỏ hoặc chờ xác minh]
+
+### 6. Đánh giá của thành viên
+[ Nhận xét về tính chính xác, mức độ phù hợp, giới hạn và rủi ro của kết quả AI. ]
+
+### 7. Quyết định của nhóm
+- Nội dung giữ lại: [Nội dung được chấp thuận]
+- Nội dung điều chỉnh: [Nội dung được sửa]
+- Nội dung loại bỏ: [Nội dung bị từ chối]
+- Trạng thái: [Đã thống nhất / Chờ xác minh / Chưa thống nhất]
+
+### 8. Người kiểm tra
+- Người chịu trách nhiệm xác minh: [Tên thành viên]
+- Kết quả kiểm tra: [Kết quả thực tế hoặc Chưa kiểm tra]
+- Minh chứng liên quan: [Đường dẫn tài liệu, commit, test hoặc nguồn tham khảo nếu có]
+
 Nhật ký sử dụng AI
 Lê Anh Khoa
 
