@@ -175,4 +175,74 @@ Sử dụng tài liệu đã rà soát làm bản dự thảo bàn giao. Trướ
 
 Lê Anh Khoa
 
+Lần sử dụng 6: Phát triển và liên kết ba ý tưởng tính năng mới
 
+Công cụ
+
+Tên công cụ AI: ChatGPT
+
+Mục đích
+
+Hỗ trợ phân tích ba ý tưởng tính năng mới do các thành viên đề xuất sau khi nhóm nhận phản hồi rằng phiên bản ý tưởng ban đầu của Nét Việt chưa đủ mới. Mục tiêu là làm rõ giá trị, cách hoạt động và mối quan hệ giữa các tính năng mà không thay đổi định hướng chính của dự án là website hỗ trợ khám phá và đặt lịch trải nghiệm văn hóa bản địa Việt Nam.
+
+Prompt
+
+Bản khôi phục nội dung chính của prompt:
+
+“Nhóm tôi đang phát triển website Nét Việt hỗ trợ khám phá và đặt lịch trải nghiệm văn hóa bản địa Việt Nam. Sau khi nhận góp ý rằng ý tưởng ban đầu chưa đủ mới, nhóm đang xem xét ba tính năng: Nét Việt Tour Planner – ghép tour thông minh; Nhật Ký Hành Trình – tự động tạo nhật ký từ tour đã đặt, gồm check-in, hình ảnh và cảm nhận; Hành Trình Giải Mã – câu đố gắn với trải nghiệm thực tế, thu thập manh mối và mở khóa nội dung hoặc phần thưởng. Hãy giúp tôi làm rõ mô tả, luồng hoạt động, giá trị và mối liên kết giữa các tính năng. Không biến ba tính năng thành một chuỗi bắt buộc nếu nghiệp vụ không yêu cầu; phân biệt đề xuất với quyết định đã được nhóm thống nhất và cân nhắc khả năng triển khai trong đồ án sinh viên.”
+
+Kết quả đề xuất
+
+ChatGPT hỗ trợ làm rõ ba hướng chức năng:
+
+Nét Việt Tour Planner: Nhận thông tin nhu cầu, lọc và ghép các địa điểm thành lịch trình cùng chi phí dự kiến.
+
+Nhật Ký Hành Trình: Sử dụng tour đã đặt làm cơ sở tạo nhật ký, cho phép check-in, tải ảnh và ghi cảm nhận, sau đó trình bày thành album theo dòng thời gian.
+
+Hành Trình Giải Mã: Gắn câu hỏi hoặc thử thách với trải nghiệm thực tế, cho phép người dùng thu thập manh mối và mở khóa nội dung hoặc phần thưởng khi đáp ứng điều kiện.
+
+Mối liên kết được làm rõ theo hướng Tour Planner có thể kết nối riêng với Nhật Ký Hành Trình và Hành Trình Giải Mã. Hai tính năng sau không mặc định phụ thuộc trực tiếp vào nhau.
+
+Phản biện
+
+Các mô tả ý tưởng chưa tự động chứng minh tính khả thi hoặc tính mới trên thị trường. Nhóm cần kiểm tra khả năng triển khai trong thời gian và nguồn lực thực tế; xác định dữ liệu địa điểm, quy tắc ghép tour, cách xác minh check-in, điều kiện mở khóa câu đố và giới hạn phần thưởng. Những chức năng như bản đồ tương tác, tải ảnh lên dịch vụ lưu trữ bên ngoài, chia sẻ công khai và voucher có giá trị thực có thể làm tăng độ phức tạp, nên cần xem xét giới hạn hoặc mô phỏng.
+
+Quyết định của nhóm
+
+Theo thông tin được cung cấp, nhóm đã lựa chọn cả ba ý tưởng để phát triển tiếp. Tuy nhiên, các chi tiết nghiệp vụ và mức độ triển khai của từng chức năng vẫn cần được nhóm xác nhận trong tài liệu yêu cầu. Không xem mọi chi tiết do AI đề xuất là quyết định chính thức.
+
+Người kiểm tra
+
+Lê Anh Khoa
+
+Lần sử dụng 7: Cập nhật REQUIREMENTS.md theo ba ý tưởng mới
+
+Công cụ
+
+Tên công cụ AI: ChatGPT
+
+Mục đích
+
+Cập nhật bản dự thảo tài liệu REQUIREMENTS.md để phản ánh ba tính năng mới đã được nhóm lựa chọn phát triển tiếp; rà soát sự liên quan giữa yêu cầu chức năng, yêu cầu phi chức năng, phạm vi ngoài dự án, giả định và quy tắc nghiệp vụ. Đồng thời, hạn chế việc lặp lại các chức năng đã có và giữ các quyết định chưa chốt ở trạng thái cần thảo luận.
+
+Prompt
+
+Bản khôi phục nội dung chính của prompt:
+
+“Tôi sẽ cung cấp nội dung REQUIREMENTS.md hiện tại của dự án Nét Việt và thông tin ba ý tưởng mới của nhóm: Nét Việt Tour Planner, Nhật Ký Hành Trình và Hành Trình Giải Mã. Hãy giúp tôi cập nhật tài liệu hiện tại một cách có hệ thống, giữ lại các yêu cầu cũ không cần sửa, tránh trùng lặp, bổ sung các yêu cầu liên quan đến ba tính năng mới và rà soát ảnh hưởng đến phạm vi, giả định, quy tắc nghiệp vụ và yêu cầu phi chức năng. Giữ mã định danh hiện có khi phù hợp; phân biệt rõ phương án đề xuất với quyết định chính thức; không tự khẳng định nhóm đã thống nhất những chi tiết tôi chưa xác nhận. Cân nhắc khả năng triển khai trong phạm vi đồ án sinh viên.”
+
+Kết quả đề xuất
+
+ChatGPT tạo một bản dự thảo Markdown cập nhật, trong đó đề xuất bổ sung các yêu cầu chức năng mới cho Tour Planner, Nhật Ký Hành Trình và Hành Trình Giải Mã; đồng thời rà soát các phần liên quan để nêu giới hạn, giả định và quy tắc nghiệp vụ cần xem xét. Bản dự thảo được cung cấp dưới dạng tệp riêng để nhóm kiểm tra và đối chiếu trước khi cập nhật repository.
+
+Phản biện
+
+Bản do AI tạo vẫn cần được đối chiếu với phiên bản REQUIREMENTS.md thực tế trong repository. Nhóm cần kiểm tra mã FR/NFR/BR, tính nhất quán giữa các mục, tiêu chí nghiệm thu, khả năng triển khai và việc có vô tình biến đề xuất thành quyết định chính thức hay không. Các yêu cầu mới cũng cần được rà soát với kế hoạch phân công và thời gian thực hiện của nhóm.
+
+Quyết định của nhóm
+
+Trạng thái hiện tại: bản cập nhật do ChatGPT đề xuất, cần nhóm review trước khi merge vào nhánh chính. Chưa ghi nhận việc toàn bộ yêu cầu mới đã được nhóm phê duyệt hoặc đã được triển khai, kiểm thử thành công. Sau khi nhóm thống nhất, cần cập nhật nội dung quyết định chính thức và trạng thái tương ứng trong REQUIREMENTS.md.
+
+Người kiểm tra
+
+Lê Anh Khoa
