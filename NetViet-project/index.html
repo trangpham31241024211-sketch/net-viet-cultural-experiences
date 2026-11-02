@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá những trải nghiệm văn hóa bản địa, làng nghề, ẩm thực và thiên nhiên khắp Việt Nam cùng Nét Việt.">
+    <meta name="theme-color" content="#102d23">
+    <title>Khám phá trải nghiệm | Nét Việt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="announcement-bar">
+        <p>VĂN HÓA KHÔNG CHỈ ĐỂ NGẮM NHÌN <span>— HÃY TRỰC TIẾP TRẢI NGHIỆM.</span></p>
+    </div>
+
+    <header class="site-header" id="top">
+        <div class="container header-inner">
+            <a class="brand" href="../Trang chủ/index.html" aria-label="Nét Việt — Trang chủ">
+                <img src="../Trang chủ/Hình/Logo (1).png" alt="">
+                <span>Nét Việt</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Mở menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="main-nav" id="main-nav" aria-label="Điều hướng chính">
+                <a class="nav-link" href="../Trang chủ/index.html">Trang chủ</a>
+                <a class="nav-link active" href="#danh-sach" aria-current="page">Khám phá trải nghiệm</a>
+                <a class="nav-link" href="#hanh-trinh">Hành trình</a>
+                <a class="nav-link" href="#cam-nang">Cẩm nang</a>
+                <a class="nav-link" href="#ve-net-viet">Về chúng tôi</a>
+            </nav>
+            <a class="header-search" href="#tim-kiem" aria-label="Tìm trải nghiệm">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="tim-kiem" aria-labelledby="hero-title">
+            <div class="hero-shade"></div>
+            <div class="container hero-content">
+                <p class="eyebrow light-eyebrow">DU LỊCH BẢN ĐỊA · TRẢI NGHIỆM CHÂN THẬT</p>
+                <h1 id="hero-title">Khám phá trải nghiệm<br><em>Chạm đến bản sắc Việt.</em></h1>
+                <p class="hero-description">Từ làng nghề truyền thống, ẩm thực địa phương đến miền thiên nhiên hùng vĩ — cùng Nét Việt tìm những câu chuyện làm nên vẻ đẹp Việt Nam.</p>
+                <div class="hero-actions">
+                    <a class="button button-gold" href="#danh-sach">Khám phá ngay <span aria-hidden="true">→</span></a>
+                    <a class="button button-outline" href="#hanh-trinh">Tìm cảm hứng cho chuyến đi</a>
+                </div>
+            </div>
+            <form class="search-panel container" id="experience-search" role="search">
+                <label class="search-field keyword-field" for="keyword">
+                    <span class="field-icon" aria-hidden="true">⌕</span>
+                    <span class="field-copy"><span class="field-label">Bạn muốn khám phá gì?</span><input id="keyword" name="keyword" type="search" placeholder="Tên trải nghiệm, địa điểm..."></span>
+                </label>
+                <label class="search-field" for="region">
+                    <span class="field-icon" aria-hidden="true">⌖</span>
+                    <span class="field-copy"><span class="field-label">Địa điểm</span>
+                        <select id="region" name="region">
+                            <option value="">Tất cả địa điểm</option>
+                            <option value="north">Miền Bắc</option>
+                            <option value="central">Miền Trung</option>
+                            <option value="south">Miền Nam</option>
+                        </select>
+                    </span>
+                </label>
+                <label class="search-field" for="experience-type">
+                    <span class="field-icon" aria-hidden="true">◇</span>
+                    <span class="field-copy"><span class="field-label">Loại trải nghiệm</span>
+                        <select id="experience-type" name="category">
+                            <option value="">Tất cả loại hình</option>
+                            <option value="craft">Làng nghề</option>
+                            <option value="food">Ẩm thực</option>
+                            <option value="culture">Văn hóa</option>
+                            <option value="nature">Thiên nhiên</option>
+                        </select>
+                    </span>
+                </label>
+                <button class="search-submit" type="submit">Tìm kiếm <span aria-hidden="true">→</span></button>
+            </form>
+        </section>
+
+        <section class="section experiences-section" id="danh-sach">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">ĐƯỢC YÊU THÍCH & ĐÓN NHẬN</p>
+                        <h2>Theo dấu những <em>di sản.</em></h2>
+                        <p>Chọn một hành trình để gặp gỡ người bản địa, tự tay trải nghiệm và khám phá câu chuyện phía sau mỗi vùng đất.</p>
+                    </div>
+                    <a class="text-link desktop-link" href="#hanh-trinh">Xem hành trình gợi ý <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="filter-pills" role="group" aria-label="Lọc theo loại trải nghiệm">
+                    <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+                    <button class="filter-pill" type="button" data-filter="craft" aria-pressed="false">Làng nghề</button>
+                    <button class="filter-pill" type="button" data-filter="food" aria-pressed="false">Ẩm thực</button>
+                    <button class="filter-pill" type="button" data-filter="culture" aria-pressed="false">Văn hóa</button>
+                    <button class="filter-pill" type="button" data-filter="nature" aria-pressed="false">Thiên nhiên</button>
+                </div>
+
+                <div class="product-grid" id="product-grid" aria-live="polite">
+                    <article class="product-card" data-category="craft" data-region="north" data-search="làm tranh đông hồ bắc ninh làng nghề thủ công">
+                        <div class="product-visual visual-dong-ho">
+                            <span class="product-badge">LÀNG NGHỀ</span>
+                            <button class="favorite-button" type="button" aria-label="Lưu Làm tranh Đông Hồ" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">BẮC NINH <span>·</span> THỦ CÔNG</p><h3>Làm tranh dân gian Đông Hồ</h3><div class="product-details"><span>◷ 2 giờ</span><span>★ 4.9</span></div><div class="product-bottom"><strong>350.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Làm tranh dân gian Đông Hồ">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card" data-category="craft" data-region="north" data-search="làm gốm bát tràng hà nội làng nghề thủ công">
+                        <div class="product-visual visual-pottery">
+                            <span class="product-badge">BÁN CHẠY</span><button class="favorite-button" type="button" aria-label="Lưu Làm gốm Bát Tràng" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">HÀ NỘI <span>·</span> LÀNG NGHỀ</p><h3>Tự tay làm gốm ở Bát Tràng</h3><div class="product-details"><span>◷ 2,5 giờ</span><span>★ 4.8</span></div><div class="product-bottom"><strong>250.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Tự tay làm gốm ở Bát Tràng">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card" data-category="craft" data-region="central" data-search="làm hương thủy xuân huế làng nghề thủ công">
+                        <div class="product-visual visual-incense">
+                            <span class="product-badge">ĐẶC SẮC</span><button class="favorite-button" type="button" aria-label="Lưu Làm hương Thủy Xuân" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">HUẾ <span>·</span> LÀNG NGHỀ</p><h3>Ghé thăm làng hương Thủy Xuân</h3><div class="product-details"><span>◷ 1,5 giờ</span><span>★ 4.9</span></div><div class="product-bottom"><strong>180.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Ghé thăm làng hương Thủy Xuân">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card" data-category="nature" data-region="north" data-search="du thuyền vịnh hạ long quảng ninh thiên nhiên">
+                        <div class="product-visual visual-halong">
+                            <span class="product-badge">THIÊN NHIÊN</span><button class="favorite-button" type="button" aria-label="Lưu Khám phá vịnh Hạ Long" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">QUẢNG NINH <span>·</span> THIÊN NHIÊN</p><h3>Ngắm bình minh trên vịnh Hạ Long</h3><div class="product-details"><span>◷ 4 giờ</span><span>★ 5.0</span></div><div class="product-bottom"><strong>650.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Ngắm bình minh trên vịnh Hạ Long">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card" data-category="food" data-region="central" data-search="nấu ăn món huế ẩm thực địa phương">
+                        <div class="product-visual visual-cooking">
+                            <span class="product-badge">ẨM THỰC</span><button class="favorite-button" type="button" aria-label="Lưu Bếp nhà xứ Huế" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">HUẾ <span>·</span> ẨM THỰC</p><h3>Vào bếp cùng người Huế</h3><div class="product-details"><span>◷ 3 giờ</span><span>★ 4.9</span></div><div class="product-bottom"><strong>420.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Vào bếp cùng người Huế">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card" data-category="culture" data-region="south" data-search="chợ nổi cái răng cần thơ văn hóa miền tây sông nước">
+                        <div class="product-visual visual-floating-market">
+                            <span class="product-badge">VĂN HÓA</span><button class="favorite-button" type="button" aria-label="Lưu Bình minh chợ nổi Cái Răng" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">CẦN THƠ <span>·</span> VĂN HÓA</p><h3>Bình minh trên chợ nổi Cái Răng</h3><div class="product-details"><span>◷ 3 giờ</span><span>★ 4.8</span></div><div class="product-bottom"><strong>390.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Bình minh trên chợ nổi Cái Răng">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card" data-category="culture" data-region="central" data-search="phố cổ hội an đèn lồng di sản văn hóa">
+                        <div class="product-visual visual-hoian">
+                            <span class="product-badge">DI SẢN</span><button class="favorite-button" type="button" aria-label="Lưu Đêm phố cổ Hội An" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">QUẢNG NAM <span>·</span> DI SẢN</p><h3>Đêm phố cổ Hội An và đèn hoa đăng</h3><div class="product-details"><span>◷ 2 giờ</span><span>★ 4.9</span></div><div class="product-bottom"><strong>320.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Đêm phố cổ Hội An và đèn hoa đăng">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card" data-category="nature" data-region="south" data-search="rừng tràm trà sư an giang thiên nhiên">
+                        <div class="product-visual visual-forest">
+                            <span class="product-badge">THIÊN NHIÊN</span><button class="favorite-button" type="button" aria-label="Lưu Khám phá rừng tràm Trà Sư" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">AN GIANG <span>·</span> THIÊN NHIÊN</p><h3>Len lỏi rừng tràm Trà Sư xanh mát</h3><div class="product-details"><span>◷ 3 giờ</span><span>★ 4.8</span></div><div class="product-bottom"><strong>480.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Len lỏi rừng tràm Trà Sư xanh mát">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card extra-card" data-category="craft" data-region="north" data-search="thêu thổ cẩm mai châu hòa bình làng nghề">
+                        <div class="product-visual visual-textile">
+                            <span class="product-badge">LÀNG NGHỀ</span><button class="favorite-button" type="button" aria-label="Lưu Dệt thổ cẩm Mai Châu" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">HÒA BÌNH <span>·</span> THỦ CÔNG</p><h3>Học dệt thổ cẩm cùng người Thái</h3><div class="product-details"><span>◷ 2 giờ</span><span>★ 4.8</span></div><div class="product-bottom"><strong>290.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Học dệt thổ cẩm cùng người Thái">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card extra-card" data-category="food" data-region="south" data-search="lớp học làm bánh xèo miền tây ẩm thực">
+                        <div class="product-visual visual-food">
+                            <span class="product-badge">ẨM THỰC</span><button class="favorite-button" type="button" aria-label="Lưu Lớp học làm bánh xèo miền Tây" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">VĨNH LONG <span>·</span> ẨM THỰC</p><h3>Đổ bánh xèo miền Tây giòn rụm</h3><div class="product-details"><span>◷ 2,5 giờ</span><span>★ 4.9</span></div><div class="product-bottom"><strong>350.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Đổ bánh xèo miền Tây giòn rụm">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card extra-card" data-category="culture" data-region="north" data-search="múa rối nước thăng long hà nội văn hóa">
+                        <div class="product-visual visual-puppetry">
+                            <span class="product-badge">VĂN HÓA</span><button class="favorite-button" type="button" aria-label="Lưu Múa rối nước Thăng Long" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">HÀ NỘI <span>·</span> VĂN HÓA</p><h3>Thưởng thức múa rối nước Thăng Long</h3><div class="product-details"><span>◷ 1 giờ</span><span>★ 4.7</span></div><div class="product-bottom"><strong>200.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Thưởng thức múa rối nước Thăng Long">Khám phá <span>→</span></button></div></div>
+                    </article>
+                    <article class="product-card extra-card" data-category="nature" data-region="central" data-search="chèo thuyền sông ngô đồng tam cốc ninh bình thiên nhiên">
+                        <div class="product-visual visual-tamcoc">
+                            <span class="product-badge">THIÊN NHIÊN</span><button class="favorite-button" type="button" aria-label="Lưu Chèo thuyền Tam Cốc" aria-pressed="false">♡</button>
+                        </div>
+                        <div class="product-info"><p class="product-meta">NINH BÌNH <span>·</span> THIÊN NHIÊN</p><h3>Chèo thuyền giữa non nước Tam Cốc</h3><div class="product-details"><span>◷ 2 giờ</span><span>★ 5.0</span></div><div class="product-bottom"><strong>300.000đ <small>/ người</small></strong><button class="book-button" type="button" data-experience="Chèo thuyền giữa non nước Tam Cốc">Khám phá <span>→</span></button></div></div>
+                    </article>
+                </div>
+                <p class="empty-state" id="empty-state" hidden>Chưa tìm thấy trải nghiệm phù hợp. Hãy thử từ khóa hoặc bộ lọc khác nhé.</p>
+                <div class="listing-footer">
+                    <p class="result-count" id="result-count" aria-live="polite"></p>
+                    <button class="button button-dark load-more" id="load-more" type="button">Xem thêm trải nghiệm <span aria-hidden="true">↓</span></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section workshop-section" id="hanh-trinh">
+            <div class="container">
+                <div class="section-heading">
+                    <div><p class="eyebrow">TRẢI NGHIỆM TỪ ĐÔI TAY</p><h2>Những hành trình <em>đáng thử.</em></h2><p>Chậm lại một chút, học một điều mới và mang về một kỷ niệm do chính tay bạn tạo nên.</p></div>
+                    <a class="text-link desktop-link" href="#danh-sach">Tìm hành trình của bạn <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="workshop-grid">
+                    <article class="workshop-card"><div class="workshop-image visual-pottery" role="img" aria-label="Bàn xoay làm gốm thủ công"></div><div><span class="workshop-label">LÀNG NGHỀ</span><h3>Một buổi làm gốm ở Bát Tràng</h3><p>Tạo hình và trang trí món đồ gốm mang dấu ấn riêng.</p><a href="#danh-sach">Tìm hiểu trải nghiệm <span>→</span></a></div></article>
+                    <article class="workshop-card"><div class="workshop-image visual-hoian" role="img" aria-label="Phố cổ Hội An lung linh đèn lồng"></div><div><span class="workshop-label">VĂN HÓA</span><h3>Hội An khi phố lên đèn</h3><p>Lắng nghe chuyện phố xưa và thả hoa đăng trên sông Hoài.</p><a href="#danh-sach">Tìm hiểu trải nghiệm <span>→</span></a></div></article>
+                    <article class="workshop-card"><div class="workshop-image visual-halong" role="img" aria-label="Thuyền đi giữa cảnh sắc vịnh Hạ Long"></div><div><span class="workshop-label">THIÊN NHIÊN</span><h3>Chạm vào kỳ quan vịnh Hạ Long</h3><p>Ngắm núi đá, đón gió biển và cảm nhận nhịp sống trên vịnh.</p><a href="#danh-sach">Tìm hiểu trải nghiệm <span>→</span></a></div></article>
+                    <article class="workshop-card"><div class="workshop-image visual-cooking" role="img" aria-label="Chuẩn bị nguyên liệu cho món ăn truyền thống"></div><div><span class="workshop-label">ẨM THỰC</span><h3>Khám phá căn bếp xứ Huế</h3><p>Đi chợ, nấu món địa phương và thưởng thức thành quả cùng nhau.</p><a href="#danh-sach">Tìm hiểu trải nghiệm <span>→</span></a></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="closing-banner" id="cam-nang">
+            <div class="container closing-content"><p class="eyebrow light-eyebrow">MỖI HÀNH TRÌNH, MỘT CÂU CHUYỆN</p><h2>Một chuyến đi.<br><em>Nhiều điều để khám phá.</em></h2><p>Để Nét Việt đồng hành cùng bạn trên hành trình chạm đến những giá trị bản địa.</p><a class="button button-gold" href="#danh-sach">Tìm trải nghiệm của bạn <span aria-hidden="true">→</span></a></div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="ve-net-viet">
+        <div class="container footer-grid">
+            <div class="footer-brand"><a class="brand footer-logo" href="../Trang chủ/index.html"><img src="../Trang chủ/Hình/Logo (1).png" alt=""><span>Nét Việt</span></a><p>Kết nối bạn với những trải nghiệm văn hóa bản địa, nơi mỗi vùng đất đều có câu chuyện đáng để khám phá.</p></div>
+            <div class="footer-column"><h2>NÉT VIỆT</h2><a href="../Trang chủ/index.html">Trang chủ</a><a href="#ve-net-viet">Về chúng tôi</a><a href="#hanh-trinh">Hành trình</a></div>
+            <div class="footer-column"><h2>KHÁM PHÁ</h2><a href="#danh-sach">Tất cả trải nghiệm</a><a href="#danh-sach">Làng nghề thủ công</a><a href="#danh-sach">Ẩm thực địa phương</a></div>
+            <div class="footer-column"><h2>KẾT NỐI</h2><a href="mailto:hello@netviet.vn">hello@netviet.vn</a><a href="#cam-nang">Cẩm nang du lịch</a><a href="#danh-sach">Câu hỏi thường gặp</a></div>
+        </div>
+        <div class="container footer-bottom"><p>© 2026 Nét Việt. Lan tỏa giá trị văn hóa Việt Nam.</p>        <a href="#top">Lên đầu trang ↑</a></div>
+    </footer>
+
+    <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
+        <button class="dialog-close" type="button" aria-label="Đóng cửa sổ">×</button>
+        <p class="eyebrow">BẮT ĐẦU HÀNH TRÌNH CỦA BẠN</p>
+        <h2 id="booking-title">Đăng ký trải nghiệm</h2>
+        <p class="dialog-experience" id="dialog-experience"></p>
+        <form id="booking-form">
+            <label for="booking-name">Tên của bạn</label><input id="booking-name" name="name" autocomplete="name" required placeholder="Nguyễn Văn An">
+            <label for="booking-email">Email liên hệ</label><input id="booking-email" name="email" type="email" autocomplete="email" required placeholder="ban@email.com">
+            <button class="button button-dark" type="submit">Tiếp tục <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="dialog-note" id="dialog-note">Giao diện minh họa: yêu cầu chưa được gửi đến hệ thống đặt chỗ.</p>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="js/app.js" defer></script>
+</body>
+</html>
