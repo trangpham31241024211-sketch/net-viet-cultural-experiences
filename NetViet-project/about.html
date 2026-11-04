@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="about-page">
 
   <!-- Top Announcement Bar -->
   <div class="announcement-bar">
@@ -17,20 +17,20 @@
   <!-- Site Header (Cập nhật đủ 5 mục theo thiết kế Figma) -->
   <header class="site-header">
     <div class="header-container">
-      <a href="about.html" class="logo">
+      <a href="index.html" class="logo" aria-label="Nét Việt - Trang chủ">
         <img src="../images/logo-icon.jpg" alt="Nét Việt Logo" class="logo-img">
         <span class="logo-text">Nét Việt</span>
       </a>
       <nav class="nav-menu">
         <a href="index.html" class="nav-link">Trang chủ</a>
-        <a href="product-detail.html" class="nav-link">Khám phá trải nghiệm</a>
-        <a href="#" class="nav-link">Hành trình</a>
-        <a href="#" class="nav-link">Cẩm nang</a>
-        <a href="about.html" class="nav-link active">Về chúng tôi</a>
+        <a href="products.html" class="nav-link">Khám phá trải nghiệm</a>
+        <a href="products.html#hanh-trinh" class="nav-link">Hành trình</a>
+        <a href="products.html#cam-nang" class="nav-link">Cẩm nang</a>
+        <a href="about.html" class="nav-link active" aria-current="page">Về chúng tôi</a>
       </nav>
       <div class="header-actions">
-        <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="icon-btn"><i class="fa-regular fa-user"></i></button>
+        <a class="icon-btn" href="products.html#tim-kiem" aria-label="Tìm trải nghiệm"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>
+        <a class="icon-btn" href="#contact" aria-label="Liên hệ Nét Việt"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
       </div>
     </div>
   </header>
@@ -46,7 +46,7 @@
       <p class="hero-desc">
         Từ những làng nghề lâu đời đến nét đẹp trong đời sống thường nhật, Nét Việt mở ra những hành trình để khám phá và cảm nhận văn hóa Việt theo cách riêng của mình.
       </p>
-      <a href="product-detail.html" class="btn-primary">Khám phá câu chuyện của chúng tôi</a>
+      <a href="products.html" class="btn-primary">Khám phá trải nghiệm</a>
     </div>
 
     <!-- Thanh 01 02 03 chuẩn số vàng, chữ trắng căn đều 3 cột -->
@@ -73,7 +73,7 @@
         <span class="section-label">— NÉT VIỆT LÀ AI</span>
         <h2 class="section-heading">Mỗi miền đất,<br>một câu chuyện<br>chờ được khám phá</h2>
         <p>Nét Việt là nền tảng kết nối những người yêu văn hóa với bảo tàng sống và các nghệ nhân trên khắp Việt Nam. Tại đây, mỗi hành trình không chỉ đưa bạn đến một vùng đất, mà còn mở ra một câu chuyện lịch sử, nghề truyền thống lâu đời và những giá trị nhân văn sâu sắc.</p>
-        <p>Nét Việt muốn trở thành cầu nối giữa quá khứ và hiện tại, giữa thế hệ trẻ với các nghệ nhân và di sản văn hóa quốc gia. Nét Việt mong muốn đưa bạn đến gần hơn với những vẻ đẹp thực túy, để mỗi chuyến đi không chỉ là trải nghiệm mà còn là sự tự hào.</p>
+        <p>Nét Việt muốn trở thành cầu nối giữa quá khứ và hiện tại, giữa thế hệ trẻ với các nghệ nhân và di sản văn hóa quốc gia. Nét Việt mong muốn đưa bạn đến gần hơn với những vẻ đẹp thuần túy, để mỗi chuyến đi không chỉ là trải nghiệm mà còn là sự tự hào.</p>
         <p class="quote-tagline">— Chạm văn hóa, kết nối con người. Yêu Việt Nam hơn.</p>
       </div>
       <div class="img-wrapper-badge">
@@ -90,7 +90,7 @@
   <section class="section-padding">
     <div class="container grid-2">
       <div class="mission-images">
-        <img src="images/about-heritage.jpg" alt="Di sản văn hóa" class="mission-main-img">
+        <img src="../images/about-heritage.jpg" alt="Di sản văn hóa" class="mission-main-img">
         <img src="../images/about-festival.jpg" alt="Lễ hội truyền thống" class="mission-sub-img">
         <div class="mission-badge-circle">
           Nét Việt - Trải nghiệm văn hóa
@@ -99,7 +99,7 @@
       <div class="text-content">
         <span class="section-label">— SỨ MỆNH CỦA CHÚNG TÔI</span>
         <h2 class="section-heading">Đưa du khách đến gần hơn với <em>văn hóa địa phương.</em></h2>
-        <p>Chúng tôi tin rằng văn hóa không chỉ nằm trong sách vở, di tích hay bảo tàng, mà sống động cùng cộng đồng. Nét Việt sứ mệnh tôn vinh và lan tỏa vẻ đẹp văn hóa địa phương đến du khách thông qua các hoạt động trải nghiệm thực tế.</p>
+        <p>Chúng tôi tin rằng văn hóa không chỉ nằm trong sách vở, di tích hay bảo tàng, mà sống động cùng cộng đồng. Sứ mệnh của Nét Việt là tôn vinh và lan tỏa vẻ đẹp văn hóa địa phương đến du khách thông qua các hoạt động trải nghiệm thực tế.</p>
         <div class="feature-list">
           <div class="feature-item">
             <div class="feature-number">01</div>
@@ -161,7 +161,7 @@
   </section>
 
   <!-- Section: Gửi lời nhắn -->
-  <section class="section-padding">
+  <section class="section-padding" id="contact">
     <div class="container grid-2">
       <div class="text-content">
         <span class="section-label">— KẾT NỐI CÙNG NÉT VIỆT</span>
@@ -169,10 +169,10 @@
         <p>Bạn có câu hỏi, góp ý hay muốn hợp tác cùng Nét Việt? Đừng ngần ngại liên hệ với chúng tôi.</p>
         <div style="margin-top: 30px;">
           <div class="contact-info-item">
-            <i class="fa-regular fa-envelope"></i> contact@netviet.com.vn
+            <i class="fa-regular fa-envelope"></i> <a href="mailto:contact@netviet.com.vn">contact@netviet.com.vn</a>
           </div>
           <div class="contact-info-item">
-            <i class="fa-solid fa-phone"></i> 0123 456 789
+            <i class="fa-solid fa-phone"></i> <a href="tel:+84123456789">0123 456 789</a>
           </div>
           <div class="contact-info-item">
             <i class="fa-solid fa-location-dot"></i> Thành phố Hồ Chí Minh, Việt Nam
@@ -185,24 +185,24 @@
         <form id="contactForm">
           <div class="form-group-row">
             <div class="form-group">
-              <input type="text" placeholder="Họ và tên">
+              <input type="text" name="name" autocomplete="name" aria-label="Họ và tên" placeholder="Họ và tên" required>
             </div>
             <div class="form-group">
-              <input type="email" placeholder="Email">
+              <input type="email" name="email" autocomplete="email" aria-label="Email" placeholder="Email" required>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Chủ đề">
+            <input type="text" name="subject" aria-label="Chủ đề" placeholder="Chủ đề" required>
           </div>
           <div class="form-group">
-            <textarea placeholder="Bạn muốn nhắn điều gì đến chúng tôi?"></textarea>
+            <textarea name="message" aria-label="Nội dung tin nhắn" placeholder="Bạn muốn nhắn điều gì đến chúng tôi?" required></textarea>
           </div>
           <div class="checkbox-group">
-            <input type="checkbox" id="privacy">
+            <input type="checkbox" id="privacy" required>
             <label for="privacy">Tôi đồng ý với các điều khoản bảo mật thông tin.</label>
           </div>
           <button type="submit" class="btn-block-dark">Gửi tin nhắn</button>
-          <div id="formMessage" style="font-size: 0.82rem; margin-top: 10px; text-align: center;"></div>
+          <div id="formMessage" role="status" aria-live="polite" style="font-size: 0.82rem; margin-top: 10px; text-align: center;"></div>
         </form>
       </div>
     </div>
@@ -222,34 +222,34 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="logo" style="margin-bottom: 16px;">
+          <a class="logo" href="index.html" aria-label="Nét Việt - Trang chủ" style="margin-bottom: 16px;">
             <img src="../images/logo-icon.jpg" alt="Nét Việt Logo" class="logo-img">
             <span class="logo-text">Nét Việt</span>
-          </div>
+          </a>
           <p style="color: #a0b5ab; font-size: 0.85rem;">Tôn vinh và lan tỏa nét đẹp văn hóa địa phương qua từng trải nghiệm độc đáo, giàu bản sắc.</p>
         </div>
         <div class="footer-col">
           <h5>Khám phá</h5>
           <ul>
-            <li><a href="#">Khám phá trải nghiệm</a></li>
-            <li><a href="#">Làng nghề truyền thống</a></li>
-            <li><a href="#">Bài viết truyền cảm hứng</a></li>
+            <li><a href="products.html">Khám phá trải nghiệm</a></li>
+            <li><a href="products.html?category=craft#danh-sach">Làng nghề truyền thống</a></li>
+            <li><a href="products.html#cam-nang">Bài viết truyền cảm hứng</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Về Nét Việt</h5>
           <ul>
-            <li><a href="#">Câu chuyện thương hiệu</a></li>
+            <li><a href="#contact">Câu chuyện thương hiệu</a></li>
             <li><a href="about.html">Về chúng tôi</a></li>
-            <li><a href="#">Hành trình phát triển</a></li>
+            <li><a href="products.html#hanh-trinh">Hành trình phát triển</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Hỗ trợ</h5>
           <ul>
-            <li><a href="#">Trung tâm hỗ trợ du khách</a></li>
-            <li><a href="#">Trở thành đối tác</a></li>
-            <li><a href="#">Điều khoản sử dụng</a></li>
+            <li><a href="#contact">Trung tâm hỗ trợ du khách</a></li>
+            <li><a href="#contact">Trở thành đối tác</a></li>
+            <li><a href="#contact">Điều khoản sử dụng</a></li>
           </ul>
         </div>
       </div>
@@ -260,6 +260,6 @@
   </footer>
 
   <!-- File JavaScript nhúng trước thẻ đóng body -->
-  <script src="js/script.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
