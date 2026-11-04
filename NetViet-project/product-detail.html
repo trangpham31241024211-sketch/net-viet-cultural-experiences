@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="detail-page">
 
   <!-- Top Announcement Bar -->
   <div class="announcement-bar">
@@ -17,20 +17,20 @@
   <!-- Site Header (Đã thêm mục Hành trình và Cẩm nang theo Figma) -->
   <header class="site-header">
     <div class="header-container">
-      <a href="about.html" class="logo">
+      <a href="index.html" class="logo" aria-label="Nét Việt - Trang chủ">
         <img src="../images/logo-icon.jpg" alt="Nét Việt Logo" class="logo-img">
         <span class="logo-text">Nét Việt</span>
       </a>
       <nav class="nav-menu">
         <a href="index.html" class="nav-link">Trang chủ</a>
-        <a href="product-detail.html" class="nav-link active">Khám phá trải nghiệm</a>
-        <a href="#" class="nav-link">Hành trình</a>
-        <a href="#" class="nav-link">Cẩm nang</a>
+        <a href="products.html" class="nav-link active" aria-current="page">Khám phá trải nghiệm</a>
+        <a href="products.html#hanh-trinh" class="nav-link">Hành trình</a>
+        <a href="products.html#cam-nang" class="nav-link">Cẩm nang</a>
         <a href="about.html" class="nav-link">Về chúng tôi</a>
       </nav>
       <div class="header-actions">
-        <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="icon-btn"><i class="fa-regular fa-user"></i></button>
+        <a class="icon-btn" href="products.html#tim-kiem" aria-label="Tìm trải nghiệm"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>
+        <a class="icon-btn" href="about.html#contact" aria-label="Liên hệ Nét Việt"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
       </div>
     </div>
   </header>
@@ -41,15 +41,15 @@
       <div>
         <div class="gallery-main-img">
           <img id="mainImage" src="../images/pottery-main.jpg" alt="Làm gốm Bát Tràng">
-          <div class="badge-overlay" id="openGalleryBtn" style="bottom: 12px; right: 12px; padding: 6px 14px; font-size: 0.78rem;">
+          <button class="badge-overlay" id="openGalleryBtn" type="button" style="bottom: 12px; right: 12px; padding: 6px 14px; font-size: 0.78rem;">
             <span>Xem tất cả</span>
-          </div>
+          </button>
         </div>
         <div class="gallery-thumbs" id="galleryThumbs">
-          <div class="thumb-item active"><img src="../images/pottery-thumb-1.jpg" alt="Thumb 1"></div>
-          <div class="thumb-item"><img src="../images/pottery-thumb-2.jpg" alt="Thumb 2"></div>
-          <div class="thumb-item"><img src="../images/pottery-thumb-3.jpg" alt="Thumb 3"></div>
-          <div class="thumb-item"><img src="../images/pottery-thumb-4.jpg" alt="Thumb 4"></div>
+          <button class="thumb-item active" type="button" aria-label="Xem ảnh gốm Bát Tràng 1" aria-pressed="true"><img src="../images/pottery-thumb-1.jpg" alt="Nghệ nhân làm gốm Bát Tràng"></button>
+          <button class="thumb-item" type="button" aria-label="Xem ảnh gốm Bát Tràng 2" aria-pressed="false"><img src="../images/pottery-thumb-2.jpg" alt="Sản phẩm gốm Bát Tràng"></button>
+          <button class="thumb-item" type="button" aria-label="Xem ảnh gốm Bát Tràng 3" aria-pressed="false"><img src="../images/pottery-thumb-3.jpg" alt="Tạo hình gốm thủ công"></button>
+          <button class="thumb-item" type="button" aria-label="Xem ảnh gốm Bát Tràng 4" aria-pressed="false"><img src="../images/pottery-thumb-4.jpg" alt="Không gian làng gốm"></button>
         </div>
       </div>
 
@@ -93,21 +93,22 @@
         <div class="booking-card">
           <div class="booking-header">
             <span style="font-weight: 600; font-size: 0.95rem;">Đặt trải nghiệm ngay</span>
-            <span class="price-text">350.000đ <small style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">/ người</small></span>
+            <span class="price-text">250.000đ <small style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">/ người</small></span>
           </div>
           <div class="form-group" style="margin-bottom: 12px;">
-            <input type="date" id="visitDate" style="background:#fff; width: 100%; padding: 10px; border: 1px solid var(--border-light); border-radius: 4px;">
+            <label class="sr-only" for="visitDate">Ngày tham gia</label>
+            <input type="date" id="visitDate" name="visitDate" required style="background:#fff; width: 100%; padding: 10px; border: 1px solid var(--border-light); border-radius: 4px;">
           </div>
           <div class="booking-row">
             <span style="font-size: 0.88rem; color: var(--text-muted);">Số lượng khách</span>
             <div class="quantity-counter">
-              <button class="counter-btn" id="minus">-</button>
-              <span style="font-weight: 600;" id="peopleCount">1</span>
-              <button class="counter-btn" id="plus">+</button>
+              <button class="counter-btn" id="minus" type="button" aria-label="Giảm số lượng khách">-</button>
+              <span style="font-weight: 600;" id="peopleCount" aria-live="polite">1</span>
+              <button class="counter-btn" id="plus" type="button" aria-label="Tăng số lượng khách">+</button>
             </div>
           </div>
-          <button class="btn-block-dark" id="bookBtn">ĐẶT TRẢI NGHIỆM NGAY &rarr;</button>
-          <div id="bookingMessage" style="font-size: 0.8rem; margin-top: 10px; text-align: center;"></div>
+          <button class="btn-block-dark" id="bookBtn" type="button">ĐẶT TRẢI NGHIỆM NGAY &rarr;</button>
+          <div id="bookingMessage" role="status" aria-live="polite" style="font-size: 0.8rem; margin-top: 10px; text-align: center;"></div>
           <div class="booking-features">
             <span><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Hủy miễn phí trước 24h</span>
             <span><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Xác nhận tức thì</span>
@@ -129,7 +130,7 @@
         <h2 class="section-heading">Làng gốm hơn 700 năm<br>giữ hồn đất Việt.</h2>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">Bát Tràng là làng nghề gốm sứ truyền thống nổi tiếng bậc nhất Việt Nam, hình thành từ thế kỷ XIV. Nơi đây quy tụ nhiều nghệ nhân tài hoa, giữ gìn và phát triển kỹ thuật chế tác gốm đỉnh cao, tạo nên những sản phẩm tinh xảo mang đậm đà bản sắc Việt.</p>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Tham gia trải nghiệm, du khách được tìm hiểu về nguồn gốc nghề gốm, ghé thăm các xưởng chế tác truyền thống và tự tay nhào nặn đất, vẽ họa tiết — tạo nên sản phẩm gốm của riêng mình.</p>
-        <a href="#" style="color: var(--primary-green); font-weight: 600; font-size: 0.9rem;">Tìm hiểu thêm về Bát Tràng &rarr;</a>
+        <a href="about.html" style="color: var(--primary-green); font-weight: 600; font-size: 0.9rem;">Tìm hiểu thêm về Nét Việt &rarr;</a>
       </div>
       <div>
         <img src="../images/gate.jpg" alt="Cổng làng gốm Bát Tràng" style="border-radius: 8px; width: 100%;">
@@ -145,13 +146,13 @@
           <span class="section-label">— TRẢI NGHIỆM LIÊN QUAN</span>
           <h2 class="section-heading" style="margin-bottom: 0;">Có thể bạn cũng sẽ thích</h2>
         </div>
-        <a href="#" style="font-size: 0.85rem; color: var(--text-muted);">Xem tất cả &rarr;</a>
+        <a href="products.html" style="font-size: 0.85rem; color: var(--text-muted);">Xem tất cả &rarr;</a>
       </div>
       <div class="cards-grid-4">
         <div class="product-card">
           <img src="../images/related-1.jpg" alt="Làm đèn lồng Hội An" class="product-card-img">
           <div class="product-card-body">
-            <div class="product-card-title">Làm đèn lồng Hội An</div>
+            <div class="product-card-title"><a href="products.html?category=culture#danh-sach">Làm đèn lồng Hội An</a></div>
             <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Quảng Nam</div>
             <div class="product-card-meta">
               <span>⏱ 2 giờ</span>
@@ -162,7 +163,7 @@
         <div class="product-card">
           <img src="../images/related-2.jpg" alt="Khám phá ruộng bậc thang" class="product-card-img">
           <div class="product-card-body">
-            <div class="product-card-title">Khám phá ruộng bậc thang</div>
+            <div class="product-card-title"><a href="products.html?category=nature#danh-sach">Khám phá ruộng bậc thang</a></div>
             <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Sapa, Lào Cai</div>
             <div class="product-card-meta">
               <span>⏱ 1 ngày</span>
@@ -173,7 +174,7 @@
         <div class="product-card">
           <img src="../images/related-3.jpg" alt="Làm nón lá Huế" class="product-card-img">
           <div class="product-card-body">
-            <div class="product-card-title">Làm nón lá Huế</div>
+            <div class="product-card-title"><a href="products.html?category=craft#danh-sach">Làm nón lá Huế</a></div>
             <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Thừa Thiên Huế</div>
             <div class="product-card-meta">
               <span>⏱ 2 giờ</span>
@@ -184,7 +185,7 @@
         <div class="product-card">
           <img src="../images/related-4.jpg" alt="Đi thuyền thúng rừng dừa" class="product-card-img">
           <div class="product-card-body">
-            <div class="product-card-title">Đi thuyền thúng rừng dừa</div>
+            <div class="product-card-title"><a href="products.html?category=nature#danh-sach">Đi thuyền thúng rừng dừa</a></div>
             <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Hội An, Quảng Nam</div>
             <div class="product-card-meta">
               <span>⏱ 2 giờ</span>
@@ -206,12 +207,12 @@
   </section>
 
   <!-- Lightbox Modal -->
-  <div class="lightbox-modal" id="lightboxModal">
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Thư viện ảnh gốm Bát Tràng" aria-hidden="true">
     <div class="lightbox-content">
-      <button class="lightbox-close" id="closeLightbox">&times;</button>
-      <button class="lightbox-btn prev" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
-      <img id="lightboxImg" src="" alt="Trình chiếu ảnh">
-      <button class="lightbox-btn next" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+      <button class="lightbox-close" id="closeLightbox" type="button" aria-label="Đóng thư viện ảnh">&times;</button>
+      <button class="lightbox-btn prev" id="prevBtn" type="button" aria-label="Ảnh trước"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+      <img id="lightboxImg" src="../images/pottery-main.jpg" alt="Nghệ nhân làm gốm Bát Tràng">
+      <button class="lightbox-btn next" id="nextBtn" type="button" aria-label="Ảnh tiếp theo"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
     </div>
     <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
   </div>
@@ -221,34 +222,34 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="logo" style="margin-bottom: 16px;">
-            <img src="../images/logo-icon.jpg" alt="Nét Việt Logo" class="logo-img">
+          <a class="logo" href="index.html" aria-label="Nét Việt - Trang chủ" style="margin-bottom: 16px;">
+            <img src="../images/logo-icon.jpg" alt="" class="logo-img">
             <span class="logo-text">Nét Việt</span>
-          </div>
+          </a>
           <p style="color: #a0b5ab; font-size: 0.85rem;">Tôn vinh và lan tỏa nét đẹp văn hóa địa phương qua từng trải nghiệm độc đáo, giàu bản sắc.</p>
         </div>
         <div class="footer-col">
           <h5>Khám phá</h5>
           <ul>
-            <li><a href="#">Khám phá trải nghiệm</a></li>
-            <li><a href="#">Làng nghề truyền thống</a></li>
-            <li><a href="#">Bài viết truyền cảm hứng</a></li>
+            <li><a href="products.html">Khám phá trải nghiệm</a></li>
+            <li><a href="products.html?category=craft#danh-sach">Làng nghề truyền thống</a></li>
+            <li><a href="products.html#cam-nang">Bài viết truyền cảm hứng</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Về Nét Việt</h5>
           <ul>
-            <li><a href="#">Câu chuyện thương hiệu</a></li>
-            <li><a href="#">Về chúng tôi</a></li>
-            <li><a href="#">Hành trình phát triển</a></li>
+            <li><a href="about.html">Câu chuyện thương hiệu</a></li>
+            <li><a href="about.html">Về chúng tôi</a></li>
+            <li><a href="products.html#hanh-trinh">Hành trình phát triển</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Hỗ trợ</h5>
           <ul>
-            <li><a href="#">Trung tâm hỗ trợ du khách</a></li>
-            <li><a href="#">Trở thành đối tác</a></li>
-            <li><a href="#">Điều khoản sử dụng</a></li>
+            <li><a href="about.html#contact">Trung tâm hỗ trợ du khách</a></li>
+            <li><a href="about.html#contact">Trở thành đối tác</a></li>
+            <li><a href="about.html#contact">Điều khoản sử dụng</a></li>
           </ul>
         </div>
       </div>
@@ -259,6 +260,6 @@
   </footer>
 
   <!-- Script liên kết ở cuối thẻ body -->
-  <script src="js/script.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
-</html>
+</html>git check-ignore -v images/about-hero.jpg
