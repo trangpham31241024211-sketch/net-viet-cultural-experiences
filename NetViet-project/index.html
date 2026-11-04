@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="home-page">
 
     <!-- THANH THÔNG BÁO -->
     <div class="announcement-bar">
@@ -23,27 +23,27 @@
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="index.html" aria-label="Nét Việt - Trang chủ">
-                <img src="Hình/Logo (1).png" alt="Logo Nét Việt">
+                <img src="../images/logo-icon.jpg" alt="">
                 <span>Nét Việt</span>
             </a>
 
             <nav class="main-nav" aria-label="Điều hướng chính">
                 <ul>
                     <li><a class="nav-link active" href="index.html" aria-current="page">Trang chủ</a></li>
-                    <li><a class="nav-link" href="../Khám phá trải nghiệm/index.html">Khám phá trải nghiệm</a></li>
+                    <li><a class="nav-link" href="products.html">Khám phá trải nghiệm</a></li>
                     <li><a class="nav-link" href="#hanh-trinh">Hành trình</a></li>
                     <li><a class="nav-link" href="#cam-nang">Cẩm nang</a></li>
-                    <li><a class="nav-link" href="#cau-chuyen">Về chúng tôi</a></li>
+                    <li><a class="nav-link" href="about.html">Về chúng tôi</a></li>
                 </ul>
             </nav>
 
             <div class="header-actions">
-                <a class="icon-button" href="../Khám phá trải nghiệm/index.html" aria-label="Tìm kiếm trải nghiệm">
+                <a class="icon-button" href="products.html#tim-kiem" aria-label="Tìm kiếm trải nghiệm">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
                 </a>
-                <button class="icon-button" type="button" aria-label="Tài khoản">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c0-3.5 3.1-6 7-6s7 2.5 7 6"></path></svg>
-                </button>
+                <a class="icon-button" href="about.html#contact" aria-label="Liên hệ Nét Việt">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>
+                </a>
             </div>
         </div>
     </header>
@@ -51,7 +51,7 @@
     <main>
         <!-- HERO -->
         <section class="hero">
-            <img class="hero-image" src="Hình/thiên nhiên (1).WEBP"
+            <img class="hero-image" src="../images/thiên nhiên (1).WEBP"
                  alt="Toàn cảnh núi đá vôi và mặt nước vịnh Hạ Long">
             <div class="hero-shade"></div>
 
@@ -65,7 +65,7 @@
                         làm nên văn hóa Việt Nam.
                     </p>
                     <div class="hero-buttons">
-                        <a class="button button-gold" href="../Khám phá trải nghiệm/index.html">Khám phá trải nghiệm <span>→</span></a>
+                        <a class="button button-gold" href="products.html">Khám phá trải nghiệm <span>→</span></a>
                         <a class="button button-outline" href="#hanh-trinh">Tìm cảm hứng cho chuyến đi</a>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
 
             <!-- SEARCH PANEL: chuyển tiêu chí tìm kiếm sang trang khám phá -->
             <div class="container search-container">
-                <form class="search-panel" action="../Khám phá trải nghiệm/index.html" method="get">
+                <form class="search-panel" action="products.html" method="get">
                     <div class="search-title">BẠN MUỐN KHÁM PHÁ ĐIỀU GÌ?</div>
                     <div class="search-grid">
                         <div class="field keyword-field">
@@ -92,7 +92,7 @@
                         </div>
                         <div class="field">
                             <label for="type">LOẠI TRẢI NGHIỆM</label>
-                            <select id="type" name="type">
+                            <select id="type" name="category">
                                 <option value="">Tất cả loại hình</option>
                                 <option value="craft">Làng nghề thủ công</option>
                                 <option value="food">Ẩm thực địa phương</option>
@@ -115,12 +115,12 @@
             </div>
 
             <div class="journey-grid">
-                <a class="journey-card journey-planner" href="../Khám phá trải nghiệm/index.html">
+                <a class="journey-card journey-planner" href="products.html">
                     <span class="card-index">01 · LÊN KẾ HOẠCH</span>
                     <span class="round-arrow">↗</span>
                     <div><h3>Nét Việt Tour Planner</h3><p>Tìm kiếm và lựa chọn trải nghiệm phù hợp với thời gian, sở thích và ngân sách.</p><span class="text-link">KHÁM PHÁ NGAY →</span></div>
                 </a>
-                <a class="journey-card journey-route" href="../Khám phá trải nghiệm/index.html">
+                <a class="journey-card journey-route" href="products.html">
                     <span class="card-index">02 · HÀNH TRÌNH</span>
                     <span class="round-arrow">↗</span>
                     <div><h3>Nhật Kí Hành Trình</h3><p>Lưu giữ những điểm dừng chân và khoảnh khắc đáng nhớ trên mỗi chuyến đi.</p><span class="text-link">TÌM CẢM HỨNG →</span></div>
@@ -232,19 +232,19 @@
                 <p>Chọn điều bạn yêu thích và tìm thấy một góc Việt Nam theo cách riêng.</p>
             </div>
             <div class="category-grid">
-                <a href="../Khám phá trải nghiệm/index.html" class="category-item">
+                <a href="products.html?category=craft#danh-sach" class="category-item">
                     <span class="category-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14.5 4.5 5 5M4 20l5.5-1.5L20 8a3.5 3.5 0 0 0-5-5L4.5 14.5 4 20Z"></path><path d="m7 13 4 4"></path></svg></span>
                     <span><b>Làng nghề</b><small>Chạm vào nghề xưa</small></span><span class="category-arrow">↗</span>
                 </a>
-                <a href="../Khám phá trải nghiệm/index.html" class="category-item">
+                <a href="products.html?category=food#danh-sach" class="category-item">
                     <span class="category-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13h16l-1.5 5.5a2 2 0 0 1-2 1.5h-9a2 2 0 0 1-2-1.5L4 13Z"></path><path d="M6 10c1.2-2 3.1-3 6-3s4.8 1 6 3M8 5c1-.9 2.3-1.4 4-1.4S15 4.1 16 5"></path></svg></span>
                     <span><b>Ẩm thực</b><small>Nếm vị quê hương</small></span><span class="category-arrow">↗</span>
                 </a>
-                <a href="../Khám phá trải nghiệm/index.html" class="category-item">
+                <a href="products.html?category=culture#danh-sach" class="category-item">
                     <span class="category-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-5 7 5v11M8 20v-7h8v7"></path><path d="M8 9h.01M12 9h.01M16 9h.01"></path></svg></span>
                     <span><b>Văn hóa</b><small>Nghe chuyện đất và người</small></span><span class="category-arrow">↗</span>
                 </a>
-                <a href="../Khám phá trải nghiệm/index.html" class="category-item">
+                <a href="products.html?category=nature#danh-sach" class="category-item">
                     <span class="category-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4c-7 0-12 2.5-14.5 7.5C3.5 15.5 6 20 9 20c6.5 0 11-7 11-16Z"></path><path d="M4 21c2-5 6-8 12-11"></path></svg></span>
                     <span><b>Thiên nhiên</b><small>Khám phá thiên nhiên</small></span><span class="category-arrow">↗</span>
                 </a>
@@ -261,60 +261,60 @@
                 </div>
 
                 <div class="filter-pills" aria-label="Danh mục trải nghiệm">
-                    <a class="filter-pill selected" href="../Khám phá trải nghiệm/index.html">Tất cả</a>
-                    <a class="filter-pill" href="../Khám phá trải nghiệm/index.html">Làng nghề</a>
-                    <a class="filter-pill" href="../Khám phá trải nghiệm/index.html">Thiên nhiên</a>
-                    <a class="filter-pill" href="../Khám phá trải nghiệm/index.html">Ẩm thực</a>
-                    <a class="filter-pill" href="../Khám phá trải nghiệm/index.html">Văn hóa</a>
+                    <a class="filter-pill selected" href="products.html#danh-sach">Tất cả</a>
+                    <a class="filter-pill" href="products.html?category=craft#danh-sach">Làng nghề</a>
+                    <a class="filter-pill" href="products.html?category=nature#danh-sach">Thiên nhiên</a>
+                    <a class="filter-pill" href="products.html?category=food#danh-sach">Ẩm thực</a>
+                    <a class="filter-pill" href="products.html?category=culture#danh-sach">Văn hóa</a>
                 </div>
 
                 <div class="product-grid">
                     <article class="product-card">
-                        <a href="../Khám phá trải nghiệm/index.html#danh-sach" class="product-visual visual-halong" aria-label="Xem trải nghiệm khám phá vịnh Hạ Long">
+                        <a href="products.html#danh-sach" class="product-visual visual-halong" aria-label="Xem trải nghiệm khám phá vịnh Hạ Long">
                             <span class="product-badge">THIÊN NHIÊN</span><span class="heart">♡</span>
                         </a>
                         <div class="product-info">
                             <small>⌖ Vịnh Hạ Long, Quảng Ninh</small>
                             <h3>Chèo kayak &amp; ngắm hoàng hôn Vịnh Di Sản</h3>
-                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>350.000đ <small>/ người</small></strong></span><a href="../Khám phá trải nghiệm/index.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
+                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>350.000đ <small>/ người</small></strong></span><a href="products.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
                         </div>
                     </article>
 
                     <article class="product-card">
-                        <a href="../Khám phá trải nghiệm/index.html#danh-sach" class="product-visual visual-pottery" aria-label="Xem trải nghiệm làm gốm Bát Tràng">
+                        <a href="product-detail.html" class="product-visual visual-pottery" aria-label="Xem chi tiết trải nghiệm làm gốm Bát Tràng">
                             <span class="product-badge">LÀNG NGHỀ</span><span class="heart">♡</span>
                         </a>
                         <div class="product-info">
                             <small>⌖ Bát Tràng, Hà Nội</small>
                             <h3>Khám phá nghệ thuật làm gốm Bát Tràng</h3>
-                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>180.000đ <small>/ người</small></strong></span><a href="../Khám phá trải nghiệm/index.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
+                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>250.000đ <small>/ người</small></strong></span><a href="product-detail.html">Xem chi tiết <span aria-hidden="true">→</span></a></div>
                         </div>
                     </article>
 
                     <article class="product-card">
-                        <a href="../Khám phá trải nghiệm/index.html#danh-sach" class="product-visual visual-food" aria-label="Xem trải nghiệm khám phá ẩm thực">
+                        <a href="products.html#danh-sach" class="product-visual visual-food" aria-label="Xem trải nghiệm khám phá ẩm thực">
                             <span class="product-badge">ẨM THỰC</span><span class="heart">♡</span>
                         </a>
                         <div class="product-info">
                             <small>⌖ Hội An, Quảng Nam</small>
                             <h3>Khám phá hương vị phố cổ</h3>
-                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>320.000đ <small>/ người</small></strong></span><a href="../Khám phá trải nghiệm/index.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
+                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>320.000đ <small>/ người</small></strong></span><a href="products.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
                         </div>
                     </article>
 
                     <article class="product-card">
-                        <a href="../Khám phá trải nghiệm/index.html#danh-sach" class="product-visual visual-coast" aria-label="Xem trải nghiệm khám phá miền biển">
+                        <a href="products.html#danh-sach" class="product-visual visual-coast" aria-label="Xem trải nghiệm khám phá miền biển">
                             <span class="product-badge">THIÊN NHIÊN</span><span class="heart">♡</span>
                         </a>
                         <div class="product-info">
                             <small>⌖ Côn Đảo</small>
                             <h3>Lặn ngắm san hô &amp; khám phá đảo hoang sơ</h3>
-                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>450.000đ <small>/ người</small></strong></span><a href="../Khám phá trải nghiệm/index.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
+                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>450.000đ <small>/ người</small></strong></span><a href="products.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
                         </div>
                     </article>
                 </div>
 
-                <div class="center-action"><a class="button button-gold" href="../Khám phá trải nghiệm/index.html">Khám phá thêm trải nghiệm <span>→</span></a></div>
+                <div class="center-action"><a class="button button-gold" href="products.html">Khám phá thêm trải nghiệm <span>→</span></a></div>
             </div>
         </section>
 
@@ -330,7 +330,7 @@
                 <h2>Đi để hiểu.<br><em>Trải nghiệm để nhớ.</em></h2>
                 <p>Nét Việt tin rằng văn hóa không chỉ nằm trong những trang sách hay hiện vật trưng bày. Văn hóa sống trong đôi bàn tay người thợ, trong hương vị món ăn và trong câu chuyện được trao truyền qua nhiều thế hệ.</p>
                 <p>Mỗi hành trình là một cơ hội để gặp gỡ, lắng nghe và cảm nhận những giá trị bản địa theo cách chân thực nhất.</p>
-                <a class="button button-gold" href="#cau-chuyen">Tìm hiểu về chúng tôi <span>→</span></a>
+                <a class="button button-gold" href="about.html">Tìm hiểu về chúng tôi <span>→</span></a>
                 <div class="story-stats">
                     <div><b>01</b><small>Gặp gỡ<br>con người</small></div>
                     <div><b>02</b><small>Khám phá<br>văn hóa</small></div>
@@ -346,7 +346,7 @@
                 <p class="eyebrow light-eyebrow">MỖI HÀNH TRÌNH, MỘT CÂU CHUYỆN</p>
                 <h2>Một chuyến đi. Nhiều điều<br><em>để khám phá.</em></h2>
                 <p>Bắt đầu hành trình chạm đến những giá trị văn hóa Việt Nam.</p>
-                <a class="button button-gold" href="../Khám phá trải nghiệm/index.html">Tìm trải nghiệm của bạn <span>→</span></a>
+                <a class="button button-gold" href="products.html">Tìm trải nghiệm của bạn <span>→</span></a>
             </div>
         </section>
     </main>
@@ -360,21 +360,21 @@
             </div>
             <div class="footer-column">
                 <h3>NÉT VIỆT</h3>
-                <a href="#cau-chuyen">Về chúng tôi</a>
+                <a href="about.html">Về chúng tôi</a>
                 <a href="#hanh-trinh">Hành trình</a>
                 <a href="#cam-nang">Cẩm nang</a>
             </div>
             <div class="footer-column">
                 <h3>KHÁM PHÁ</h3>
-                <a href="../Khám phá trải nghiệm/index.html">Tất cả trải nghiệm</a>
-                <a href="../Khám phá trải nghiệm/index.html">Làng nghề thủ công</a>
-                <a href="../Khám phá trải nghiệm/index.html">Ẩm thực địa phương</a>
+                <a href="products.html">Tất cả trải nghiệm</a>
+                <a href="products.html?category=craft#danh-sach">Làng nghề thủ công</a>
+                <a href="products.html?category=food#danh-sach">Ẩm thực địa phương</a>
             </div>
             <div class="footer-column">
                 <h3>HỖ TRỢ</h3>
-                <a href="about.html">Liên hệ</a>
-                <a href="about.html">Câu hỏi thường gặp</a>
-                <a href="about.html">Chính sách</a>
+                <a href="about.html#contact">Liên hệ</a>
+                <a href="about.html#contact">Câu hỏi thường gặp</a>
+                <a href="about.html#contact">Chính sách &amp; hỗ trợ</a>
             </div>
         </div>
         <div class="container footer-bottom">
