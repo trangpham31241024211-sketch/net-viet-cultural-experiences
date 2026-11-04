@@ -1881,10 +1881,19 @@ gallery-thumbs .thumb-item img,
   padding: 12px 12px 11px;
 }
 
+
 .home-page .product-info > small {
-  color: #74837a;
-  font-size: 8px;
+    display: inline-block;
+    width: fit-content;
+    padding: 5px 9px;
+    margin-bottom: 5px;
+    color: #245b3f;
+    background-color: #e1eee5;
+    border-radius: 4px;
+    font-size: 8px;
+    font-weight: 700;
 }
+
 
 .home-page .product-info h3 {
   min-height: 37px;
@@ -3794,4 +3803,43 @@ gallery-thumbs .thumb-item img,
   .about-page .form-group-row {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+/* Hiệu ứng hover cho nút Đặt trải nghiệm */
+.btn-block-dark {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-block-dark:hover {
+    background-color: #c89b3c;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+/* Hiệu ứng hover cho thanh menu trang About */
+.nav-menu a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Đổi màu chữ khi di chuột */
+.nav-menu a:hover {
+    color: #c89b3c;
+}
+
+/* Tạo đường gạch chân */
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #c89b3c;
+    transition: width 0.3s ease;
+}
+
+/* Hiệu ứng đường gạch chân khi hover */
+.nav-menu a:hover::after {
+    width: 100%;
 }
