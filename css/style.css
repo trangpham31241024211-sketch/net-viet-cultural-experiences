@@ -1377,15 +1377,15 @@ gallery-thumbs .thumb-item img,
 }
 
 .home-page .journey-planner {
-  background-image: url("../images/nhật%20kí%20hành%20trình.JPG");
+  background-image: url("../images/related-2.jpg");
 }
 
 .home-page .journey-route {
-  background-image: url("../images/hành%20trình%20giải%20mã.JPG");
+  background-image: url("../images/related-1.jpg");
 }
 
 .home-page .journey-memory {
-  background-image: url("../images/ẩm%20thực.JPG");
+  background-image: url("../images/about-festival.jpg");
 }
 
 .home-page .card-index,
@@ -1832,19 +1832,19 @@ gallery-thumbs .thumb-item img,
 }
 
 .home-page .visual-halong {
-  background-image: url("../images/thiên%20nhiên%20(1).WEBP");
+  background-image: url("../images/about-landscape.jpg");
 }
 
 .home-page .visual-pottery {
-  background-image: url("../images/làng%20nghề.png");
+  background-image: url("../images/pottery-main.jpg");
 }
 
 .home-page .visual-food {
-  background-image: url("../images/ẩm%20thực.JPG");
+  background-image: url("../images/about-festival.jpg");
 }
 
 .home-page .visual-coast {
-  background-image: url("../images/thiên%20nhiên.JPG");
+  background-image: url("../images/related-4.jpg");
 }
 
 .home-page .product-badge,
@@ -1975,7 +1975,7 @@ gallery-thumbs .thumb-item img,
   inset: 0 0 0 0;
   min-height: 300px;
   border-radius: 7px;
-  background: url("../images/dưới.JPG") center / cover no-repeat;
+  background: url("../images/footer-banner.jpg") center / cover no-repeat;
   box-shadow: 0 12px 28px rgba(27, 55, 39, .14);
 }
 
@@ -2611,7 +2611,7 @@ gallery-thumbs .thumb-item img,
   align-items: center;
   overflow: visible;
   color: #fff;
-  background: #173c2e url("../images/thiên%20nhiên%20(1).WEBP") center 54% / cover no-repeat;
+  background: #173c2e url("../images/about-landscape.jpg") center 54% / cover no-repeat;
 }
 
 .explore-page .hero-shade {
@@ -2948,12 +2948,12 @@ gallery-thumbs .thumb-item img,
 }
 
 .explore-page .visual-halong {
-  background-image: url("../images/thiên%20nhiên%20(1).WEBP");
+  background-image: url("../images/about-landscape.jpg");
 }
 
 .explore-page .visual-cooking,
 .explore-page .visual-food {
-  background-image: url("../images/ẩm%20thực.JPG");
+  background-image: url("../images/about-festival.jpg");
 }
 
 .explore-page .visual-floating-market {
