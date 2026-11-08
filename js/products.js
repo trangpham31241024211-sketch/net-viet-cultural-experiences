@@ -137,4 +137,64 @@ function getProductById(id) {
  return products.find(item => item.id === Number(id));
 }
 
+// ==============================================================
+// 3. HÀM HIỂN THỊ DANH SÁCH SẢN PHẨM (Phụ trách: Ngô Mỹ Châu)
+// ==============================================================
+/**
+ * Hiển thị danh sách sản phẩm động ra giao diện HTML
+ * @param {Array} productList - Mảng các sản phẩm cần hiển thị
+ */
+function renderProducts(productList) {
+  const container = document.getElementById('products-grid');
+  const emptyMessage = document.getElementById('no-products-message');
 
+  // Nếu trang hiện tại không có container (ví dụ trang about hoặc cart) thì thoát
+  if (!container) return;
+
+  // TRƯỜNG HỢP 1: Danh sách không có sản phẩm nào
+  if (!productList || productList.length === 0) {
+    container.innerHTML = '';
+    if (emptyMessage) emptyMessage.style.display = 'block';
+    return;
+  }
+
+  // TRƯỜNG HỢP 2: Có sản phẩm -> Ẩn thông báo rỗng và vẽ danh sách
+  if (emptyMessage) emptyMessage.style.display = 'none';
+
+  // Dùng .map() và cú pháp template string để render từng sản phẩm
+  container.innerHTML = productList.map(item => `
+    <article class="product-card" data-id="${item.id}" data-category="${item.category}">
+<a href="product-detail.html?id=${item.id}" class="product-visual" aria-label="Xem chi tiết ${item.name}" style="position: relative; display: block; overflow: hidden;">
+     <img src="${item.image}" alt="${item.name}" loading="lazy" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+     <span class="product-badge" style="position: absolute; top: 12px; left: 12px; z-index: 2;">${item.categoryName ? item.categoryName.toUpperCase() : 'TRẢI NGHIỆM'}</span>
+   </a>
+      <div class="product-info" style="padding: 16px; display: flex; flex-direction: column; flex-grow: 1;">
+        <small style="color: #666; font-size: 0.8rem; margin-bottom: 6px;">📍 ${item.location} • ⏱️ ${item.duration}</small>
+        <h3 style="margin: 0 0 8px 0; font-size: 1.1rem; line-height: 1.4;">
+          <a href="product-detail.html?id=${item.id}" style="color: inherit; text-decoration: none;">
+            ${item.name}
+          </a>
+        </h3>
+        <p style="font-size: 0.88rem; color: #555; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px; line-height: 1.5;">
+          ${item.description}
+        </p>
+        <div class="product-bottom" style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px; border-top: 1px solid #eee;">
+          <span class="product-price">
+            <small style="display: block; font-size: 0.75rem; color: #888;">Giá từ</small>
+            <strong style="color: #b35e27; font-size: 1.15rem;">${formatCurrency(item.price)}</strong>
+          </span>
+          <a href="product-detail.html?id=${item.id}" class="button button-gold" style="padding: 6px 14px; font-size: 0.85rem; text-decoration: none; border-radius: 4px;">
+            Xem chi tiết &rarr;
+          </a>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+// Tự động kích hoạt hiển thị 8 sản phẩm khi trang web tải xong
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof products !== 'undefined' && Array.isArray(products)) {
+    renderProducts(products);
+  }
+});
