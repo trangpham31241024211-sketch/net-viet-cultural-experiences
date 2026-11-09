@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -38,12 +38,14 @@
     </div>
   </header>
 
+  <main id="detail-main-content">
+
   <!-- Main Product Detail Section -->
   <section id="product-main" class="section-padding">
     <div class="container grid-2" style="align-items: start;">
       <div>
         <div class="gallery-main-img">
-          <img id="mainImage" src="images/pottery-main.jpg" alt="Làm gốm Bát Tràng">
+          <img id="detail-image" src="images/pottery-main.jpg" alt="Làm gốm Bát Tràng">
           <button class="badge-overlay" id="openGalleryBtn" type="button" style="bottom: 12px; right: 12px; padding: 6px 14px; font-size: 0.78rem;">
             <span>Xem tất cả</span>
           </button>
@@ -57,9 +59,9 @@
       </div>
 
       <div>
-        <span class="product-meta-tag">Làng nghề</span>
-        <h1 class="product-title">Làm gốm Bát Tràng</h1>
-        <p class="product-location"><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Gia Lâm, Hà Nội</p>
+        <span id="detail-category" class="product-meta-tag">Làng nghề</span>
+        <h1 id="detail-title" class="product-title">Làm gốm Bát Tràng</h1>
+        <p id="detail-location" class="product-location"><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Gia Lâm, Hà Nội</p>
         
         <!-- Đánh giá và số lượt trải nghiệm theo Figma mới -->
         <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
@@ -69,7 +71,7 @@
         <div class="product-stats-grid">
           <div class="stat-box">
             <i class="fa-regular fa-clock"></i>
-            <span class="stat-value">2 - 3 tiếng</span>
+            <span id="detail-duration" class="stat-value">2 - 3 tiếng</span>
             <span class="stat-label">Thời lượng</span>
           </div>
           <div class="stat-box">
@@ -89,14 +91,14 @@
           </div>
         </div>
 
-        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+        <p id="detail-description" style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
           Trải nghiệm làm gốm Bát Tràng truyền thống mang đến cơ hội tự tay sáng tạo nên những sản phẩm gốm độc đáo dưới sự hướng dẫn tỉ mỉ của các nghệ nhân. Bạn sẽ được tìm hiểu quy trình sản xuất gốm truyền thống có lịch sử hơn 700 năm phát triển.
         </p>
 
         <div class="booking-card">
           <div class="booking-header">
             <span style="font-weight: 600; font-size: 0.95rem;">Đặt trải nghiệm ngay</span>
-            <span class="price-text">250.000đ <small style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">/ người</small></span>
+            <span class="price-text"><strong id="detail-price">250.000đ</strong> <small style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">/ người</small></span>
           </div>
           <div class="form-group" style="margin-bottom: 12px;">
             <label class="sr-only" for="visitDate">Ngày tham gia</label>
@@ -110,7 +112,7 @@
               <button class="counter-btn" id="plus" type="button" aria-label="Tăng số lượng khách">+</button>
             </div>
           </div>
-          <button class="btn-block-dark" id="bookBtn" type="button">ĐẶT TRẢI NGHIỆM NGAY &rarr;</button>
+          <button class="btn-block-dark" id="detail-add-to-cart" type="button">ĐẶT TRẢI NGHIỆM NGAY &rarr;</button>
           <div id="bookingMessage" role="status" aria-live="polite" style="font-size: 0.8rem; margin-top: 10px; text-align: center;"></div>
           <div class="booking-features">
             <span><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Hủy miễn phí trước 24h</span>
@@ -219,6 +221,8 @@
     </div>
     <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
   </div>
+
+  </main>
 
   <!-- Site Footer -->
   <footer class="site-footer">
