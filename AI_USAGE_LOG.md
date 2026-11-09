@@ -719,3 +719,43 @@ AI hỗ trợ hệ thống hóa CSS theo từng khu vực giao diện, giúp vi�
 - Người chịu trách nhiệm xác minh: Lê Bảo Ngọc.
 - Kết quả kiểm tra: Đã đối chiếu class gallery-thumbs trong HTML với selector CSS; chưa xác nhận việc chỉnh sửa và kiểm thử lại file CSS gốc.
 - Minh chứng liên quan: style.css, about.html, product-detail.html và tài liệu Word chú thích CSS.
+
+## 12. Tích hợp trang chi tiết sản phẩm động
+
+### 1. Thông tin chung
+- Thành viên thực hiện: Người phụ trách nhánh Khánh-An (cần thành viên xác nhận tên ghi nhật ký)
+- Ngày sử dụng: 09/11/2026
+- Công cụ AI: Copilot SDK trong VS Code
+- Mục đích: Đồng bộ nhánh Khánh-An với main, hoàn thiện liên kết các script trang chi tiết và kiểm tra hiển thị sản phẩm theo ID trên URL.
+
+### 2. Prompt chính
+Thực hiện theo hướng dẫn nhóm trưởng về tích hợp product-detail.html: cập nhật main vào nhánh Khánh-An, kiểm tra các id trên giao diện, nạp products.js, cart.js và product-detail.js theo thứ tự, kiểm thử các ID 1, 3 và 999, sau đó đẩy nhánh lên GitHub.
+
+### 3. Kết quả nhận được
+- Đã cập nhật main mới nhất và xử lý xung đột thêm mới cùng lúc ở js/cart.js bằng cách giữ phần quản lý giỏ hàng đầy đủ từ main.
+- Bổ sung nạp js/cart.js và js/product-detail.js sau js/products.js trong product-detail.html.
+- Giữ nguyên dữ liệu sản phẩm mới nhất trong js/products.js; không thay đổi nghiệp vụ dữ liệu dùng chung.
+
+### 4. Kiểm chứng
+- Phương pháp kiểm chứng: Mở trang trong trình duyệt với các URL id=1, id=3 và id=999; kiểm tra tiêu đề, thông tin sản phẩm và thông báo lỗi. Chạy node --check cho các tệp JavaScript liên quan.
+- Kết quả kiểm chứng: ID 1 hiển thị “Làm tranh dân gian Đông Hồ”; ID 3 hiển thị “Ghé thăm làng hương Thủy Xuân”; ID 999 hiển thị thông báo không tìm thấy và liên kết về products.html. Các lệnh node --check hoàn tất thành công.
+- Nội dung chưa xác minh: Chưa kiểm thử thao tác thêm vào giỏ trên trang này; chưa tạo Pull Request hoặc gửi thông báo cho Minh Trang.
+
+### 5. Phản biện
+- Công cụ hoặc người phản biện: Chưa thực hiện phản biện bằng AI thứ hai.
+- Ý kiến phản biện cần xem xét: Hướng dẫn kiểm thử ban đầu ghi ID 3 là Mù Cang Chải, nhưng dữ liệu mới nhất trên main gán ID 3 cho làng hương Thủy Xuân.
+- Cách xử lý: Người dùng xác nhận giữ dữ liệu main và cập nhật kỳ vọng kiểm thử thành làng hương Thủy Xuân.
+
+### 6. Đánh giá của thành viên
+Kiểm thử trình duyệt xác nhận trang lấy thông tin theo ID và xử lý ID không tồn tại. Người phụ trách cần xem lại thay đổi merge, xác nhận nhật ký và thực hiện kiểm tra nghiệp vụ cuối cùng trước khi duyệt.
+
+### 7. Quyết định của nhóm
+- Nội dung giữ lại: Dữ liệu sản phẩm và logic giỏ hàng mới nhất từ main; script chi tiết sản phẩm được nạp sau dữ liệu và giỏ hàng.
+- Nội dung điều chỉnh: Kỳ vọng kiểm thử ID 3 theo dữ liệu hiện có trên main.
+- Nội dung loại bỏ: Không tự ý đổi dữ liệu ID 3 thành Mù Cang Chải.
+- Trạng thái: Chờ người phụ trách kiểm tra và Minh Trang duyệt.
+
+### 8. Người kiểm tra
+- Người chịu trách nhiệm xác minh: Người phụ trách nhánh Khánh-An và Minh Trang.
+- Kết quả kiểm tra: Đã kiểm tra hiển thị trình duyệt cho ba ID; cần rà soát merge và các thay đổi trước khi duyệt.
+- Minh chứng liên quan: product-detail.html, js/product-detail.js, js/products.js, js/cart.js.
