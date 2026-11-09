@@ -35,6 +35,10 @@
             <a class="header-search" href="#tim-kiem" aria-label="Tìm trải nghiệm">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
             </a>
+            <a class="header-search" href="cart.html" aria-label="Hành trình của bạn" title="Hành trình trải nghiệm đã chọn" style="position: relative; margin-left: 10px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #173c2e;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span id="cart-count-badge" style="position: absolute; top: -5px; right: -5px; background: #b35e27; color: #fff; font-size: 0.7rem; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">0</span>
+            </a>
         </div>
     </header>
 
@@ -168,5 +172,6 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
      <!-- Nạp file dữ liệu sản phẩm dùng chung -->
    <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 </html>
