@@ -1,4 +1,3 @@
-
 /**
  * DỰ ÁN: NÉT VIỆT - TRẢI NGHIỆM VĂN HÓA BẢN ĐỊA VIỆT NAM
  * File: js/products.js
@@ -196,5 +195,150 @@ function renderProducts(productList) {
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof products !== 'undefined' && Array.isArray(products)) {
     renderProducts(products);
+  }
+});
+// ==============================================================
+
+// ==============================================================
+
+// ==============================================================
+// 4. CHỨC NĂNG TÌM KIẾM, LỌC & SẮP XẾP (Phụ trách: Lê Bảo Ngọc)
+// ==============================================================
+
+function applyFilterAndSort() {
+  const keywordInput = document.getElementById('keyword');
+  const regionSelect = document.getElementById('region');
+  const categorySelect = document.getElementById('experience-type');
+  const sortPrice = document.getElementById('sort-price');
+
+  const keyword = keywordInput ? keywordInput.value.trim().toLowerCase() : '';
+  const selectedRegion = regionSelect ? regionSelect.value : '';
+  const selectedCategory = categorySelect ? categorySelect.value : '';
+  const sortOption = sortPrice ? sortPrice.value : 'default';
+
+  // Luôn dùng spread operator [...] để bảo đảm không làm biến đổi mảng gốc
+  let result = [...products];
+
+  // 1. TÌM KIẾM THEO TÊN HOẶC ĐỊA ĐIỂM
+  if (keyword !== '') {
+    result = result.filter(item =>
+      item.name.toLowerCase().includes(keyword) ||
+      item.location.toLowerCase().includes(keyword)
+    );
+  }
+
+  // 2. LỌC THEO VÙNG MIỀN (north / central / south)
+  if (selectedRegion !== '') {
+    result = result.filter(item => item.region === selectedRegion);
+  }
+
+  // 3. LỌC THEO DANH MỤC (craft / food / culture / nature)
+  if (selectedCategory !== '' && selectedCategory !== 'all') {
+    result = result.filter(item => item.category === selectedCategory);
+  }
+
+  // 4. SẮP XẾP THEO GIÁ TIỀN
+  if (sortOption === 'low-to-high') {
+    result.sort((a, b) => a.price - b.price); // Giá tăng dần
+  } else if (sortOption === 'high-to-low') {
+    result.sort((a, b) => b.price - a.price); // Giá giảm dần
+  }
+
+  // 5. HIỂN THỊ KẾT QUẢ RA LƯỚI SẢN PHẨM
+  renderProducts(result);
+
+  // Cập nhật số lượng kết quả tìm thấy
+  const resultCount = document.getElementById('result-count');
+  if (resultCount) {
+    resultCount.textContent = `Tìm thấy ${result.length} trải nghiệm`;
+  }
+}
+
+// ==============================================================
+// 5. KHỞI TẠO VÀ ĐỒNG BỘ TÌM KIẾM TỪ TRANG CHỦ & TRANG DANH SÁCH
+// ==============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  const keywordInput = document.getElementById('keyword');
+  const regionSelect = document.getElementById('region');
+  const categorySelect = document.getElementById('experience-type');
+  const sortPrice = document.getElementById('sort-price');
+  const searchForm = document.getElementById('experience-search');
+  const filterPills = document.querySelectorAll('.filter-pill');
+
+  // 1. ĐỌC THAM SỐ TRUYỀN TỪ TRANG CHỦ INDEX.HTML (keyword, region, category)
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlKeyword = urlParams.get('keyword');
+  const urlRegion = urlParams.get('region');
+  const urlCategory = urlParams.get('category');
+
+  if (urlKeyword && keywordInput) keywordInput.value = urlKeyword;
+  if (urlRegion && regionSelect) regionSelect.value = urlRegion;
+  if (urlCategory && categorySelect) categorySelect.value = urlCategory;
+
+  // Đồng bộ trạng thái active của các nút pill nếu có category từ URL
+  if (urlCategory) {
+    filterPills.forEach(pill => {
+      const isActive = pill.dataset.filter === urlCategory;
+      pill.classList.toggle('is-active', isActive);
+      pill.setAttribute('aria-pressed', String(isActive));
+    });
+  }
+
+  // Chạy lọc ngay lập tức (nếu có URL params thì lọc theo params, nếu không thì hiển thị 8 món)
+  applyFilterAndSort();
+
+  // 2. LẮNG NGHE SỰ KIỆN GÕ PHÍM VÀ THAY ĐỔI TRÊN GIAO DIỆN
+  if (keywordInput) {
+    keywordInput.addEventListener('input', applyFilterAndSort);
+  }
+
+  if (regionSelect) {
+    regionSelect.addEventListener('change', applyFilterAndSort);
+  }
+
+  if (categorySelect) {
+    categorySelect.addEventListener('change', () => {
+      const val = categorySelect.value || 'all';
+      filterPills.forEach(pill => {
+        const isActive = (pill.dataset.filter === val) || (val === '' && pill.dataset.filter === 'all');
+        pill.classList.toggle('is-active', isActive);
+        pill.setAttribute('aria-pressed', String(isActive));
+      });
+      applyFilterAndSort();
+    });
+  }
+
+  if (sortPrice) {
+    sortPrice.addEventListener('change', applyFilterAndSort);
+  }
+
+  // 3. KẾT NỐI CÁC NÚT DANH MỤC DẠNG PILL (Tất cả, Làng nghề, Ẩm thực...)
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      e.preventDefault();
+      const filterVal = pill.dataset.filter;
+
+      filterPills.forEach(p => {
+        p.classList.remove('is-active');
+        p.setAttribute('aria-pressed', 'false');
+      });
+      pill.classList.add('is-active');
+      pill.setAttribute('aria-pressed', 'true');
+
+      if (categorySelect) {
+        categorySelect.value = filterVal === 'all' ? '' : filterVal;
+      }
+      applyFilterAndSort();
+    });
+  });
+
+  // 4. NGĂN FORM SUBMIT RELOAD TRANG KHI BẤM NÚT TÌM KIẾM TRÊN PRODUCTS.HTML
+  if (searchForm) {
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      applyFilterAndSort();
+      const target = document.getElementById('danh-sach');
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
   }
 });

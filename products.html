@@ -92,12 +92,19 @@
                     </div>
                     <a class="text-link desktop-link" href="#hanh-trinh">Xem hành trình gợi ý <span aria-hidden="true">↗</span></a>
                 </div>
-                <div class="filter-pills" role="group" aria-label="Lọc theo loại trải nghiệm">
-                    <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">Tất cả</button>
-                    <button class="filter-pill" type="button" data-filter="craft" aria-pressed="false">Làng nghề</button>
-                    <button class="filter-pill" type="button" data-filter="food" aria-pressed="false">Ẩm thực</button>
-                    <button class="filter-pill" type="button" data-filter="culture" aria-pressed="false">Văn hóa</button>
-                    <button class="filter-pill" type="button" data-filter="nature" aria-pressed="false">Thiên nhiên</button>
+                <div class="filter-pills" role="group" aria-label="Lọc theo loại trải nghiệm" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 25px;">
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+                        <button class="filter-pill" type="button" data-filter="craft" aria-pressed="false">Làng nghề</button>
+                        <button class="filter-pill" type="button" data-filter="food" aria-pressed="false">Ẩm thực</button>
+                        <button class="filter-pill" type="button" data-filter="culture" aria-pressed="false">Văn hóa</button>
+                        <button class="filter-pill" type="button" data-filter="nature" aria-pressed="false">Thiên nhiên</button>
+                    </div>
+                    <select id="sort-price" style="padding: 8px 16px; border-radius: 20px; border: 1px solid #ccc; font-size: 0.85rem; cursor: pointer; background: #fff;">
+                        <option value="default">Sắp xếp: Mặc định</option>
+                        <option value="low-to-high">Giá: Thấp đến cao ↑</option>
+                        <option value="high-to-low">Giá: Cao đến thấp ↓</option>
+                    </select>
                 </div>
 
 <!-- Nơi JavaScript sẽ tự động vẽ các thẻ sản phẩm vào -->
