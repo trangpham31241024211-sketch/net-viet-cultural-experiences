@@ -198,3 +198,190 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProducts(products);
   }
 });
+// ==============================================================
+
+// ==============================================================
+// 4. CHỨC NĂNG TÌM KIẾM, LỌC & SẮP XẾP
+// (Phụ trách: Lê Bảo Ngọc)
+// ==============================================================
+
+function applyFilterAndSort() {
+    const searchInput = document.getElementById('search-input');
+    const keywordInput = document.getElementById('keyword');
+
+    const categoryFilter = document.getElementById('category-filter');
+    const experienceType = document.getElementById('experience-type');
+
+    const sortPrice = document.getElementById('sort-price');
+
+    // Lấy từ khóa tìm kiếm
+    const keyword = (
+        (searchInput && searchInput.value) ||
+        (keywordInput && keywordInput.value) ||
+        ''
+    ).trim().toLowerCase();
+
+    // Lấy danh mục được chọn
+    let selectedCategory = 'all';
+
+    if (categoryFilter && categoryFilter.value !== 'all') {
+        selectedCategory = categoryFilter.value;
+    } else if (experienceType && experienceType.value !== '') {
+        selectedCategory = experienceType.value;
+    }
+
+    // Lấy lựa chọn sắp xếp giá
+    const sortOption = sortPrice ? sortPrice.value : 'default';
+
+    // Sao chép dữ liệu gốc
+    let result = [...products];
+
+    // 1. TÌM KIẾM THEO TÊN VÀ ĐỊA ĐIỂM
+    if (keyword !== '') {
+        result = result.filter(item =>
+            item.name.toLowerCase().includes(keyword) ||
+            item.location.toLowerCase().includes(keyword)
+        );
+    }
+
+    // 2. LỌC THEO DANH MỤC
+    if (selectedCategory !== 'all') {
+        result = result.filter(item =>
+            item.category === selectedCategory
+        );
+    }
+
+    // 3. SẮP XẾP THEO GIÁ
+    if (sortOption === 'low-to-high') {
+        result.sort((a, b) => a.price - b.price);
+    } else if (sortOption === 'high-to-low') {
+        result.sort((a, b) => b.price - a.price);
+    }
+
+    // 4. HIỂN THỊ KẾT QUẢ
+    renderProducts(result);
+
+    // Cập nhật số lượng kết quả
+    const resultCount = document.getElementById('result-count');
+
+    if (resultCount) {
+        resultCount.textContent =
+            `Tìm thấy ${result.length} trải nghiệm`;
+    }
+}
+
+
+// ==============================================================
+// 5. KHỞI TẠO SỰ KIỆN TÌM KIẾM VÀ LỌC
+// ==============================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const searchInput = document.getElementById('search-input');
+    const keywordInput = document.getElementById('keyword');
+
+    const categoryFilter = document.getElementById('category-filter');
+    const experienceType = document.getElementById('experience-type');
+
+    const sortPrice = document.getElementById('sort-price');
+
+    const searchForm = document.getElementById('experience-search');
+
+    const filterPills = document.querySelectorAll('.filter-pill');
+
+
+    // 1. KẾT NỐI HAI Ô TÌM KIẾM
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            if (keywordInput) {
+                keywordInput.value = searchInput.value;
+            }
+
+            applyFilterAndSort();
+        });
+    }
+
+    if (keywordInput) {
+        keywordInput.addEventListener('input', () => {
+            if (searchInput) {
+                searchInput.value = keywordInput.value;
+            }
+
+            applyFilterAndSort();
+        });
+    }
+
+    // Ngăn form tìm kiếm tải lại trang
+    if (searchForm) {
+        searchForm.addEventListener('submit', event => {
+            event.preventDefault();
+
+            if (searchInput && keywordInput) {
+                searchInput.value = keywordInput.value;
+            }
+
+            applyFilterAndSort();
+
+            document.getElementById('danh-sach')
+                ?.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+
+    // 2. KẾT NỐI BỘ LỌC DANH MỤC
+    function updateCategory(value) {
+        if (categoryFilter) {
+            categoryFilter.value = value;
+        }
+
+        if (experienceType) {
+            experienceType.value = value === 'all' ? '' : value;
+        }
+
+        filterPills.forEach(pill => {
+            const isActive = pill.dataset.filter === value;
+
+            pill.classList.toggle('is-active', isActive);
+            pill.setAttribute('aria-pressed', String(isActive));
+        });
+
+        applyFilterAndSort();
+    }
+
+    if (categoryFilter) {
+        categoryFilter.addEventListener('change', () => {
+            updateCategory(categoryFilter.value);
+        });
+    }
+
+    if (experienceType) {
+        experienceType.addEventListener('change', () => {
+            updateCategory(experienceType.value || 'all');
+        });
+    }
+
+    // Kết nối các nút lọc dạng pill
+    filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            updateCategory(pill.dataset.filter);
+        });
+    });
+
+
+    // 3. KẾT NỐI SẮP XẾP GIÁ
+    if (sortPrice) {
+        sortPrice.addEventListener('change', applyFilterAndSort);
+    }
+
+
+    // 4. ĐỌC DANH MỤC TỪ ĐƯỜNG DẪN URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFromURL = urlParams.get('category');
+
+    if (categoryFromURL) {
+        updateCategory(categoryFromURL);
+    } else {
+        applyFilterAndSort();
+    }
+
+});
