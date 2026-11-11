@@ -17,53 +17,64 @@ function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-// 3. Tự động cập nhật con số đếm trên biểu tượng ở Header
+// 3. Cập nhật con số hiển thị trên icon Header ở mọi trang
 function updateCartBadge() {
   const badge = document.getElementById('cart-count-badge');
   if (!badge) return;
   const cart = getCart();
-  const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalCount = cart.reduce((sum, item) => sum + (parseInt(item.quantity, 10) || 1), 0);
   badge.textContent = totalCount;
 }
 
-// 4. Thêm sản phẩm vào giỏ (xử lý không tạo dòng trùng)
+// 4. Thêm sản phẩm vào giỏ (FIX LỖI CỘNG DỒN SỐ LƯỢNG KHI THÊM LẠI)
 function addToCart(productId, quantity = 1) {
-  const product = typeof getProductById === 'function' ? getProductById(productId) : null;
-  if (!product) {
-    alert('Không tìm thấy thông tin trải nghiệm!');
-    return;
-  }
+  const pId = parseInt(productId, 10);
+  const qty = parseInt(quantity, 10) || 1;
 
-  const cart = getCart();
-  const existing = cart.find(item => item.id === product.id);
+  let cart = getCart();
+  const existingIndex = cart.findIndex(item => parseInt(item.id, 10) === pId);
 
-  if (existing) {
-    existing.quantity += quantity; // Nếu trùng thì tăng số lượng
+  if (existingIndex !== -1) {
+    // Đã có trong giỏ -> Cộng dồn số lượng
+    cart[existingIndex].quantity = (parseInt(cart[existingIndex].quantity, 10) || 0) + qty;
   } else {
+    // Chưa có -> Tìm thông tin trong danh sách products
+    const product = typeof getProductById === 'function'
+      ? getProductById(pId)
+      : (typeof products !== 'undefined' ? products.find(p => parseInt(p.id, 10) === pId) : null);
+
+    if (!product) {
+      alert('Không tìm thấy thông tin trải nghiệm!');
+      return;
+    }
+
     cart.push({
       id: product.id,
       name: product.name,
       price: product.price,
       image: product.image,
-      quantity: quantity
+      quantity: qty
     });
   }
 
   saveCart(cart);
-  alert(`Đã thêm "${product.name}" vào hành trình của bạn thành công!`);
-  renderCart();
   updateCartBadge();
+  if (typeof renderCart === 'function') {
+    renderCart();
+  }
+  alert('Đã thêm trải nghiệm vào hành trình của bạn thành công!');
 }
 
-// 5. Cập nhật số lượng (Tăng / Giảm số lượng khách)
+// 5. Cập nhật số lượng (+ / -) trong trang giỏ hàng
 function updateQuantity(productId, change) {
+  const pId = parseInt(productId, 10);
   let cart = getCart();
-  const item = cart.find(p => p.id === productId);
+  const item = cart.find(p => parseInt(p.id, 10) === pId);
 
   if (item) {
-    item.quantity += change;
+    item.quantity = (parseInt(item.quantity, 10) || 0) + change;
     if (item.quantity <= 0) {
-      cart = cart.filter(p => p.id !== productId);
+      cart = cart.filter(p => parseInt(p.id, 10) !== pId);
     }
     saveCart(cart);
     renderCart();
@@ -71,18 +82,19 @@ function updateQuantity(productId, change) {
   }
 }
 
-// 6. Xóa hoàn toàn sản phẩm khỏi giỏ
+// 6. Xóa hoàn toàn một sản phẩm khỏi giỏ
 function removeFromCart(productId) {
+  const pId = parseInt(productId, 10);
   if (confirm('Bạn có chắc chắn muốn xóa trải nghiệm này khỏi hành trình?')) {
     let cart = getCart();
-    cart = cart.filter(p => p.id !== productId);
+    cart = cart.filter(p => parseInt(p.id, 10) !== pId);
     saveCart(cart);
     renderCart();
     updateCartBadge();
   }
 }
 
-// 7. Hiển thị danh sách giỏ hàng và tính tổng tiền
+// 7. Hiển thị danh sách giỏ hàng và tính tổng chi phí (dành cho cart.html)
 function renderCart() {
   const tbody = document.getElementById('cart-items-body');
   const emptyMsg = document.getElementById('empty-cart-message');
@@ -136,7 +148,7 @@ function renderCart() {
           <button onclick="removeFromCart(${item.id})" 
                   title="Xóa trải nghiệm này"
                   style="color: #d9534f; background: none; border: none; cursor: pointer; font-size: 1.1rem;">
-            <i class="fa-solid fa-trash-can"></i>
+            🗑️
           </button>
         </td>
       </tr>
@@ -148,8 +160,10 @@ function renderCart() {
   }
 }
 
-// Khởi chạy khi mở bất kỳ trang nào có nạp script này
+// Khởi chạy khi nạp trang bất kỳ
 document.addEventListener('DOMContentLoaded', () => {
-  renderCart();
   updateCartBadge();
+  if (typeof renderCart === 'function') {
+    renderCart();
+  }
 });
