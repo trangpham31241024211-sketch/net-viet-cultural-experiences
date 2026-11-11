@@ -10,9 +10,21 @@ function getCart() {
  const data = localStorage.getItem(CART_KEY);
  return data ? JSON.parse(data) : [];
 }
+// Cập nhật số lượng hiển thị trên biểu tượng giỏ hàng ở các trang có header.
+function updateCartBadge() {
+ const badge = document.getElementById('cart-count-badge');
+ if (!badge) return;
+
+ const count = getCart().reduce((total, item) => total + (Number(item.quantity) || 0), 0);
+ badge.textContent = String(count);
+
+ const cartLink = badge.closest('a');
+ if (cartLink) cartLink.setAttribute('aria-label', `Giỏ hàng, ${count} sản phẩm`);
+}
 // 2. Lưu giỏ hàng vào localStorage
 function saveCart(cart) {
  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+ updateCartBadge();
 }
 // 3. Thêm sản phẩm vào giỏ (xử lý không tạo dòng trùng)
 function addToCart(productId, quantity = 1) {
@@ -101,5 +113,11 @@ function renderCart() {
 }
 // Khởi chạy khi mở trang
 document.addEventListener('DOMContentLoaded', () => {
+ updateCartBadge();
  renderCart();
+});
+
+// Đồng bộ badge nếu giỏ hàng được thay đổi ở một tab trình duyệt khác.
+window.addEventListener('storage', (event) => {
+ if (event.key === CART_KEY) updateCartBadge();
 });
