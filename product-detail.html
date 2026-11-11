@@ -113,7 +113,14 @@
               <button class="counter-btn" id="plus" type="button" aria-label="Tăng số lượng khách">+</button>
             </div>
           </div>
-          <button class="btn-block-dark" id="detail-add-to-cart" type="button">ĐẶT TRẢI NGHIỆM NGAY &rarr;</button>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px;">
+            <button type="button" id="btn-add-to-cart" style="width: 100%; padding: 12px; background: #fff; color: #b35e27; border: 2px solid #b35e27; border-radius: 4px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.95rem;">
+              <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+            </button>
+            <button class="btn-block-dark" id="btn-book-now" type="button" style="margin-top: 0;">
+              ĐẶT TRẢI NGHIỆM NGAY &rarr;
+            </button>
+          </div>
           <div id="bookingMessage" role="status" aria-live="polite" style="font-size: 0.8rem; margin-top: 10px; text-align: center;"></div>
           <div class="booking-features">
             <span><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Hủy miễn phí trước 24h</span>
@@ -121,6 +128,7 @@
             <span><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Thanh toán an toàn</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
