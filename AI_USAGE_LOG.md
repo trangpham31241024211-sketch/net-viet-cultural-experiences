@@ -1,4 +1,3 @@
-
 ## Quy ước ghi nhật ký
 - Ghi nhận các lần sử dụng AI có ảnh hưởng đến kết quả dự án.
 - Ghi đúng công cụ và prompt đã thực sự sử dụng.
@@ -45,18 +44,12 @@
 - Kết quả kiểm tra: (Kết quả thực tế hoặc Chưa kiểm tra)
 - Minh chứng liên quan: (Link tài liệu, commit, test hoặc nguồn tham khảo nếu có)
 
-Nhật ký sử dụng AI
-Lê Anh Khoa
-
-# AI Usage Log — Dự án Nét Việt
-
-## Lần sử dụng 1: Phân tích yêu cầu dự án
+## Nhật ký sử dụng AI 1
 
 ### Công cụ
-
 Tên công cụ AI: ChatGPT
-### Mục đích
 
+### Mục đích
 Phân tích yêu cầu của Task 4 và xây dựng bản yêu cầu ban đầu cho website Nét Việt, bao gồm mục tiêu, phạm vi, nhóm người dùng, yêu cầu chức năng, yêu cầu phi chức năng và quy tắc nghiệp vụ.
 ### Prompt
 
@@ -75,7 +68,7 @@ Tiếp tục sử dụng bản yêu cầu làm cơ sở thảo luận. Các đ�
 
 Lê Anh Khoa
 
-## Lần sử dụng 2: Rà soát phạm vi và quy tắc nghiệp vụ
+## Nhật ký sử dụng AI 2
 
 ### Công cụ
 
@@ -100,7 +93,7 @@ Các quy tắc cần được kiểm tra ở cả trường hợp thành công v
 
 Lê Anh Khoa
 
-## Lần sử dụng 3: Phản biện bản REQUIREMENTS.md bằng Claude
+## Nhật ký sử dụng AI 3
 
 ### Công cụ
 
@@ -125,7 +118,7 @@ Sử dụng phản biện để rà soát và điều chỉnh bản yêu cầu. 
 
 Lê Anh Khoa
 
-## Lần sử dụng 4: Hoàn thiện yêu cầu sau phản biện
+## Nhật ký sử dụng AI 4
 
 ### Công cụ
 
@@ -150,7 +143,7 @@ Giữ lại các nghiệp vụ cốt lõi; đề xuất loại bỏ mã ưu đã
 
 Lê Anh Khoa
 
-## Lần sử dụng 5: Rà soát cấu trúc và tài liệu bàn giao
+## Nhật ký sử dụng AI 5
 
 ### Công cụ
 
@@ -175,7 +168,7 @@ Sử dụng tài liệu đã rà soát làm bản dự thảo bàn giao. Trướ
 
 Lê Anh Khoa
 
-## Lần sử dụng 6: Phát triển ba ý tưởng chức năng mới cho dự án Nét Việt
+## Nhật ký sử dụng AI 6
 
 ### Công cụ
 
@@ -214,7 +207,7 @@ Lê Anh Khoa
 
 ---
 
-## Lần sử dụng 7: Cập nhật bản dự thảo REQUIREMENTS.md theo các ý tưởng mới
+## Nhật ký sử dụng AI 7
 
 ### Công cụ
 
@@ -247,8 +240,7 @@ Sử dụng bản dự thảo làm cơ sở để tiếp tục rà soát và ho�
 
 Lê Anh Khoa
 
-# NHẬT KÝ SỬ DỤNG TRÍ TUỆ NHÂN TẠO (AI) BUỔI 2
-## DỰ ÁN WEBSITE NÉT VIỆT 
+# NHẬT KÝ SỬ DỤNG AI 8
 
 **Thành viên thực hiện:** Lê Bảo Ngọc  
 **Thời gian thực hiện:** 25/10/2026 – 04/11/2026  
@@ -298,7 +290,7 @@ Kết quả giúp tiết kiệm thời gian đọc và hệ thống hóa tài li
 
 ---
 
-## 2. Mô tả quy trình nghiệp vụ đặt lịch của khách hàng
+## Nhật ký sử dụng AI 9
 
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
@@ -340,7 +332,7 @@ Cách trình bày theo từng bước phù hợp để đọc hiểu và xây d�
 
 ---
 
-## 3. Khởi tạo bộ mã nguồn HTML/CSS cơ bản
+## Nhật ký sử dụng AI 10
 
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
@@ -386,7 +378,7 @@ AI hỗ trợ tạo nhanh cấu trúc ban đầu và tiết kiệm thời gian v
 
 ---
 
-## 4. Khắc phục lỗi môi trường khởi chạy và Debug trên VS Code
+## Nhật ký sử dụng AI 11
 
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
@@ -428,8 +420,7 @@ Giải pháp Live Server phù hợp với quá trình phát triển giao diện 
 
 ---
 
-## 5. Điều chỉnh logo và kích thước Footer
-
+## Nhật ký sử dụng AI 12
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
 - Ngày sử dụng: 27/10/2026
@@ -468,7 +459,7 @@ AI đưa ra nhiều phương án xử lý nhưng không phải phương án nào
 
 ---
 
-## 6. Xây dựng thư viện ảnh và Lightbox Slideshow
+## Nhật ký sử dụng AI 13
 
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
@@ -510,7 +501,7 @@ AI hỗ trợ xây dựng nhanh các thao tác tương tác và kết nối Java
 
 ---
 
-## 7. Cập nhật Header và Hero Banner theo thiết kế Figma
+## Nhật ký sử dụng AI 14
 
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
@@ -552,7 +543,7 @@ AI hỗ trợ chuyển các thay đổi từ Figma thành quy tắc HTML/CSS c�
 
 ---
 
-## 8. Chọn lọc và chú thích mã HTML của trang about.html
+## 8. Nhật ký sử dụng AI 15
 
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
@@ -594,7 +585,7 @@ Cách trình bày code trước, giải thích ngay bên dưới phù hợp vớ
 
 ---
 
-## 9. Chọn lọc và chú thích mã HTML của trang product-detail.html
+## Nhật ký sử dụng AI 16
 
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
@@ -636,7 +627,7 @@ Kết quả hỗ trợ xác định các thành phần quan trọng của trang 
 
 ---
 
-## 10. Phân tích và chú thích file JavaScript
+## Nhật ký sử dụng AI 17
 
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
@@ -678,7 +669,7 @@ AI hỗ trợ giải thích mối liên hệ giữa các sự kiện JavaScript,
 
 ---
 
-## 11. Phân tích và chú thích file CSS
+## Nhật ký sử dụng AI 18
 
 ### 1. Thông tin chung
 - Thành viên thực hiện: Lê Bảo Ngọc
