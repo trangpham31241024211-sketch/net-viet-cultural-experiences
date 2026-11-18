@@ -2769,87 +2769,76 @@ gallery-thumbs .thumb-item img,
   bottom: -34px;
   left: 0;
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1fr auto;
-  align-items: center;
-  gap: 0;
-  padding: 13px 15px;
+  grid-template-columns: 1.2fr 1fr 1fr auto;
+  align-items: end;
+  gap: 16px;
+  padding: 18px 22px;
   border: 1px solid rgba(17, 58, 43, .06);
-  border-radius: 9px;
+  border-radius: 12px;
   background: #fff;
   box-shadow: 0 12px 32px rgba(22, 52, 39, .13);
 }
 
-.explore-page .search-field {
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 14px;
-  border-right: 1px solid var(--border-light);
-  cursor: text;
-}
-
-.explore-page .search-field:first-child {
-  padding-left: 5px;
-}
-
-.explore-page .field-icon {
-  width: 28px;
-  height: 28px;
-  display: grid;
-  flex: 0 0 28px;
-  place-items: center;
-  border-radius: 50%;
+.explore-page .search-title {
+  grid-column: 1 / -1;
+  margin-bottom: -5px;
   color: var(--primary-green);
-  background: #edf4ee;
-  font-size: 17px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.explore-page .field-copy {
+.explore-page .field {
   min-width: 0;
   display: flex;
-  flex: 1;
   flex-direction: column;
-  gap: 3px;
+  gap: 6px;
+  padding-right: 14px;
+  border-right: 1px solid var(--border-light);
 }
 
-.explore-page .field-label {
+.explore-page .field label {
   color: #718078;
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 800;
-  letter-spacing: .55px;
+  letter-spacing: .8px;
 }
 
-.explore-page .field-copy input,
-.explore-page .field-copy select {
+.explore-page .field input,
+.explore-page .field select {
   width: 100%;
-  min-height: 22px;
+  min-height: 28px;
   padding: 0;
   border: 0;
   outline: 0;
   color: var(--text-dark);
   background: transparent;
-  font: 500 10px var(--font-body);
+  font: 500 12px var(--font-body);
 }
 
-.explore-page .field-copy input::placeholder {
+.explore-page .field input::placeholder {
   color: #87958e;
 }
 
 .explore-page .search-submit {
-  min-height: 38px;
-  margin-left: 12px;
-  padding: 0 15px;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 19px;
   border: 0;
-  border-radius: 4px;
+  border-radius: 6px;
   color: #fff;
   background: var(--primary-green);
-  font: 700 10px var(--font-body);
+  font: 700 11px var(--font-body);
+  line-height: 1.2;
   cursor: pointer;
-  transition: background .2s ease;
+  transition: background .2s ease, color .2s ease, transform .2s ease, border-color .2s ease;
 }
 
 .explore-page .search-submit:hover {
+  transform: translateY(-2px);
   background: #1b513c;
 }
 
@@ -3500,6 +3489,18 @@ gallery-thumbs .thumb-item img,
   }
 }
 
+@media (max-width: 900px) {
+  .explore-page .search-panel {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .explore-page .search-title {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 680px) {
   .explore-page .container,
   .explore-page .hero-content {
@@ -3626,39 +3627,6 @@ gallery-thumbs .thumb-item img,
 
   .explore-page .search-panel {
     bottom: -112px;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 0;
-    padding: 12px;
-  }
-
-  .explore-page .search-field {
-    gap: 7px;
-    padding: 0 7px;
-  }
-
-  .explore-page .search-field:first-child {
-    padding-left: 0;
-  }
-
-  .explore-page .search-field:nth-child(3) {
-    border-right: 0;
-  }
-
-  .explore-page .field-icon {
-    width: 24px;
-    height: 24px;
-    flex-basis: 24px;
-    font-size: 14px;
-  }
-
-  .explore-page .field-copy input,
-  .explore-page .field-copy select {
-    font-size: 8px;
-  }
-
-  .explore-page .search-submit {
-    grid-column: 1 / -1;
-    margin: 0;
   }
 
   .explore-page .experiences-section {
@@ -3744,6 +3712,39 @@ gallery-thumbs .thumb-item img,
   .explore-page .footer-bottom {
     flex-direction: column;
     gap: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .explore-page .search-panel {
+    bottom: -130px;
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .explore-page .search-title {
+    font-size: 9px;
+  }
+
+  .explore-page .field {
+    gap: 5px;
+    padding-right: 8px;
+  }
+
+  .explore-page .field label {
+    font-size: 8px;
+  }
+
+  .explore-page .field input,
+  .explore-page .field select {
+    min-height: 24px;
+    font-size: 10px;
+  }
+
+  .explore-page .search-submit {
+    min-height: 40px;
+    font-size: 10px;
+    grid-column: 1 / -1;
   }
 }
 

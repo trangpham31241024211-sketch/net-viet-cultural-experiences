@@ -51,27 +51,26 @@
             <span>Xem tất cả</span>
           </button>
         </div>
-        <div class="gallery-thumbs" id="galleryThumbs">
-          <button class="thumb-item active" type="button" aria-label="Xem ảnh gốm Bát Tràng 1" aria-pressed="true"><img src="images/pottery-thumb-1.jpg" alt="Nghệ nhân làm gốm Bát Tràng"></button>
-          <button class="thumb-item" type="button" aria-label="Xem ảnh gốm Bát Tràng 2" aria-pressed="false"><img src="images/pottery-thumb-2.jpg" alt="Sản phẩm gốm Bát Tràng"></button>
-          <button class="thumb-item" type="button" aria-label="Xem ảnh gốm Bát Tràng 3" aria-pressed="false"><img src="images/pottery-thumb-3.jpg" alt="Tạo hình gốm thủ công"></button>
-          <button class="thumb-item" type="button" aria-label="Xem ảnh gốm Bát Tràng 4" aria-pressed="false"><img src="images/pottery-thumb-4.jpg" alt="Không gian làng gốm"></button>
-        </div>
+        <div class="gallery-thumbs" id="galleryThumbs" role="group" aria-label="Ảnh phụ của trải nghiệm"></div>
       </div>
 
       <div>
+        <span class="product-meta-tag">Làng nghề</span>
+        <h1 class="product-title">Làm gốm Bát Tràng</h1>
+        <p class="product-location"><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> <span id="detail-location">Gia Lâm, Hà Nội</span></p>
         <span id="detail-category" class="product-meta-tag">Làng nghề</span>
         <h1 id="detail-title" class="product-title">Làm gốm Bát Tràng</h1>
         <p id="detail-location" class="product-location"><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Gia Lâm, Hà Nội</p>
         
         <!-- Đánh giá và số lượt trải nghiệm theo Figma mới -->
         <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
-          <span style="color: var(--accent-gold); font-weight: 700;">★ 4.9</span> (120 đánh giá) &nbsp;|&nbsp; <span>3.1k+ lượt trải nghiệm</span>
+          <span id="detail-rating" style="color: var(--accent-gold); font-weight: 700;">★ 4.8</span>
         </div>
 
         <div class="product-stats-grid">
           <div class="stat-box">
             <i class="fa-regular fa-clock"></i>
+            <span class="stat-value" id="detail-duration">2 - 3 tiếng</span>
             <span id="detail-duration" class="stat-value">2 - 3 tiếng</span>
             <span class="stat-label">Thời lượng</span>
           </div>
@@ -99,6 +98,7 @@
         <div class="booking-card">
           <div class="booking-header">
             <span style="font-weight: 600; font-size: 0.95rem;">Đặt trải nghiệm ngay</span>
+            <span class="price-text"><span id="detail-price">250.000đ</span> <small style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">/ người</small></span>
             <span class="price-text"><strong id="detail-price">250.000đ</strong> <small style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">/ người</small></span>
           </div>
           <div class="form-group" style="margin-bottom: 12px;">
@@ -134,7 +134,7 @@
   </section>
 
   <!-- Cultural Story Section -->
-  <section class="section-padding bg-light">
+  <section class="section-padding bg-light" id="bat-trang-story">
     <div class="container grid-2">
       <div>
         <div class="img-arch" style="margin-bottom: 20px; max-width: 320px;">
@@ -162,52 +162,7 @@
         </div>
         <a href="products.html" style="font-size: 0.85rem; color: var(--text-muted);">Xem tất cả &rarr;</a>
       </div>
-      <div class="cards-grid-4">
-        <div class="product-card">
-          <img src="images/related-1.jpg" alt="Làm đèn lồng Hội An" class="product-card-img">
-          <div class="product-card-body">
-            <div class="product-card-title"><a href="products.html?category=culture#danh-sach">Làm đèn lồng Hội An</a></div>
-            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Quảng Nam</div>
-            <div class="product-card-meta">
-              <span>⏱ 2 giờ</span>
-              <span style="font-weight: 700; color: var(--accent-gold);">250.000đ/người</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="images/related-2.jpg" alt="Khám phá ruộng bậc thang" class="product-card-img">
-          <div class="product-card-body">
-            <div class="product-card-title"><a href="products.html?category=nature#danh-sach">Khám phá ruộng bậc thang</a></div>
-            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Sapa, Lào Cai</div>
-            <div class="product-card-meta">
-              <span>⏱ 1 ngày</span>
-              <span style="font-weight: 700; color: var(--accent-gold);">650.000đ/người</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="images/related-3.jpg" alt="Làm nón lá Huế" class="product-card-img">
-          <div class="product-card-body">
-            <div class="product-card-title"><a href="products.html?category=craft#danh-sach">Làm nón lá Huế</a></div>
-            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Thừa Thiên Huế</div>
-            <div class="product-card-meta">
-              <span>⏱ 2 giờ</span>
-              <span style="font-weight: 700; color: var(--accent-gold);">280.000đ/người</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="images/related-4.jpg" alt="Đi thuyền thúng rừng dừa" class="product-card-img">
-          <div class="product-card-body">
-            <div class="product-card-title"><a href="products.html?category=nature#danh-sach">Đi thuyền thúng rừng dừa</a></div>
-            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Hội An, Quảng Nam</div>
-            <div class="product-card-meta">
-              <span>⏱ 2 giờ</span>
-              <span style="font-weight: 700; color: var(--accent-gold);">320.000đ/người</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="cards-grid-4" id="related-experiences"></div>
     </div>
   </section>
 
@@ -278,6 +233,8 @@
   <!-- Script liên kết ở cuối thẻ body -->
   <script src="js/app.js" defer></script>
    <!-- Nạp file dữ liệu sản phẩm dùng chung -->
+   <script src="js/products.js"></script>
+   <script src="js/product-detail.js"></script>
     <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/product-detail.js"></script>
