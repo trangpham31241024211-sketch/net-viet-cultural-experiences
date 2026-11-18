@@ -31,6 +31,10 @@
       <div class="header-actions">
         <a class="icon-btn" href="products.html#tim-kiem" aria-label="Tìm trải nghiệm"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>
         <a class="icon-btn" href="#contact" aria-label="Liên hệ Nét Việt"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+        <a class="cart-link" href="cart.html" aria-label="Giỏ hàng, 0 sản phẩm">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.5L22 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+          <span id="cart-count-badge" class="cart-count-badge" aria-live="polite">0</span>
+        </a>
       </div>
     </div>
   </header>
@@ -261,5 +265,7 @@
 
   <!-- File JavaScript nhúng trước thẻ đóng body -->
   <script src="js/app.js" defer></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 </html>

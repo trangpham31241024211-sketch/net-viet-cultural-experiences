@@ -2604,6 +2604,51 @@ gallery-thumbs .thumb-item img,
   display: none;
 }
 
+/* Biểu tượng giỏ hàng dùng chung trên các trang. */
+.cart-link {
+  position: relative;
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  color: var(--primary-green);
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.cart-link:hover,
+.cart-link:focus-visible {
+  background: #edf4ee;
+}
+
+.cart-link svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.cart-count-badge {
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #b35e27;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .explore-page .hero {
   position: relative;
   min-height: 430px;

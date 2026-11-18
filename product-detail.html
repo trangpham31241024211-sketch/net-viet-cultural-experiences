@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -31,16 +31,22 @@
       <div class="header-actions">
         <a class="icon-btn" href="products.html#tim-kiem" aria-label="Tìm trải nghiệm"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>
         <a class="icon-btn" href="about.html#contact" aria-label="Liên hệ Nét Việt"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+        <a class="cart-link" href="cart.html" aria-label="Giỏ hàng, 0 sản phẩm">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.5L22 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+          <span id="cart-count-badge" class="cart-count-badge" aria-live="polite">0</span>
+        </a>
       </div>
     </div>
   </header>
+
+  <main id="detail-main-content">
 
   <!-- Main Product Detail Section -->
   <section id="product-main" class="section-padding">
     <div class="container grid-2" style="align-items: start;">
       <div>
         <div class="gallery-main-img">
-          <img id="mainImage" src="images/pottery-main.jpg" alt="Làm gốm Bát Tràng">
+          <img id="detail-image" src="images/pottery-main.jpg" alt="Làm gốm Bát Tràng">
           <button class="badge-overlay" id="openGalleryBtn" type="button" style="bottom: 12px; right: 12px; padding: 6px 14px; font-size: 0.78rem;">
             <span>Xem tất cả</span>
           </button>
@@ -52,6 +58,9 @@
         <span class="product-meta-tag">Làng nghề</span>
         <h1 class="product-title">Làm gốm Bát Tràng</h1>
         <p class="product-location"><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> <span id="detail-location">Gia Lâm, Hà Nội</span></p>
+        <span id="detail-category" class="product-meta-tag">Làng nghề</span>
+        <h1 id="detail-title" class="product-title">Làm gốm Bát Tràng</h1>
+        <p id="detail-location" class="product-location"><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Gia Lâm, Hà Nội</p>
         
         <!-- Đánh giá và số lượt trải nghiệm theo Figma mới -->
         <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
@@ -62,6 +71,7 @@
           <div class="stat-box">
             <i class="fa-regular fa-clock"></i>
             <span class="stat-value" id="detail-duration">2 - 3 tiếng</span>
+            <span id="detail-duration" class="stat-value">2 - 3 tiếng</span>
             <span class="stat-label">Thời lượng</span>
           </div>
           <div class="stat-box">
@@ -89,6 +99,7 @@
           <div class="booking-header">
             <span style="font-weight: 600; font-size: 0.95rem;">Đặt trải nghiệm ngay</span>
             <span class="price-text"><span id="detail-price">250.000đ</span> <small style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">/ người</small></span>
+            <span class="price-text"><strong id="detail-price">250.000đ</strong> <small style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">/ người</small></span>
           </div>
           <div class="form-group" style="margin-bottom: 12px;">
             <label class="sr-only" for="visitDate">Ngày tham gia</label>
@@ -102,7 +113,14 @@
               <button class="counter-btn" id="plus" type="button" aria-label="Tăng số lượng khách">+</button>
             </div>
           </div>
-          <button class="btn-block-dark" id="bookBtn" type="button">ĐẶT TRẢI NGHIỆM NGAY &rarr;</button>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px;">
+            <button type="button" id="btn-add-to-cart" style="width: 100%; padding: 12px; background: #fff; color: #b35e27; border: 2px solid #b35e27; border-radius: 4px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.95rem;">
+              <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+            </button>
+            <button class="btn-block-dark" id="btn-book-now" type="button" style="margin-top: 0;">
+              ĐẶT TRẢI NGHIỆM NGAY &rarr;
+            </button>
+          </div>
           <div id="bookingMessage" role="status" aria-live="polite" style="font-size: 0.8rem; margin-top: 10px; text-align: center;"></div>
           <div class="booking-features">
             <span><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Hủy miễn phí trước 24h</span>
@@ -110,6 +128,7 @@
             <span><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Thanh toán an toàn</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -167,6 +186,8 @@
     <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
   </div>
 
+  </main>
+
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -214,5 +235,8 @@
    <!-- Nạp file dữ liệu sản phẩm dùng chung -->
    <script src="js/products.js"></script>
    <script src="js/product-detail.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product-detail.js"></script>
 </body>
 </html>

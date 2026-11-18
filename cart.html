@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Giỏ hàng của bạn | Nét Việt</title>
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+ <!-- Header đơn giản -->
+ <header class="site-header">
+   <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+     <a class="brand" href="index.html" style="text-decoration: none; font-weight: 700; font-size: 1.3rem; color: #173c2e;">
+       <img src="images/logo-icon.jpg" alt="" style="height: 35px; vertical-align: middle;"> Nét Việt
+     </a>
+     <a href="products.html" style="text-decoration: none; color: #b35e27; font-weight: 600;">← Tiếp tục khám phá</a>
+   </div>
+ </header>
+ <main class="container" style="padding: 40px 15px; min-height: 65vh;">
+   <h1 style="margin-bottom: 25px; font-size: 1.8rem; color: #173c2e;">Giỏ hàng của bạn</h1>
+   <!-- Thông báo khi giỏ hàng trống -->
+   <div id="empty-cart-message" style="display: none; text-align: center; padding: 50px 20px;">
+     <p style="font-size: 1.2rem; color: #666; margin-bottom: 15px;">🛒 Giỏ hàng của bạn hiện đang trống.</p>
+     <a href="products.html" class="button button-gold" style="padding: 10px 20px; text-decoration: none; border-radius: 6px;">
+       Khám phá trải nghiệm ngay
+     </a>
+   </div>
+   <!-- Bảng danh sách giỏ hàng -->
+   <div id="cart-content-wrapper">
+     <div style="overflow-x: auto;">
+       <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
+         <thead>
+           <tr style="border-bottom: 2px solid #eee; text-align: left;">
+             <th style="padding: 12px;">Trải nghiệm</th>
+             <th style="padding: 12px;">Đơn giá</th>
+             <th style="padding: 12px; text-align: center;">Số lượng</th>
+             <th style="padding: 12px;">Thành tiền</th>
+             <th style="padding: 12px; text-align: center;">Xóa</th>
+           </tr>
+         </thead>
+         <tbody id="cart-items-body"></tbody>
+       </table>
+     </div>
+     <!-- Tổng tiền thanh toán -->
+     <div style="display: flex; justify-content: flex-end; align-items: center; gap: 20px; border-top: 2px solid #eee; padding-top: 20px;">
+       <span style="font-size: 1.2rem;">Tổng thanh toán: <strong id="cart-total-price" style="color: #b35e27; font-size: 1.5rem;">0 đ</strong></span>
+       <button onclick="alert('Cảm ơn bạn! Đơn đặt chỗ đã được gửi thành công.')" class="button button-gold" style="padding: 12px 25px; font-size: 1rem; border-radius: 6px; border: none; cursor: pointer;">
+         Tiến hành đặt chỗ
+       </button>
+     </div>
+   </div>
+ </main>
+ <script src="js/products.js"></script>
+ <script src="js/cart.js"></script>
+</body>
+</html>
