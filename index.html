@@ -11,6 +11,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .home-page .search-panel {
+            gap: 16px;
+            padding: 18px 22px;
+            border-radius: 12px;
+        }
+
+        .home-page .search-title {
+            margin-bottom: -5px;
+            font-size: 10px;
+        }
+
+        .home-page .field {
+            gap: 6px;
+            padding-right: 14px;
+        }
+
+        .home-page .field label {
+            font-size: 9px;
+        }
+
+        .home-page .field input,
+        .home-page .field select {
+            min-height: 28px;
+            font-size: 12px;
+        }
+
+        .home-page .search-submit {
+            min-height: 42px;
+            padding: 0 19px;
+            border-radius: 6px;
+            font-size: 11px;
+        }
+
+        @media (max-width: 900px) {
+            .home-page .search-panel {
+                gap: 12px;
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .home-page .search-panel {
+                gap: 10px;
+                padding: 13px;
+            }
+
+            .home-page .search-title {
+                font-size: 9px;
+            }
+
+            .home-page .field {
+                gap: 5px;
+                padding-right: 8px;
+            }
+
+            .home-page .field label {
+                font-size: 8px;
+            }
+
+            .home-page .field input,
+            .home-page .field select {
+                min-height: 24px;
+                font-size: 10px;
+            }
+
+            .home-page .search-submit {
+                min-height: 40px;
+                font-size: 10px;
+            }
+        }
+    </style>
 </head>
 <body class="home-page">
 
@@ -75,33 +147,31 @@
             <div class="container search-container">
                 <form class="search-panel" action="products.html" method="get">
                     <div class="search-title">BẠN MUỐN KHÁM PHÁ ĐIỀU GÌ?</div>
-                    <div class="search-grid">
-                        <div class="field keyword-field">
-                            <label for="keyword">TỪ KHÓA</label>
-                            <input id="keyword" name="keyword" type="text"
-                                   placeholder="Ví dụ: làm gốm, ẩm thực, làng nghề...">
-                        </div>
-                        <div class="field">
-                            <label for="location">ĐỊA ĐIỂM</label>
-                            <select id="location" name="region">
-                                <option value="">Tất cả địa điểm</option>
-                                <option value="north">Miền Bắc</option>
-                                <option value="central">Miền Trung</option>
-                                <option value="south">Miền Nam</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <label for="type">LOẠI TRẢI NGHIỆM</label>
-                            <select id="type" name="category">
-                                <option value="">Tất cả loại hình</option>
-                                <option value="craft">Làng nghề thủ công</option>
-                                <option value="food">Ẩm thực địa phương</option>
-                                <option value="culture">Văn hóa và di sản</option>
-                                <option value="nature">Thiên nhiên và khám phá</option>
-                            </select>
-                        </div>
-                        <button class="button search-submit" type="submit">Tìm trải nghiệm <span>→</span></button>
+                    <div class="field keyword-field">
+                        <label for="keyword">TỪ KHÓA</label>
+                        <input id="keyword" name="keyword" type="text"
+                               placeholder="Ví dụ: làm gốm, ẩm thực, làng nghề...">
                     </div>
+                    <div class="field">
+                        <label for="location">ĐỊA ĐIỂM</label>
+                        <select id="location" name="region">
+                            <option value="">Tất cả địa điểm</option>
+                            <option value="north">Miền Bắc</option>
+                            <option value="central">Miền Trung</option>
+                            <option value="south">Miền Nam</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="type">LOẠI TRẢI NGHIỆM</label>
+                        <select id="type" name="category">
+                            <option value="">Tất cả loại hình</option>
+                            <option value="craft">Làng nghề thủ công</option>
+                            <option value="food">Ẩm thực địa phương</option>
+                            <option value="culture">Văn hóa và di sản</option>
+                            <option value="nature">Thiên nhiên và khám phá</option>
+                        </select>
+                    </div>
+                    <button class="button search-submit" type="submit">Tìm trải nghiệm <span>→</span></button>
                 </form>
             </div>
         </section>

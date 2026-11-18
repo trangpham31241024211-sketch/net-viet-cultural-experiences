@@ -51,34 +51,32 @@
                 </div>
             </div>
             <form class="search-panel container" id="experience-search" role="search">
-                <label class="search-field keyword-field" for="keyword">
-                    <span class="field-icon" aria-hidden="true">⌕</span>
-                    <span class="field-copy"><span class="field-label">Bạn muốn khám phá gì?</span><input id="keyword" name="keyword" type="search" placeholder="Tên trải nghiệm, địa điểm..."></span>
-                </label>
-                <label class="search-field" for="region">
-                    <span class="field-icon" aria-hidden="true">⌖</span>
-                    <span class="field-copy"><span class="field-label">Địa điểm</span>
-                        <select id="region" name="region">
-                            <option value="">Tất cả địa điểm</option>
-                            <option value="north">Miền Bắc</option>
-                            <option value="central">Miền Trung</option>
-                            <option value="south">Miền Nam</option>
-                        </select>
-                    </span>
-                </label>
-                <label class="search-field" for="experience-type">
-                    <span class="field-icon" aria-hidden="true">◇</span>
-                    <span class="field-copy"><span class="field-label">Loại trải nghiệm</span>
-                        <select id="experience-type" name="category">
-                            <option value="">Tất cả loại hình</option>
-                            <option value="craft">Làng nghề</option>
-                            <option value="food">Ẩm thực</option>
-                            <option value="culture">Văn hóa</option>
-                            <option value="nature">Thiên nhiên</option>
-                        </select>
-                    </span>
-                </label>
-                <button class="search-submit" type="submit">Tìm kiếm <span aria-hidden="true">→</span></button>
+                <div class="search-title">BẠN MUỐN KHÁM PHÁ ĐIỀU GÌ?</div>
+                <div class="field keyword-field">
+                    <label for="keyword">TỪ KHÓA</label>
+                    <input id="keyword" name="keyword" type="search"
+                           placeholder="Ví dụ: làm gốm, ẩm thực, làng nghề...">
+                </div>
+                <div class="field">
+                    <label for="region">ĐỊA ĐIỂM</label>
+                    <select id="region" name="region">
+                        <option value="">Tất cả địa điểm</option>
+                        <option value="north">Miền Bắc</option>
+                        <option value="central">Miền Trung</option>
+                        <option value="south">Miền Nam</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="experience-type">LOẠI TRẢI NGHIỆM</label>
+                    <select id="experience-type" name="category">
+                        <option value="">Tất cả loại hình</option>
+                        <option value="craft">Làng nghề thủ công</option>
+                        <option value="food">Ẩm thực địa phương</option>
+                        <option value="culture">Văn hóa và di sản</option>
+                        <option value="nature">Thiên nhiên và khám phá</option>
+                    </select>
+                </div>
+                <button class="search-submit" type="submit">Tìm trải nghiệm <span aria-hidden="true">→</span></button>
             </form>
         </section>
 
@@ -118,7 +116,7 @@
                 <p class="empty-state" id="empty-state" hidden>Chưa tìm thấy trải nghiệm phù hợp. Hãy thử từ khóa hoặc bộ lọc khác nhé.</p>
                 <div class="listing-footer">
                     <p class="result-count" id="result-count" aria-live="polite"></p>
-                    <button class="button button-dark load-more" id="load-more" type="button">Xem thêm trải nghiệm <span aria-hidden="true">↓</span></button>
+                    <button class="button button-dark load-more" id="load-more" type="button" hidden>Xem thêm trải nghiệm <span aria-hidden="true">↓</span></button>
                 </div>
             </div>
         </section>
