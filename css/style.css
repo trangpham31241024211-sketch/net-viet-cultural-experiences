@@ -3889,3 +3889,311 @@ gallery-thumbs .thumb-item img,
 .nav-menu a:hover::after {
     width: 100%;
 }
+<<<<<<< Updated upstream
+=======
+/* --- Custom Layout cho trang Hành trình --- */
+.about-page .journey-planner-box {
+  display: grid;
+  grid-template-columns: 1.2fr 0.85fr;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(12, 42, 32, 0.06);
+}
+
+.about-page .journey-planner-box .contact-box {
+  box-shadow: none;
+  border-radius: 0;
+  padding: 28px;
+}
+
+.about-page .journey-side-panel {
+  background: #FAFBF9;
+  border-left: 1px solid var(--border-light);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.about-page .journey-side-panel .img-wrapper-badge img {
+  height: 195px;
+  margin-bottom: 16px;
+}
+
+.about-page .journey-side-panel .product-stats-grid {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.about-page .journey-side-panel .stat-box {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+}
+
+.about-page .chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-page .chip-btn {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid #D4DDD7;
+  background: #ffffff;
+  color: var(--text-dark);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.about-page .chip-btn.active {
+  background: var(--primary-green);
+  color: #ffffff;
+  border-color: var(--primary-green);
+  font-weight: 600;
+}
+
+/* Hành trình đề xuất */
+.about-page #hanh-trinh-goi-y {
+  background-color: #EFF5F0;
+}
+
+.about-page .suggested-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.about-page .fit-badge {
+  background: #DFEBE3;
+  color: var(--secondary-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+
+.about-page .summary-strip {
+  background: #F7FAF8;
+  border: 1px solid #DDE7E0;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-bottom: 28px;
+}
+
+.about-page .summary-strip .stat-box {
+  background: transparent;
+  text-align: left;
+  padding: 4px;
+}
+
+.about-page .suggested-layout {
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.about-page .timeline-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page .timeline-step {
+  display: grid;
+  grid-template-columns: 48px 18px 1fr 74px;
+  gap: 10px;
+  align-items: start;
+}
+
+.about-page .timeline-hour {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #C4841D;
+  padding-top: 2px;
+}
+
+.about-page .timeline-axis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.about-page .timeline-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #14533E;
+  border: 2px solid #CFE0D6;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.about-page .timeline-line {
+  width: 1.5px;
+  flex: 1;
+  background: #CBD8D0;
+  min-height: 76px;
+}
+
+.about-page .timeline-body {
+  padding-bottom: 10px;
+}
+
+.about-page .timeline-body h4 {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.about-page .timeline-body p {
+  font-size: 0.76rem;
+  color: #46574F;
+  margin-bottom: 2px;
+  line-height: 1.45;
+}
+
+.about-page .transit-pill {
+  display: inline-block;
+  margin-top: 5px;
+  background: #E2ECE6;
+  color: #335244;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.about-page .timeline-thumb {
+  width: 74px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-page .map-box {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.about-page .map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.about-page .map-legend {
+  display: flex;
+  gap: 16px;
+  font-size: 0.75rem;
+  color: #5A6B63;
+  margin-top: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E8EFEA;
+}
+
+.about-page .map-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #14533E;
+}
+
+.about-page .journey-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.about-page .btn-edit-criteria {
+  padding: 11px 18px;
+  border-radius: 6px;
+  border: 1px solid #C5D1C9;
+  background: #ffffff;
+  color: var(--primary-green);
+  font-weight: 700;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.about-page .journey-actions .btn-block-dark {
+  width: auto;
+  padding: 11px 22px;
+  border-radius: 6px;
+}
+
+/* Lưới 5 thẻ văn hóa */
+.about-page .cards-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.about-page .cards-grid-5 .product-card-img {
+  height: 120px;
+}
+
+/* CTA & Footer giống mẫu */
+.about-page .cta-banner {
+  text-align: left;
+  padding: 56px 24px !important;
+}
+
+.about-page .cta-banner .cta-content {
+  margin: 0;
+  max-width: 520px;
+  text-align: left;
+}
+
+.about-page .site-footer {
+  background-color: #1B3124;
+  padding: 44px 24px 28px !important;
+}
+
+.about-page .footer-grid {
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+}
+
+.about-page .footer-col h5,
+.about-page .footer-grid h5 {
+  color: #ffffff;
+}
+
+.about-page .footer-bottom {
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .about-page .journey-planner-box,
+  .about-page .suggested-layout {
+    grid-template-columns: 1fr;
+  }
+  .about-page .cards-grid-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.about-page .cta-banner .section-heading,
+.cta-banner .section-heading {
+  color: #ffffff;
+}
+
+.about-page .cta-banner p,
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.about-page .hero-banner + .section-padding.bg-light,
+body.about-page main > section.bg-light:first-of-type {
+  background-color: #ECF3EE !important;
+}
+
