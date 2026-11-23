@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cẩm nang văn hóa Nét Việt – Đọc chuyện đất Việt, chạm vào hồn quê qua các bài viết về làng nghề, ẩm thực, di sản và thiên nhiên.">
+  <title>Cẩm nang văn hóa - Nét Việt</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="guide-page">
+  <div class="announcement-bar">
+    VĂN HÓA KHÔNG CHỈ ĐỂ NGẮM NHÌN – <span class="highlight">HÃY TRỰC TIẾP TRẢI NGHIỆM.</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="Nét Việt - Trang chủ">
+        <img src="images/logo-icon.jpg" alt="Nét Việt Logo" class="logo-img">
+        <span class="logo-text">Nét Việt</span>
+      </a>
+      <nav class="nav-menu" aria-label="Điều hướng chính">
+        <a href="index.html" class="nav-link">Trang chủ</a>
+        <a href="products.html" class="nav-link">Khám phá trải nghiệm</a>
+        <a href="journey.html" class="nav-link">Hành trình</a>
+        <a href="guide.html" class="nav-link active" aria-current="page">Cẩm nang</a>
+        <a href="about.html" class="nav-link">Về chúng tôi</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-btn" href="#tim-bai-viet" aria-label="Tìm bài viết"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a class="icon-btn" href="about.html#contact" aria-label="Tài khoản"><i class="fa-regular fa-user"></i></a>
+        <a class="cart-link" href="cart.html" aria-label="Giỏ hàng">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.5L22 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+          <span id="cart-count-badge" class="cart-count-badge" aria-live="polite">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="guide-hero" style="background-image:url('images/amthuchoian-5.jpg')">
+      <div class="container">
+        <span class="section-label">— GÓC NHÌN VĂN HÓA BẢN ĐỊA</span>
+        <h1 class="guide-hero-title">
+          Đọc chuyện đất Việt.
+          <em>Chạm vào hồn quê.</em>
+        </h1>
+        <p class="guide-hero-desc">Từ câu chuyện làng nghề, hương vị quê nhà đến phong tục và di sản, cùng Nét Việt khám phá những giá trị văn hóa làm nên bản sắc của mỗi vùng đất.</p>
+        <span class="guide-hero-note">Nội dung được biên tập và chọn lọc bởi đội ngũ Nét Việt</span>
+      </div>
+    </section>
+
+    <!-- Thanh tìm kiếm & bộ lọc chủ đề -->
+    <section class="guide-filter-wrap" id="tim-bai-viet">
+      <div class="container">
+        <form class="guide-search-bar" id="guideSearchForm">
+          <div class="guide-search-input-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="guideKeyword" placeholder="Tìm bài viết, chủ đề, địa danh...">
+          </div>
+          <select id="guideRegionFilter" aria-label="Lọc theo vùng miền">
+            <option value="all">Tất cả vùng miền</option>
+            <option value="north">Miền Bắc</option>
+            <option value="central">Miền Trung</option>
+            <option value="south">Miền Nam</option>
+          </select>
+          <button type="submit" class="guide-search-btn">Tìm bài viết &rarr;</button>
+        </form>
+
+        <div class="guide-topic-row" role="group" aria-label="Lọc theo chủ đề">
+          <span class="guide-topic-label">Chủ đề:</span>
+          <button type="button" class="guide-topic-pill active" data-topic="all">Tất cả</button>
+          <button type="button" class="guide-topic-pill" data-topic="craft">Làng nghề</button>
+          <button type="button" class="guide-topic-pill" data-topic="food">Ẩm thực</button>
+          <button type="button" class="guide-topic-pill" data-topic="culture">Văn hóa</button>
+          <button type="button" class="guide-topic-pill" data-topic="nature">Thiên nhiên</button>
+          <button type="button" class="guide-topic-pill" data-topic="tips">Cẩm nang du lịch</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bài viết nổi bật -->
+    <section class="guide-section">
+      <div class="container">
+        <div class="guide-title-row">
+          <div>
+            <span class="guide-eyebrow">CÂU CHUYỆN ĐƯỢC TUYỂN CHỌN</span>
+            <h2 class="guide-heading">Nổi bật từ <em>Nét Việt.</em></h2>
+            <p class="guide-subtext">Một góc nhìn sâu hơn về những giá trị bản địa đang hiện diện trong đời sống hôm nay.</p>
+          </div>
+        </div>
+
+        <article class="featured-story-card">
+          <div class="featured-story-media">
+            <img src="images/tanchauag-2.jpg" alt="Làng lụa Vạn Phúc - nơi từng sợi tơ kể chuyện nghề xưa">
+            <span class="featured-badge">BÀI VIẾT NỔI BẬT</span>
+          </div>
+          <div class="featured-story-body">
+            <span class="story-category-meta">LÀNG NGHỀ • HÀ NỘI</span>
+            <h3>Làng lụa Vạn Phúc - nơi từng sợi tơ kể chuyện nghề xưa</h3>
+            <p>Từ những khung cửi truyền thống đến nhịp sống hiện đại hôm nay, nghề dệt lụa vẫn là một phần ký ức văn hóa, kiên nhẫn và kinh nghiệm được gìn giữ qua nhiều thế hệ.</p>
+            <div class="story-footer-row">
+              <span>5 phút đọc</span>
+              <a href="products.html?category=craft#danh-sach" class="story-read-link">Đọc bài viết &rarr;</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Danh sách 8 bài viết mới nhất -->
+    <section class="guide-section" id="danh-sach-bai-viet">
+      <div class="container">
+        <div class="guide-title-row">
+          <div>
+            <span class="guide-eyebrow">MỚI NHẤT TỪ BAN BIÊN TẬP</span>
+            <h2 class="guide-heading">Những câu chuyện <em>mới nhất.</em></h2>
+            <p class="guide-subtext">Những bài viết được Nét Việt chọn lọc để bạn hiểu thêm về văn hóa, con người và vùng đất Việt Nam.</p>
+          </div>
+          <a href="#danh-sach-bai-viet" class="guide-view-all" id="resetGuideFilter">Tất cả bài viết &rarr;</a>
+        </div>
+
+        <div class="stories-grid-3" id="guideArticlesGrid">
+          <!-- Bài 1 -->
+          <article class="story-card" data-topic="craft" data-region="central" data-page="1">
+            <div class="story-card-thumb">
+              <img src="images/related-1.jpg" alt="Đèn lồng Hội An - Sắc màu được dệt nên từ đôi bàn tay khéo léo">
+              <span class="story-tag-pill">Làng nghề</span>
+            </div>
+            <div class="story-card-content">
+              <h3>Đèn lồng Hội An - Sắc màu được dệt nên từ đôi bàn tay khéo léo</h3>
+              <p>Đằng sau ánh sáng ấm áp mỗi tối phố cổ là những công đoạn thủ công tỉ mỉ từ tre, lụa và sự bền bỉ của nghệ nhân vùng đất di sản.</p>
+              <div class="story-footer-row">
+                <span>4 phút đọc</span>
+                <a href="product-detail.html?id=7" class="story-read-link">Đọc tiếp &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bài 2 -->
+          <article class="story-card" data-topic="food" data-region="central" data-page="1">
+            <div class="story-card-thumb">
+              <img src="images/am-thuc-hoi-an.webp" alt="Ẩm thực Hội An - Hương vị lưu giữ ký ức phố cổ">
+              <span class="story-tag-pill">Ẩm thực</span>
+            </div>
+            <div class="story-card-content">
+              <h3>Ẩm thực Hội An - Hương vị lưu giữ ký ức phố cổ</h3>
+              <p>Cao lầu, mì Quảng hay những món bánh dân dã không chỉ là thức quà ngon miệng mà còn phản ánh lịch sử giao thoa văn hóa của vùng đất này.</p>
+              <div class="story-footer-row">
+                <span>5 phút đọc</span>
+                <a href="product-detail.html?id=22" class="story-read-link">Đọc tiếp &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bài 3 -->
+          <article class="story-card" data-topic="culture" data-region="central" data-page="1">
+            <div class="story-card-thumb">
+              <img src="images/dayen-1.jpg" alt="Cố đô Huế - Dấu ấn vàng son qua từng công trình kiến trúc">
+              <span class="story-tag-pill">Văn hóa</span>
+            </div>
+            <div class="story-card-content">
+              <h3>Cố đô Huế - Dấu ấn vàng son qua từng công trình kiến trúc</h3>
+              <p>Những thành quách, lăng tẩm và không gian trầm mặc bên dòng Hương giang vẫn kể lại câu chuyện về chiều sâu lịch sử, mỹ học và nếp sống cung đình triều Nguyễn.</p>
+              <div class="story-footer-row">
+                <span>6 phút đọc</span>
+                <a href="product-detail.html?id=31" class="story-read-link">Đọc tiếp &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bài 4 -->
+          <article class="story-card" data-topic="culture" data-region="south" data-page="1">
+            <div class="story-card-thumb">
+              <img src="images/related-4.jpg" alt="Chợ nổi Cái Răng - Nhịp sống đặc trưng của miền sông nước">
+              <span class="story-tag-pill">Văn hóa</span>
+            </div>
+            <div class="story-card-content">
+              <h3>Chợ nổi Cái Răng - Nhịp sống đặc trưng của miền sông nước</h3>
+              <p>Khi mặt trời vừa ló rạng, những chiếc ghe hàng nối đuôi nhau tạo nên bức tranh sinh hoạt vừa mộc mạc vừa giàu bản sắc của người dân miền Tây.</p>
+              <div class="story-footer-row">
+                <span>4 phút đọc</span>
+                <a href="product-detail.html?id=6" class="story-read-link">Đọc tiếp &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bài 5 -->
+          <article class="story-card" data-topic="tips" data-region="north" data-page="1">
+            <div class="story-card-thumb">
+              <img src="images/dinhyendt-3.jpg" alt="Đến thăm làng nghề - 5 điều nên biết trước chuyến đi">
+              <span class="story-tag-pill">Cẩm nang du lịch</span>
+            </div>
+            <div class="story-card-content">
+              <h3>Đến thăm làng nghề - 5 điều nên biết trước chuyến đi</h3>
+              <p>Tìm hiểu trước thời gian hoạt động, cách trò chuyện với nghệ nhân và ứng xử tôn trọng không gian sản xuất sẽ giúp trải nghiệm của bạn trọn vẹn hơn.</p>
+              <div class="story-footer-row">
+                <span>3 phút đọc</span>
+                <a href="journey.html" class="story-read-link">Đọc tiếp &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bài 6 -->
+          <article class="story-card" data-topic="culture" data-region="north" data-page="1">
+            <div class="story-card-thumb">
+              <img src="images/about-festival.jpg" alt="Tết Việt - Những phong tục lưu giữ ký ức gia đình">
+              <span class="story-tag-pill">Văn hóa</span>
+            </div>
+            <div class="story-card-content">
+              <h3>Tết Việt - Những phong tục lưu giữ ký ức gia đình</h3>
+              <p>Từ bánh chưng, mâm ngũ quả đến lời chúc đầu năm, mỗi nghi thức đều gắn liền với sự sum vầy và lòng biết ơn của người Việt qua nhiều thế hệ.</p>
+              <div class="story-footer-row">
+                <span>5 phút đọc</span>
+                <a href="products.html?category=culture#danh-sach" class="story-read-link">Đọc tiếp &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bài 7 -->
+          <article class="story-card" data-topic="craft" data-region="north" data-page="2">
+            <div class="story-card-thumb">
+              <img src="images/pottery-main.jpg" alt="Gốm Bát Tràng - Hồn đất sét bên bờ sông Hồng">
+              <span class="story-tag-pill">Làng nghề</span>
+            </div>
+            <div class="story-card-content">
+              <h3>Gốm Bát Tràng - Hồn đất sét bên bờ sông Hồng</h3>
+              <p>Hành trình khám phá bí quyết chọn đất, tạo hình trên bàn xoay và phối men hỏa biến độc đáo của ngôi làng gốm hơn 700 năm tuổi.</p>
+              <div class="story-footer-row">
+                <span>5 phút đọc</span>
+                <a href="product-detail.html?id=2" class="story-read-link">Đọc tiếp &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bài 8 -->
+          <article class="story-card" data-topic="nature" data-region="north" data-page="2">
+            <div class="story-card-thumb">
+              <img src="images/about-landscape.jpg" alt="Vịnh Hạ Long - Kỳ quan đá vôi giữa lòng di sản">
+              <span class="story-tag-pill">Thiên nhiên</span>
+            </div>
+            <div class="story-card-content">
+              <h3>Vịnh Hạ Long - Kỳ quan đá vôi giữa lòng di sản</h3>
+              <p>Đón ánh bình minh trên mặt biển ngọc bích, lắng nghe nhịp chèo làng chài và cảm nhận vẻ đẹp nguyên sơ của hàng nghìn đảo đá kỳ vĩ.</p>
+              <div class="story-footer-row">
+                <span>4 phút đọc</span>
+                <a href="product-detail.html?id=4" class="story-read-link">Đọc tiếp &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p id="guideEmptyState" class="empty-state" hidden>Không tìm thấy bài viết phù hợp với từ khóa hoặc chủ đề bạn chọn.</p>
+
+        <!-- Phân trang -->
+        <div class="guide-pagination" id="guidePagination" aria-label="Phân trang bài viết">
+          <button type="button" class="page-btn active" data-page="1">1</button>
+          <button type="button" class="page-btn" data-page="2">2</button>
+          <button type="button" class="page-btn" data-page="next" aria-label="Trang tiếp theo">&rsaquo;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dải cam kết biên tập -->
+    <section class="editorial-strip">
+      <div class="container">
+        <div class="editorial-grid">
+          <div class="editorial-lead">
+            <span class="guide-eyebrow">GÓC NHÌN NÉT VIỆT</span>
+            <h3>Chuyện văn hóa,<br>kể bằng sự trân trọng.</h3>
+          </div>
+          <div class="editorial-item">
+            <span class="editorial-icon"><i class="fa-solid fa-plus"></i></span>
+            <div>
+              <h4>Chọn lọc nội dung</h4>
+              <p>Tập trung vào câu chuyện địa phương, làng nghề, ẩm thực và chiều sâu văn hóa Việt.</p>
+            </div>
+          </div>
+          <div class="editorial-item">
+            <span class="editorial-icon"><i class="fa-regular fa-compass"></i></span>
+            <div>
+              <h4>Gắn với bản địa</h4>
+              <p>Mỗi bài viết được nhìn từ bối cảnh văn hóa, con người và đời sống nơi đó.</p>
+            </div>
+          </div>
+          <div class="editorial-item">
+            <span class="editorial-icon"><i class="fa-solid fa-location-dot"></i></span>
+            <div>
+              <h4>Lan tỏa giá trị</h4>
+              <p>Khơi gợi sự đồng cảm và mong muốn khám phá văn hóa một cách bền vững.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner" style="background-image:url('images/footer-banner.jpg')">
+      <div class="container">
+        <div class="cta-content">
+          <span class="section-label">— TIẾP TỤC HÀNH TRÌNH CỦA BẠN</span>
+          <h2 class="section-heading">Đọc để hiểu.<br>Đi để chạm.</h2>
+          <p>Khám phá những trải nghiệm gắn với các vùng đất trong câu chuyện của Nét Việt.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h5>Nét Việt</h5>
+          <p>Nền tảng kết nối du khách với văn hóa bản địa Việt Nam qua các trải nghiệm làng nghề, thủ công và đặc sản.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Khám phá</h5>
+          <ul>
+            <li><a href="products.html">Tất cả trải nghiệm</a></li>
+            <li><a href="products.html?category=craft#danh-sach">Làng nghề truyền thống</a></li>
+            <li><a href="products.html?category=food#danh-sach">Ẩm thực địa phương</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Về Nét Việt</h5>
+          <ul>
+            <li><a href="about.html">Câu chuyện của chúng tôi</a></li>
+            <li><a href="journey.html">Hành trình của bạn</a></li>
+            <li><a href="guide.html">Cẩm nang văn hóa</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Kết nối</h5>
+          <ul>
+            <li><a href="mailto:hello@netviet.example">Email: hello@netviet.example</a></li>
+            <li><span>Việt Nam</span></li>
+            <li><a href="#">Trở về đầu trang &uarr;</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 Nét Việt – Sản phẩm học tập môn Phát triển ứng dụng thương mại điện tử. Nội dung và giá trên trang là dữ liệu minh họa.</div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script>
+    const topicButtons = document.querySelectorAll('.guide-topic-pill');
+    const keywordInput = document.getElementById('guideKeyword');
+    const regionSelect = document.getElementById('guideRegionFilter');
+    const articles = Array.from(document.querySelectorAll('#guideArticlesGrid .story-card'));
+    const emptyState = document.getElementById('guideEmptyState');
+    const paginationEl = document.getElementById('guidePagination');
+    const pageButtons = document.querySelectorAll('.page-btn');
+
+    let selectedTopic = 'all';
+    let currentPage = '1';
+
+    function filterGuideArticles(usePagination) {
+      const keyword = keywordInput.value.trim().toLowerCase();
+      const region = regionSelect.value;
+      const isFiltering = keyword !== '' || region !== 'all' || selectedTopic !== 'all';
+
+      let visibleCount = 0;
+
+      articles.forEach(function (card) {
+        const cardTopic = card.getAttribute('data-topic');
+        const cardRegion = card.getAttribute('data-region');
+        const cardPage = card.getAttribute('data-page');
+        const cardText = card.textContent.toLowerCase();
+
+        const matchTopic = selectedTopic === 'all' || cardTopic === selectedTopic;
+        const matchRegion = region === 'all' || cardRegion === region;
+        const matchKeyword = keyword === '' || cardText.includes(keyword);
+        const matchPage = !usePagination || isFiltering || cardPage === currentPage;
+
+        const shouldShow = matchTopic && matchRegion && matchKeyword && matchPage;
+        card.hidden = !shouldShow;
+        if (shouldShow) visibleCount++;
+      });
+
+      emptyState.hidden = visibleCount > 0;
+      paginationEl.style.display = isFiltering ? 'none' : 'flex';
+    }
+
+    topicButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        topicButtons.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        selectedTopic = btn.getAttribute('data-topic');
+        filterGuideArticles(true);
+      });
+    });
+
+    document.getElementById('guideSearchForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      filterGuideArticles(true);
+    });
+
+    keywordInput.addEventListener('input', function () {
+      filterGuideArticles(true);
+    });
+
+    regionSelect.addEventListener('change', function () {
+      filterGuideArticles(true);
+    });
+
+    pageButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const pageVal = btn.getAttribute('data-page');
+        if (pageVal === 'next') {
+          currentPage = currentPage === '1' ? '2' : '1';
+        } else {
+          currentPage = pageVal;
+        }
+        pageButtons.forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-page') === currentPage);
+        });
+        filterGuideArticles(true);
+      });
+    });
+
+    document.getElementById('resetGuideFilter').addEventListener('click', function (e) {
+      e.preventDefault();
+      keywordInput.value = '';
+      regionSelect.value = 'all';
+      selectedTopic = 'all';
+      topicButtons.forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-topic') === 'all');
+      });
+      filterGuideArticles(false);
+    });
+
+    filterGuideArticles(true);
+  </script>
+</body>
+</html>

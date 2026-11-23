@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tự thiết kế hành trình khám phá văn hóa Việt cùng Nét Việt.">
+  <title>Hành trình của bạn - Nét Việt</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="about-page">
+  <div class="announcement-bar">
+    VĂN HÓA KHÔNG CHỈ ĐỂ NGẮM NHÌN – <span class="highlight">HÃY TRỰC TIẾP TRẢI NGHIỆM.</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="Nét Việt - Trang chủ">
+        <img src="images/logo-icon.jpg" alt="Nét Việt Logo" class="logo-img">
+        <span class="logo-text">Nét Việt</span>
+      </a>
+      <nav class="nav-menu" aria-label="Điều hướng chính">
+  <a href="index.html" class="nav-link">Trang chủ</a>
+  <a href="products.html" class="nav-link">Khám phá trải nghiệm</a>
+  <a href="journey.html" class="nav-link">Hành trình</a>
+  <a href="guide.html" class="nav-link active" aria-current="page">Cẩm nang</a>
+  <a href="about.html" class="nav-link">Về chúng tôi</a>
+</nav>
+      <div class="header-actions">
+        <a class="icon-btn" href="products.html#tim-kiem" aria-label="Tìm trải nghiệm"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a class="icon-btn" href="about.html#contact" aria-label="Tài khoản"><i class="fa-regular fa-user"></i></a>
+        <a class="cart-link" href="cart.html" aria-label="Giỏ hàng">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.5L22 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+          <span id="cart-count-badge" class="cart-count-badge" aria-live="polite">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-banner" style="background-image:url('images/about-hero.jpg')">
+      <div class="hero-content">
+        <span class="section-label">— THIẾT KẾ HÀNH TRÌNH CỦA BẠN</span>
+        <h1 class="hero-title">Một miền đất gọi.<br><span class="gold-text italic-text">Một hành trình mở ra.</span></h1>
+        <p class="hero-desc">Mỗi vùng đất đều có câu chuyện riêng. Hãy để Nét Việt cùng bạn lựa chọn những trải nghiệm phù hợp, kết nối các điểm đến và lưu giữ hành trình theo cách của riêng mình.</p>
+        <a href="#tao-hanh-trinh" class="btn-primary">Lên lịch cho chuyến đi</a>
+        <a href="#hanh-trinh-goi-y" class="btn-outline">Khám phá hành trình</a>
+      </div>
+      <div class="hero-tabs">
+        <div class="hero-tab-item"><span class="tab-num">01</span><span class="tab-text">Chọn điểm đến</span></div>
+        <div class="hero-tab-item"><span class="tab-num">02</span><span class="tab-text">Sắp xếp trải nghiệm</span></div>
+        <div class="hero-tab-item"><span class="tab-num">03</span><span class="tab-text">Lưu giữ hành trình</span></div>
+      </div>
+    </section>
+
+    <section class="section-padding bg-light">
+      <div class="container">
+        <div class="section-center-header">
+          <span class="section-label">— LÊN KẾ HOẠCH THEO CÁCH CỦA BẠN</span>
+          <h2 class="section-heading">Chuyến đi của bạn,<br><em>được tạo nên từ điều bạn yêu thích.</em></h2>
+          <p>Không cần mất hàng giờ tìm kiếm. Chỉ cần chia sẻ mong muốn, Nét Việt sẽ gợi ý lịch trình phù hợp và giúp bạn khám phá những điểm đến văn hóa độc đáo.</p>
+        </div>
+        <div class="cards-grid-4">
+          <div class="value-card">
+            <div class="card-icon"><i class="fa-solid fa-compass"></i></div>
+            <h3>Cá nhân hóa</h3>
+            <p>Lựa chọn điểm đến và trải nghiệm theo sở thích của bạn.</p>
+          </div>
+          <div class="value-card">
+            <div class="card-icon"><i class="fa-regular fa-calendar-check"></i></div>
+            <h3>Linh hoạt</h3>
+            <p>Chủ động thời gian, ngày đi và thời lượng khám phá.</p>
+          </div>
+          <div class="value-card">
+            <div class="card-icon"><i class="fa-solid fa-route"></i></div>
+            <h3>Bản đồ</h3>
+            <p>Dễ dàng hình dung các điểm dừng trong hành trình.</p>
+          </div>
+          <div class="value-card">
+            <div class="card-icon"><i class="fa-regular fa-bookmark"></i></div>
+            <h3>Lưu giữ</h3>
+            <p>Gom những trải nghiệm yêu thích vào một chuyến đi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="tao-hanh-trinh">
+      <div class="container">
+        <span class="section-label">— BẮT ĐẦU TỪ ĐÂY</span>
+        <h2 class="section-heading">Lên lịch trình <em>chuyến đi</em></h2>
+        <p class="product-location">Chọn điểm đến, thời gian và những trải nghiệm bạn muốn khám phá.</p>
+
+        <div class="journey-planner-box">
+          <div class="contact-box">
+            <form id="journeyForm">
+              <div class="feature-item">
+                <div class="feature-number">01</div>
+                <div class="feature-info">
+                  <h4>Bạn muốn đi đâu?</h4>
+                  <p>Chọn khu vực hoặc địa điểm bạn muốn khám phá.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="region">Khu vực</label>
+                <div class="chip-list" role="group" aria-label="Khu vực">
+                  <button type="button" class="chip-btn" data-target="region" data-value="Tất cả">Tất cả</button>
+                  <button type="button" class="chip-btn active" data-target="region" data-value="Miền Bắc">Miền Bắc</button>
+                  <button type="button" class="chip-btn" data-target="region" data-value="Miền Trung">Miền Trung</button>
+                  <button type="button" class="chip-btn" data-target="region" data-value="Miền Nam">Miền Nam</button>
+                </div>
+                <select id="region" name="region" class="sr-only" required>
+                  <option value="Tất cả">Tất cả</option>
+                  <option value="Miền Bắc" selected>Miền Bắc</option>
+                  <option value="Miền Trung">Miền Trung</option>
+                  <option value="Miền Nam">Miền Nam</option>
+                </select>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="start-point">Điểm xuất phát</label>
+                  <input id="start-point" name="startPoint" type="text" placeholder="Nhập điểm xuất phát" value="Trung tâm Hà Nội">
+                </div>
+                <div class="form-group">
+                  <label for="destination">Điểm đến</label>
+                  <input id="destination" name="destination" type="text" placeholder="Nhập điểm đến" value="Bát Tràng, Gia Lâm, Hà Nội" required>
+                </div>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="start-date">Ngày bắt đầu</label>
+                  <input id="start-date" name="startDate" type="date" value="2026-11-15" required>
+                </div>
+                <div class="form-group">
+                  <label for="end-date">Ngày kết thúc</label>
+                  <input id="end-date" name="endDate" type="date" value="2026-11-15" required>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-number">02</div>
+                <div class="feature-info">
+                  <h4>Bạn yêu thích điều gì?</h4>
+                  <p>Chọn chủ đề và loại hình trải nghiệm phù hợp.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="interest">Chủ đề yêu thích</label>
+                <div class="chip-list" role="group" aria-label="Chủ đề yêu thích">
+                  <button type="button" class="chip-btn" data-target="interest" data-value="Làng nghề truyền thống">Làng nghề</button>
+                  <button type="button" class="chip-btn active" data-target="interest" data-value="Ẩm thực địa phương">Ẩm thực</button>
+                  <button type="button" class="chip-btn" data-target="interest" data-value="Di sản và lịch sử">Di sản</button>
+                  <button type="button" class="chip-btn" data-target="interest" data-value="Thiên nhiên">Thiên nhiên</button>
+                  <button type="button" class="chip-btn" data-target="interest" data-value="Lễ hội và văn hóa">Lễ hội</button>
+                </div>
+                <select id="interest" name="interest" class="sr-only">
+                  <option value="Làng nghề truyền thống">Làng nghề truyền thống</option>
+                  <option value="Ẩm thực địa phương" selected>Ẩm thực địa phương</option>
+                  <option value="Di sản và lịch sử">Di sản và lịch sử</option>
+                  <option value="Thiên nhiên">Thiên nhiên</option>
+                  <option value="Lễ hội và văn hóa">Lễ hội và văn hóa</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="style">Phong cách chuyến đi</label>
+                <div class="chip-list" role="group" aria-label="Phong cách chuyến đi">
+                  <button type="button" class="chip-btn active" data-target="style" data-value="Khám phá">Khám phá</button>
+                  <button type="button" class="chip-btn" data-target="style" data-value="Nghỉ ngơi">Nghỉ ngơi</button>
+                  <button type="button" class="chip-btn" data-target="style" data-value="Trải nghiệm">Trải nghiệm</button>
+                  <button type="button" class="chip-btn" data-target="style" data-value="Thư giãn">Thư giãn</button>
+                </div>
+                <select id="style" name="style" class="sr-only">
+                  <option selected>Khám phá</option>
+                  <option>Nghỉ ngơi</option>
+                  <option>Trải nghiệm</option>
+                  <option>Thư giãn</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="notes">Địa điểm hoặc trải nghiệm mong muốn</label>
+                <input id="notes" name="notes" type="text" placeholder="Ví dụ: chợ địa phương, làng nghề, ẩm thực...">
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="budget">Ngân sách dự kiến</label>
+                  <select id="budget" name="budget">
+                    <option value="850.000đ/người" selected>500.000đ - 1.000.000đ</option>
+                    <option value="1.800.000đ/người">1.000.000đ - 3.000.000đ</option>
+                    <option value="3.500.000đ/người">3.000.000đ - 5.000.000đ</option>
+                    <option value="5.500.000đ/người">Trên 5.000.000đ</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="travellers">Số người tham gia</label>
+                  <input id="travellers" name="travellers" type="number" min="1" value="2">
+                </div>
+              </div>
+
+              <button type="submit" class="btn-block-dark">GỢI Ý HÀNH TRÌNH CỦA TÔI</button>
+              <p id="journeyMessage" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="text-content journey-side-panel">
+            <div class="img-wrapper-badge">
+              <img src="images/pottery-main.jpg" alt="Nghệ nhân đang tạo hình gốm thủ công">
+            </div>
+            <h2 class="section-heading">Đi chậm hơn,<br><em>cảm nhận sâu hơn.</em></h2>
+            <p>Một hành trình đáng nhớ không nằm ở số lượng điểm đến, mà ở những điều bạn được trực tiếp trải nghiệm, những con người bạn gặp và câu chuyện bạn mang về.</p>
+            <div class="product-stats-grid">
+              <div class="stat-box">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span class="stat-value">8+</span>
+                <span class="stat-label">Trải nghiệm đặc sắc</span>
+              </div>
+              <div class="stat-box">
+                <i class="fa-solid fa-map"></i>
+                <span class="stat-value">3 miền</span>
+                <span class="stat-label">Khắp Việt Nam</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding bg-light" id="hanh-trinh-goi-y">
+      <div class="container">
+        <div class="suggested-header">
+          <div>
+            <span class="section-label">— GỢI Ý DÀNH CHO BẠN</span>
+            <h2 class="section-heading">Hành trình đề xuất</h2>
+          </div>
+          <span class="fit-badge">+ PHÙ HỢP VỚI BẠN</span>
+        </div>
+
+        <div class="product-stats-grid summary-strip">
+          <div class="stat-box">
+            <span class="stat-label">KHU VỰC</span>
+            <span class="stat-value" id="suggestedRegion">Miền Bắc – Bát Tràng, Gia Lâm, Hà Nội</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">THỜI GIAN</span>
+            <span class="stat-value" id="suggestedTime">15/11/2026 - 15/11/2026</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">NGÂN SÁCH ƯỚC TÍNH</span>
+            <span class="stat-value" id="suggestedBudget">850.000đ/người</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">SỐ NGƯỜI</span>
+            <span class="stat-value" id="suggestedTravellers">2 người</span>
+          </div>
+        </div>
+
+        <div class="grid-2 suggested-layout">
+          <div id="suggestedTimeline" class="timeline-list">
+            <div class="timeline-step">
+              <div class="timeline-hour">08:30</div>
+              <div class="timeline-axis">
+                <span class="timeline-dot"></span>
+                <span class="timeline-line"></span>
+              </div>
+              <div class="timeline-body">
+                <h4>Tham quan chợ gốm Bát Tràng</h4>
+                <p><i class="fa-solid fa-location-dot"></i> <strong>Địa chỉ:</strong> Làng gốm Bát Tràng, Gia Lâm, Hà Nội</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Thời lượng:</strong> 1 giờ 30 phút</p>
+                <p><i class="fa-solid fa-ticket"></i> <strong>Chi phí tham khảo:</strong> Miễn phí</p>
+                <span class="transit-pill">Di chuyển đến điểm tiếp theo: 5 phút (khoảng 1.5 km)</span>
+              </div>
+              <img class="timeline-thumb" src="images/gate.jpg" alt="Chợ gốm Bát Tràng">
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-hour">10:30</div>
+              <div class="timeline-axis">
+                <span class="timeline-dot"></span>
+                <span class="timeline-line"></span>
+              </div>
+              <div class="timeline-body">
+                <h4>Trải nghiệm làm gốm thủ công</h4>
+                <p><i class="fa-solid fa-location-dot"></i> <strong>Địa chỉ:</strong> Làng gốm Bát Tràng, Gia Lâm, Hà Nội</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Thời lượng:</strong> 1 giờ 30 phút</p>
+                <p><i class="fa-solid fa-ticket"></i> <strong>Chi phí tham khảo:</strong> 300.000đ/người</p>
+                <span class="transit-pill">Di chuyển đến điểm tiếp theo: 10 phút (khoảng 3 km)</span>
+              </div>
+              <img class="timeline-thumb" src="images/pottery-main.jpg" alt="Làm gốm thủ công">
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-hour">13:30</div>
+              <div class="timeline-axis">
+                <span class="timeline-dot"></span>
+                <span class="timeline-line"></span>
+              </div>
+              <div class="timeline-body">
+                <h4>Thưởng thức ẩm thực cổ Bát Tràng</h4>
+                <p><i class="fa-solid fa-location-dot"></i> <strong>Địa chỉ:</strong> Khu ẩm thực Bát Tràng, Gia Lâm, Hà Nội</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Thời lượng:</strong> 1 giờ 30 phút</p>
+                <p><i class="fa-solid fa-ticket"></i> <strong>Chi phí tham khảo:</strong> 200.000đ/người</p>
+                <span class="transit-pill">Di chuyển đến điểm tiếp theo: 15 phút (khoảng 7 km)</span>
+              </div>
+              <img class="timeline-thumb" src="images/am-thuc-co-bat-trang.webp" alt="Ẩm thực cổ Bát Tràng">
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-hour">15:30</div>
+              <div class="timeline-axis">
+                <span class="timeline-dot"></span>
+                <span class="timeline-line"></span>
+                <span class="timeline-dot"></span>
+              </div>
+              <div class="timeline-body">
+                <h4>Tham quan Bảo tàng gốm Bát Tràng</h4>
+                <p><i class="fa-solid fa-location-dot"></i> <strong>Địa chỉ:</strong> Số 28, thôn 5, Bát Tràng, Gia Lâm, Hà Nội</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Thời lượng:</strong> 1 giờ 30 phút</p>
+                <p><i class="fa-solid fa-ticket"></i> <strong>Chi phí tham khảo:</strong> 350.000đ/người</p>
+              </div>
+              <img class="timeline-thumb" src="images/product-hero.jpg" alt="Bảo tàng gốm Bát Tràng">
+            </div>
+          </div>
+
+          <div class="contact-box map-box">
+            <div class="map-header">
+              <div>
+                <h3>Bản đồ hành trình</h3>
+                <p>Khám phá các điểm dừng trên bản đồ</p>
+              </div>
+              <button type="button" class="icon-btn" aria-label="Chỉnh sửa bản đồ"><i class="fa-solid fa-pen"></i></button>
+            </div>
+
+            <svg viewBox="0 0 600 350" role="img" aria-label="Bản đồ minh họa bốn điểm dừng chân tại Bát Tràng">
+              <rect width="600" height="350" fill="#E8F1DC"/>
+              <path d="M475 0 Q435 105 495 190 T520 350 L600 350 L600 0 Z" fill="#BCE0DD"/>
+              <ellipse cx="145" cy="95" rx="58" ry="26" fill="#C4DCB4"/>
+              <ellipse cx="350" cy="72" rx="64" ry="28" fill="#C4DCB4"/>
+              <ellipse cx="125" cy="285" rx="52" ry="22" fill="#C4DCB4"/>
+              <ellipse cx="365" cy="292" rx="68" ry="28" fill="#C4DCB4"/>
+              <path d="M0 135 L485 105 M0 245 L495 215 M95 0 L165 350 M290 0 L245 350 M405 0 L435 350" stroke="#FFFFFF" stroke-width="11" fill="none"/>
+              <path d="M225 118 C275 105 350 112 375 152 C395 186 275 212 245 232 C222 248 345 272 415 245" fill="none" stroke="#14533E" stroke-width="4.5" stroke-dasharray="9 7" stroke-linecap="round"/>
+              <g transform="translate(225,118)">
+                <circle r="17" fill="#C97A2B" stroke="#FFFFFF" stroke-width="3"/>
+                <path d="M-7 1 L0 -6 L7 1 V7 H-7 Z" fill="#14533E"/>
+              </g>
+              <g transform="translate(375,152)">
+                <circle r="17" fill="#C97A2B" stroke="#FFFFFF" stroke-width="3"/>
+                <path d="M-7 1 L0 -6 L7 1 V7 H-7 Z" fill="#14533E"/>
+              </g>
+              <g transform="translate(245,232)">
+                <circle r="17" fill="#C97A2B" stroke="#FFFFFF" stroke-width="3"/>
+                <path d="M-7 1 L0 -6 L7 1 V7 H-7 Z" fill="#14533E"/>
+              </g>
+              <g transform="translate(415,245)">
+                <circle r="17" fill="#C97A2B" stroke="#FFFFFF" stroke-width="3"/>
+                <path d="M-7 1 L0 -6 L7 1 V7 H-7 Z" fill="#14533E"/>
+              </g>
+              <text x="108" y="172" fill="#2E5442" font-size="14" font-weight="700">Làng gốm</text>
+              <text x="112" y="189" fill="#2E5442" font-size="14" font-weight="700">Bát Tràng</text>
+              <text x="530" y="175" fill="#3B7A78" font-size="13" font-weight="600" transform="rotate(82 530 175)">Sông Hồng</text>
+            </svg>
+
+            <div class="map-legend">
+              <span>● Điểm trải nghiệm</span>
+              <span>--- Tuyến di chuyển gợi ý</span>
+            </div>
+            <a class="map-more-link" href="products.html">Khám phá các địa điểm khác &rarr;</a>
+          </div>
+        </div>
+
+        <div class="journey-actions">
+          <button type="button" class="btn-edit-criteria" id="editJourney">ĐIỀU CHỈNH TIÊU CHÍ</button>
+          <button type="button" class="btn-block-dark" id="confirmJourney">XÁC NHẬN HÀNH TRÌNH</button>
+        </div>
+        <p id="confirmMessage" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <span class="section-label">— KHÁM PHÁ THEO CÁCH RIÊNG</span>
+        <h2 class="section-heading">Những miền văn hóa <em>đang chờ bạn.</em></h2>
+        <div class="cards-grid-4">
+          <article class="product-card">
+            <img class="product-card-img" src="images/pottery-main.jpg" alt="Tự tay làm gốm ở Bát Tràng">
+            <div class="product-card-body">
+              <span class="product-meta-tag">Miền Bắc</span>
+              <h3 class="product-card-title">Tự tay làm gốm ở Bát Tràng</h3>
+              <p>Trải nghiệm nhào nặn đất sét, tạo hình trên bàn xoay cùng nghệ nhân.</p>
+              <div class="product-card-meta"><span>250.000đ/người</span><a href="product-detail.html?id=2">Khám phá <i class="fa-solid fa-arrow-right"></i></a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card-img" src="images/about-landscape.jpg" alt="Ngắm bình minh trên vịnh Hạ Long">
+            <div class="product-card-body">
+              <span class="product-meta-tag">Miền Bắc</span>
+              <h3 class="product-card-title">Ngắm bình minh trên vịnh Hạ Long</h3>
+              <p>Chiêm ngưỡng ánh bình minh trên mặt biển và những dãy núi đá vôi hùng vĩ.</p>
+              <div class="product-card-meta"><span>650.000đ/người</span><a href="product-detail.html?id=4">Khám phá <i class="fa-solid fa-arrow-right"></i></a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card-img" src="images/related-1.jpg" alt="Đêm phố cổ Hội An và đèn hoa đăng">
+            <div class="product-card-body">
+              <span class="product-meta-tag">Miền Trung</span>
+              <h3 class="product-card-title">Đêm phố cổ Hội An và đèn hoa đăng</h3>
+              <p>Dạo bước phố cổ lung linh ánh đèn lồng và thả đèn hoa đăng.</p>
+              <div class="product-card-meta"><span>320.000đ/người</span><a href="product-detail.html?id=7">Khám phá <i class="fa-solid fa-arrow-right"></i></a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card-img" src="images/related-4.jpg" alt="Bình minh trên chợ nổi Cái Răng">
+            <div class="product-card-body">
+              <span class="product-meta-tag">Miền Nam</span>
+              <h3 class="product-card-title">Bình minh trên chợ nổi Cái Răng</h3>
+              <p>Trải nghiệm không khí mua bán nhộn nhịp và văn hóa sông nước miền Tây.</p>
+              <div class="product-card-meta"><span>390.000đ/người</span><a href="product-detail.html?id=6">Khám phá <i class="fa-solid fa-arrow-right"></i></a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner" style="background-image:url('images/footer-banner.jpg')">
+      <div class="container">
+        <div class="cta-content">
+          <span class="section-label">— HÀNH TRÌNH TIẾP THEO ĐANG CHỜ</span>
+          <h2 class="section-heading">Một chuyến đi. Nhiều điều<br>để khám phá.</h2>
+          <p>Bắt đầu tìm trải nghiệm mang dấu ấn riêng của bạn.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h5>Nét Việt</h5>
+          <p>Nền tảng kết nối du khách với văn hóa bản địa Việt Nam qua các trải nghiệm làng nghề, thủ công và đặc sản.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Khám phá</h5>
+          <ul>
+            <li><a href="products.html">Tất cả trải nghiệm</a></li>
+            <li><a href="products.html?category=craft#danh-sach">Làng nghề truyền thống</a></li>
+            <li><a href="products.html?category=food#danh-sach">Ẩm thực địa phương</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Về Nét Việt</h5>
+          <ul>
+            <li><a href="about.html">Câu chuyện của chúng tôi</a></li>
+            <li><a href="hanh-trinh.html">Hành trình của bạn</a></li>
+            <li><a href="products.html#cam-nang">Nhật Kí Hành Trình</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Kết nối</h5>
+          <ul>
+            <li><a href="mailto:hello@netviet.example">Email: hello@netviet.example</a></li>
+            <li><span>Việt Nam</span></li>
+            <li><a href="#">Trở về đầu trang &uarr;</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 Nét Việt – Sản phẩm học tập môn Phát triển ứng dụng thương mại điện tử. Nội dung và giá trên trang là dữ liệu minh họa.</div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script>
+    document.querySelectorAll('.chip-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const targetId = btn.getAttribute('data-target');
+        const value = btn.getAttribute('data-value');
+        document.querySelectorAll('.chip-btn[data-target="' + targetId + '"]').forEach(function (item) {
+          item.classList.remove('active');
+        });
+        btn.classList.add('active');
+        const selectEl = document.getElementById(targetId);
+        if (selectEl) selectEl.value = value;
+      });
+    });
+
+    function formatDisplayDate(isoDate) {
+      if (!isoDate || !isoDate.includes('-')) return isoDate;
+      const parts = isoDate.split('-');
+      return parts[2] + '/' + parts[1] + '/' + parts[0];
+    }
+
+    document.getElementById('journeyForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const start = document.getElementById('start-date').value;
+      const end = document.getElementById('end-date').value;
+      const message = document.getElementById('journeyMessage');
+      if (end < start) {
+        message.textContent = 'Ngày kết thúc cần sau ngày bắt đầu. Vui lòng kiểm tra lại.';
+        return;
+      }
+
+      const region = document.getElementById('region').value;
+      const destination = document.getElementById('destination').value.trim() || 'Bát Tràng, Gia Lâm, Hà Nội';
+      const travellers = document.getElementById('travellers').value || '2';
+      const budgetText = document.getElementById('budget').value;
+
+      document.getElementById('suggestedRegion').textContent = region + ' – ' + destination;
+      document.getElementById('suggestedTime').textContent = formatDisplayDate(start) + ' - ' + formatDisplayDate(end);
+      document.getElementById('suggestedBudget').textContent = budgetText;
+      document.getElementById('suggestedTravellers').textContent = travellers + ' người';
+
+      message.textContent = 'Thông tin hành trình đã được ghi nhận. Bạn có thể xem lịch trình gợi ý bên dưới.';
+      document.getElementById('hanh-trinh-goi-y').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('editJourney').addEventListener('click', function () {
+      document.getElementById('tao-hanh-trinh').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('confirmJourney').addEventListener('click', function () {
+      document.getElementById('confirmMessage').textContent = 'Hành trình đã được xác nhận trên bản demo.';
+    });
+  </script>
+</body>
+</html>

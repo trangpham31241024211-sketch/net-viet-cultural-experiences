@@ -3842,4 +3842,835 @@ gallery-thumbs .thumb-item img,
 /* Hiệu ứng đường gạch chân khi hover */
 .nav-menu a:hover::after {
     width: 100%;
+<<<<<<< Updated upstream
 }
+=======
+}
+<<<<<<< Updated upstream
+=======
+/* --- Custom Layout cho trang Hành trình --- */
+.about-page .journey-planner-box {
+  display: grid;
+  grid-template-columns: 1.2fr 0.85fr;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(12, 42, 32, 0.06);
+}
+
+.about-page .journey-planner-box .contact-box {
+  box-shadow: none;
+  border-radius: 0;
+  padding: 28px;
+}
+
+.about-page .journey-side-panel {
+  background: #FAFBF9;
+  border-left: 1px solid var(--border-light);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.about-page .journey-side-panel .img-wrapper-badge img {
+  height: 195px;
+  margin-bottom: 16px;
+}
+
+.about-page .journey-side-panel .product-stats-grid {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.about-page .journey-side-panel .stat-box {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+}
+
+.about-page .chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-page .chip-btn {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid #D4DDD7;
+  background: #ffffff;
+  color: var(--text-dark);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.about-page .chip-btn.active {
+  background: var(--primary-green);
+  color: #ffffff;
+  border-color: var(--primary-green);
+  font-weight: 600;
+}
+
+/* Hành trình đề xuất */
+.about-page #hanh-trinh-goi-y {
+  background-color: #EFF5F0;
+}
+
+.about-page .suggested-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.about-page .fit-badge {
+  background: #DFEBE3;
+  color: var(--secondary-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+
+.about-page .summary-strip {
+  background: #F7FAF8;
+  border: 1px solid #DDE7E0;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-bottom: 28px;
+}
+
+.about-page .summary-strip .stat-box {
+  background: transparent;
+  text-align: left;
+  padding: 4px;
+}
+
+.about-page .suggested-layout {
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.about-page .timeline-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page .timeline-step {
+  display: grid;
+  grid-template-columns: 48px 18px 1fr 74px;
+  gap: 10px;
+  align-items: start;
+}
+
+.about-page .timeline-hour {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #C4841D;
+  padding-top: 2px;
+}
+
+.about-page .timeline-axis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.about-page .timeline-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #14533E;
+  border: 2px solid #CFE0D6;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.about-page .timeline-line {
+  width: 1.5px;
+  flex: 1;
+  background: #CBD8D0;
+  min-height: 76px;
+}
+
+.about-page .timeline-body {
+  padding-bottom: 10px;
+}
+
+.about-page .timeline-body h4 {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.about-page .timeline-body p {
+  font-size: 0.76rem;
+  color: #46574F;
+  margin-bottom: 2px;
+  line-height: 1.45;
+}
+
+.about-page .transit-pill {
+  display: inline-block;
+  margin-top: 5px;
+  background: #E2ECE6;
+  color: #335244;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.about-page .timeline-thumb {
+  width: 74px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-page .map-box {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.about-page .map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.about-page .map-legend {
+  display: flex;
+  gap: 16px;
+  font-size: 0.75rem;
+  color: #5A6B63;
+  margin-top: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E8EFEA;
+}
+
+.about-page .map-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #14533E;
+}
+
+.about-page .journey-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.about-page .btn-edit-criteria {
+  padding: 11px 18px;
+  border-radius: 6px;
+  border: 1px solid #C5D1C9;
+  background: #ffffff;
+  color: var(--primary-green);
+  font-weight: 700;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.about-page .journey-actions .btn-block-dark {
+  width: auto;
+  padding: 11px 22px;
+  border-radius: 6px;
+}
+
+/* Lưới 5 thẻ văn hóa */
+.about-page .cards-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.about-page .cards-grid-5 .product-card-img {
+  height: 120px;
+}
+
+/* CTA & Footer giống mẫu */
+.about-page .cta-banner {
+  text-align: left;
+  padding: 56px 24px !important;
+}
+
+.about-page .cta-banner .cta-content {
+  margin: 0;
+  max-width: 520px;
+  text-align: left;
+}
+
+.about-page .site-footer {
+  background-color: #1B3124;
+  padding: 44px 24px 28px !important;
+}
+
+.about-page .footer-grid {
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+}
+
+.about-page .footer-col h5,
+.about-page .footer-grid h5 {
+  color: #ffffff;
+}
+
+.about-page .footer-bottom {
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .about-page .journey-planner-box,
+  .about-page .suggested-layout {
+    grid-template-columns: 1fr;
+  }
+  .about-page .cards-grid-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.about-page .cta-banner .section-heading,
+.cta-banner .section-heading {
+  color: #ffffff;
+}
+
+.about-page .cta-banner p,
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.about-page .hero-banner + .section-padding.bg-light,
+body.about-page main > section.bg-light:first-of-type {
+  background-color: #ECF3EE !important;
+}
+/* --- Custom Layout cho trang Cẩm nang (guide.html) --- */
+.guide-page {
+  background-color: #F4F8F5;
+  color: var(--text-dark);
+}
+
+.guide-page .guide-hero {
+  position: relative;
+  min-height: 430px;
+  padding: 76px 24px 96px;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.guide-page .guide-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 42, 31, 0.9) 0%, rgba(12, 49, 36, 0.68) 52%, rgba(12, 49, 36, 0.35) 100%);
+  z-index: 1;
+}
+
+.guide-page .guide-hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.guide-page .guide-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 4.4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.guide-page .guide-hero-title em {
+  display: block;
+  color: var(--accent-gold);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.guide-page .guide-hero-desc {
+  max-width: 560px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #DCE8E2;
+  margin-bottom: 18px;
+}
+
+.guide-page .guide-hero-note {
+  font-size: 0.8rem;
+  color: #B9CFC4;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.guide-page .guide-hero-note::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+}
+
+/* Thanh tìm kiếm & lọc chủ đề */
+.guide-page .guide-filter-wrap {
+  position: relative;
+  z-index: 5;
+  margin-top: -36px;
+  padding: 0 24px;
+}
+
+.guide-page .guide-search-bar {
+  display: grid;
+  grid-template-columns: 1.8fr 0.7fr auto;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 10px 12px;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 12px 30px rgba(12, 42, 32, 0.08);
+}
+
+.guide-page .guide-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px;
+  border-right: 1px solid var(--border-light);
+}
+
+.guide-page .guide-search-input-wrap i {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.guide-page .guide-search-input-wrap input,
+.guide-page .guide-search-bar select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+}
+
+.guide-page .guide-search-btn {
+  background: var(--accent-gold);
+  color: #0C2A20;
+  font-weight: 700;
+  font-size: 0.84rem;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 22px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.guide-page .guide-search-btn:hover {
+  background: var(--accent-gold-hover);
+}
+
+.guide-page .guide-topic-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.guide-page .guide-topic-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.guide-page .guide-topic-pill {
+  padding: 6px 15px;
+  border-radius: 999px;
+  border: 1px solid #D5E0D9;
+  background: #ffffff;
+  color: var(--text-dark);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.guide-page .guide-topic-pill.active,
+.guide-page .guide-topic-pill:hover {
+  background: var(--primary-green);
+  color: #ffffff;
+  border-color: var(--primary-green);
+}
+
+/* Section & Tiêu đề */
+.guide-page .guide-section {
+  padding: 48px 24px;
+}
+
+.guide-page .guide-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #B84A39;
+  margin-bottom: 6px;
+}
+
+.guide-page .guide-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.guide-page .guide-heading {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  line-height: 1.25;
+}
+
+.guide-page .guide-heading em {
+  font-style: italic;
+  color: #195E45;
+  font-weight: 500;
+}
+
+.guide-page .guide-subtext {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.guide-page .guide-view-all {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+/* Bài viết nổi bật */
+.guide-page .featured-story-card {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(12, 42, 32, 0.05);
+}
+
+.guide-page .featured-story-media {
+  position: relative;
+  min-height: 310px;
+}
+
+.guide-page .featured-story-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.guide-page .featured-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--primary-green);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.guide-page .featured-story-body {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.guide-page .story-category-meta {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #B84A39;
+  margin-bottom: 10px;
+}
+
+.guide-page .featured-story-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  line-height: 1.3;
+  color: var(--primary-green);
+  margin-bottom: 14px;
+}
+
+.guide-page .featured-story-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.guide-page .story-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.guide-page .story-read-link {
+  font-weight: 700;
+  color: var(--primary-green);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.guide-page .story-read-link:hover {
+  color: #B84A39;
+}
+
+/* Lưới bài viết mới nhất (3 cột) */
+.guide-page .stories-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.guide-page .story-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guide-page .story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(12, 42, 32, 0.08);
+}
+
+.guide-page .story-card[hidden] {
+  display: none !important;
+}
+
+.guide-page .story-card-thumb {
+  position: relative;
+  height: 195px;
+  overflow: hidden;
+}
+
+.guide-page .story-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.guide-page .story-tag-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(12, 42, 32, 0.9);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+}
+
+.guide-page .story-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.guide-page .story-card-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  line-height: 1.38;
+  color: var(--primary-green);
+  margin-bottom: 10px;
+}
+
+.guide-page .story-card-content p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+/* Phân trang */
+.guide-page .guide-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 34px;
+}
+
+.guide-page .page-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid #D3DFD8;
+  background: #ffffff;
+  color: var(--text-dark);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.guide-page .page-btn.active {
+  background: var(--primary-green);
+  color: #ffffff;
+  border-color: var(--primary-green);
+}
+
+/* Dải cam kết biên tập */
+.guide-page .editorial-strip {
+  background: #EAF2EC;
+  border-top: 1px solid #DCE7DF;
+  padding: 36px 24px;
+}
+
+.guide-page .editorial-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.guide-page .editorial-lead h3 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  line-height: 1.3;
+  color: var(--primary-green);
+}
+
+.guide-page .editorial-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.guide-page .editorial-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--primary-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  border: 1px solid #D6E3DA;
+}
+
+.guide-page .editorial-item h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 3px;
+}
+
+.guide-page .editorial-item p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* CTA & Footer đồng bộ */
+.guide-page .cta-banner {
+  text-align: left;
+  padding: 56px 24px !important;
+}
+
+.guide-page .cta-banner .cta-content {
+  margin: 0;
+  max-width: 520px;
+  text-align: left;
+}
+
+.guide-page .cta-banner .section-heading {
+  color: #ffffff;
+}
+
+.guide-page .cta-banner p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.guide-page .site-footer {
+  background-color: #1B3124;
+  padding: 44px 24px 28px !important;
+}
+
+.guide-page .footer-grid {
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+}
+
+.guide-page .footer-col h5 {
+  color: #ffffff;
+}
+
+.guide-page .footer-bottom {
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  .guide-page .featured-story-card,
+  .guide-page .editorial-grid {
+    grid-template-columns: 1fr;
+  }
+  .guide-page .stories-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .guide-page .guide-search-bar {
+    grid-template-columns: 1fr;
+  }
+  .guide-page .guide-search-input-wrap {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .guide-page .stories-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+>>>>>>> Stashed changes
