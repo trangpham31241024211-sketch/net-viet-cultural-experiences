@@ -4673,4 +4673,509 @@ body.about-page main > section.bg-light:first-of-type {
     grid-template-columns: 1fr;
   }
 }
->>>>>>> Stashed changes
+/* --- Custom Layout cho trang Chính sách (policies.html) --- */
+.policies-page {
+  background-color: #F4F8F5;
+  color: var(--text-dark);
+}
+
+.policies-page .policy-hero {
+  background: #D4E1D9;
+  padding: 56px 24px;
+}
+
+.policies-page .policy-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.policies-page .policy-hero-kicker {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #C48A1C;
+  margin-bottom: 10px;
+}
+
+.policies-page .policy-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  line-height: 1.15;
+  color: var(--primary-green);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.policies-page .policy-hero-title em {
+  display: block;
+  font-style: italic;
+  color: #1A6B47;
+  font-weight: 500;
+}
+
+.policies-page .policy-hero-desc {
+  font-size: 0.88rem;
+  color: #54665D;
+  max-width: 440px;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.policies-page .policy-updated {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #195E45;
+}
+
+.policies-page .policy-hero-card {
+  position: relative;
+  border-radius: 76px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(12, 42, 32, 0.12);
+  height: 245px;
+}
+
+.policies-page .policy-hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.policies-page .policy-hero-card-caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: rgba(12, 42, 32, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.policies-page .policy-hero-card-caption small {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--accent-gold);
+  margin-bottom: 2px;
+}
+
+.policies-page .policy-hero-card-caption strong {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Tiêu đề giới thiệu */
+.policies-page .policy-intro {
+  padding: 54px 24px 24px;
+  text-align: center;
+}
+
+.policies-page .policy-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #B84A39;
+  margin-bottom: 8px;
+}
+
+.policies-page .policy-intro h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 3.2vw, 2.4rem);
+  color: var(--primary-green);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.policies-page .policy-intro h2 em {
+  display: block;
+  font-style: italic;
+  color: #195E45;
+  font-weight: 500;
+}
+
+.policies-page .policy-intro p {
+  max-width: 660px;
+  margin: 0 auto;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Bố cục 2 cột: Danh mục trái + 6 thẻ chính sách phải */
+.policies-page .policy-main-section {
+  padding: 28px 24px 72px;
+}
+
+.policies-page .policy-layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.policies-page .policy-sidebar {
+  position: sticky;
+  top: 88px;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 20px 16px;
+  box-shadow: 0 6px 20px rgba(12, 42, 32, 0.04);
+}
+
+.policies-page .policy-sidebar-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--primary-green);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.policies-page .policy-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.policies-page .policy-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.policies-page .policy-nav-link span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.policies-page .policy-nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #BAC8C0;
+  flex-shrink: 0;
+}
+
+.policies-page .policy-nav-link:hover,
+.policies-page .policy-nav-link.active {
+  background: #EAF2EC;
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.policies-page .policy-nav-link.active .policy-nav-dot {
+  background: var(--primary-green);
+}
+
+.policies-page .policy-help-box {
+  margin-top: 18px;
+  padding: 14px;
+  background: #F4F8F5;
+  border: 1px solid #DCE7DF;
+  border-radius: 8px;
+}
+
+.policies-page .policy-help-box h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.policies-page .policy-help-box p {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.policies-page .policy-help-box a {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #195E45;
+}
+
+/* Nội dung chính sách bên phải */
+.policies-page .policy-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.policies-page .policy-content-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--primary-green);
+}
+
+.policies-page .policy-count-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.policies-page .policy-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.policies-page .policy-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 28px 32px;
+  box-shadow: 0 4px 18px rgba(12, 42, 32, 0.035);
+  scroll-margin-top: 92px;
+}
+
+.policies-page .policy-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #EDF2EE;
+}
+
+.policies-page .policy-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #EAF2EC;
+  color: var(--primary-green);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.policies-page .policy-kicker {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: #B84A39;
+  margin-bottom: 4px;
+}
+
+.policies-page .policy-card-top h4 {
+  font-family: var(--font-heading);
+  font-size: 1.32rem;
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.policies-page .policy-card-lead {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.policies-page .policy-clause {
+  margin-bottom: 16px;
+}
+
+.policies-page .policy-clause:last-child {
+  margin-bottom: 0;
+}
+
+.policies-page .policy-clause h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 6px;
+}
+
+.policies-page .policy-clause p,
+.policies-page .policy-clause li {
+  font-size: 0.84rem;
+  color: #46574F;
+  line-height: 1.6;
+}
+
+.policies-page .policy-clause ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 4px;
+}
+
+.policies-page .policy-clause li {
+  margin-bottom: 4px;
+}
+
+/* 4 phương thức thanh toán ở mục 02 */
+.policies-page .payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.policies-page .payment-method-box {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 14px 10px;
+  text-align: center;
+  background: #FAFBF9;
+}
+
+.policies-page .payment-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  margin: 0 auto 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.policies-page .payment-badge.momo {
+  background: #A50064;
+}
+
+.policies-page .payment-badge.vnpay {
+  background: #005BAA;
+}
+
+.policies-page .payment-badge.zalopay {
+  background: #0068FF;
+}
+
+.policies-page .payment-badge.bank {
+  background: #D98E1A;
+}
+
+.policies-page .payment-method-box span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* CTA & Footer đồng bộ */
+.policies-page .cta-banner {
+  text-align: left;
+  padding: 56px 24px !important;
+}
+
+.policies-page .cta-banner .cta-content {
+  margin: 0;
+  max-width: 520px;
+  text-align: left;
+}
+
+.policies-page .cta-banner .section-heading {
+  color: #ffffff;
+}
+
+.policies-page .cta-banner p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.policies-page .site-footer {
+  background-color: #1B3124;
+  padding: 44px 24px 28px !important;
+}
+
+.policies-page .footer-grid {
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+}
+
+.policies-page .footer-col h5 {
+  color: #ffffff;
+}
+
+.policies-page .footer-bottom {
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .policies-page .policy-hero-grid,
+  .policies-page .policy-layout {
+    grid-template-columns: 1fr;
+  }
+  .policies-page .policy-sidebar {
+    position: static;
+  }
+  .policies-page .payment-methods-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* Đổi màu chữ khối nội dung chính sách cho khớp tông thiết kế */
+.policies-page .policy-kicker {
+  color: #D98E1A;
+}
+
+.policies-page .policy-card-top h4,
+.policies-page .policy-clause h5 {
+  color: var(--primary-green);
+}
+
+.policies-page .policy-card-lead,
+.policies-page .policy-clause p,
+.policies-page .policy-clause li {
+  color: var(--text-muted);
+}
+.policies-page .policy-clause h5 {
+  color: #1A6B47;
+}
+/* Thu nhỏ icon thanh toán và thu gọn thẻ cho khớp ảnh mẫu */
+.policies-page .payment-methods-grid {
+  gap: 14px;
+}
+
+.policies-page .payment-method-box {
+  background: #ffffff;
+  border: 1px solid #DCE6DF;
+  border-radius: 10px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 92px;
+}
+
+.policies-page .payment-logo {
+  width: 36px;
+  height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+  display: block;
+}
+
+.policies-page .payment-method-box span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #55665D;
+}
