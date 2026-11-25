@@ -98,16 +98,6 @@ Nhóm thống nhất quy trình xử lý lỗi như sau:
 
 Để thuận tiện trong việc quản lý và phối hợp, nhóm sử dụng nhánh `fix/bug-fixes` làm nhánh tập hợp các thay đổi sửa lỗi.
 
-Đối với từng lỗi cần xử lý, thành viên tạo nhánh riêng theo cấu trúc:
-
-`fix/ten-loi`
-
-Ví dụ:
-
-- `fix/header-merge-conflict`
-- `fix/page-navigation`
-- `fix/responsive-layout`
-
 Sau khi hoàn thành, thành viên push code và tạo Pull Request để nhóm trưởng review. Các thay đổi chỉ được Merge sau khi đã kiểm tra và đảm bảo không ảnh hưởng đến những chức năng hiện có.
 
 ## 7. Nguyên tắc cập nhật báo cáo
