@@ -3,515 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quản lý thông tin, hành trình trải nghiệm và cài đặt tài khoản Nét Việt.">
-    <meta name="theme-color" content="#103b2d">
-    <title>Tài khoản của tôi | Nét Việt</title>
+    <meta name="description" content="Đăng nhập hoặc tạo tài khoản Nét Việt để lưu giữ hành trình khám phá văn hóa Việt Nam.">
+    <meta name="theme-color" content="#f2f7f3">
+    <title>Tài khoản | Nét Việt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .account-page {
-            --account-green: #12513d;
-            --account-green-dark: #103b2d;
-            --account-green-soft: #e8f1e8;
-            --account-gold: #e9a323;
-            --account-text: #24352e;
-            --account-muted: #78857e;
-            --account-line: #e7ece7;
-            --account-surface: #fff;
-            min-width: 320px;
-            background: #f2f7f3;
-            color: var(--account-text);
+            --auth-green: #075b43;
+            --auth-ink: #263b32;
+            --auth-muted: #78857e;
+            min-width: 0;
+            background: #fff;
+            color: var(--auth-ink);
             font-family: var(--font-body, "Be Vietnam Pro", sans-serif);
         }
-
-        .account-page *,
-        .account-page *::before,
-        .account-page *::after { box-sizing: border-box; }
-
+        .account-page *, .account-page *::before, .account-page *::after { box-sizing: border-box; }
         .account-page a { color: inherit; text-decoration: none; }
-        .account-page button,
-        .account-page input,
-        .account-page select { font: inherit; }
+        .account-page button, .account-page input { font-family: inherit; }
         .account-page button { color: inherit; }
         .account-page [hidden] { display: none !important; }
-
-        .account-page .announcement-bar {
-            min-height: 23px;
-            padding: 5px 16px;
-            background: #102a20;
-            font-size: 9px;
-            letter-spacing: 1.2px;
+        .account-frame {
+            width: 100%;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background: #f2f7f3;
         }
-        .account-page .announcement-bar span { color: var(--account-gold); }
-        .account-page .site-header {
-            position: relative;
-            z-index: 20;
-            background: rgba(255,255,255,.97);
-            border-bottom: 1px solid #e8eee9;
-        }
-        .account-page .header-inner {
-            width: min(100% - 48px, 1120px);
-            min-height: 66px;
+        .auth-main {
+            width: min(100% - 48px, 1200px);
             margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
+            padding: clamp(38px, 5vw, 64px) 0 clamp(46px, 5.5vw, 72px);
         }
-        .account-page .brand {
-            display: inline-flex;
-            align-items: center;
-            flex: 0 0 auto;
-            gap: 8px;
-            color: var(--account-green-dark);
-            font-family: var(--font-heading, "Playfair Display", Georgia, serif);
-            font-size: 21px;
-            font-style: italic;
-            font-weight: 700;
+        .auth-card {
+            display: grid;
+            width: min(94%, 1080px);
+            min-height: clamp(480px, 42vw, 600px);
+            margin: auto;
+            grid-template-columns: minmax(0, .45fr) minmax(0, .55fr);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.92);
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(27, 62, 43, .09), 0 2px 8px rgba(27, 62, 43, .035);
+            animation: auth-arrive .55s cubic-bezier(.2,.7,.2,1) both;
         }
-        .account-page .brand img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
-        .account-page .main-nav { display: flex; align-items: center; gap: clamp(14px, 2.2vw, 32px); }
-        .account-page .nav-link {
+        .auth-art {
             position: relative;
-            display: inline-block;
-            padding: 24px 0 21px;
-            color: #42544a;
-            font-size: 11px;
-            font-weight: 600;
-            white-space: nowrap;
+            display: flex;
+            min-height: 0;
+            align-items: flex-end;
+            overflow: hidden;
+            isolation: isolate;
+            padding: clamp(28px, 4vw, 48px);
+            color: #fff;
+            background: #153f35;
         }
-        .account-page .nav-link:hover,
-        .account-page .nav-link[aria-current="page"] { color: var(--account-green); }
-        .account-page .nav-link[aria-current="page"]::after {
+        .auth-art > img {
             position: absolute;
-            right: 0;
-            bottom: 13px;
-            left: 0;
-            height: 2px;
-            background: var(--account-gold);
+            z-index: -2;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 8% center;
+            filter: saturate(.82) brightness(.82);
+            animation: auth-image-in 1.1s ease-out both;
+        }
+        .auth-art::before {
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(9,39,33,.08) 8%, rgba(9,39,33,.28) 40%, rgba(7,38,30,.91) 100%);
             content: "";
         }
-        .account-page .header-actions { display: flex; align-items: center; gap: 5px; }
-        .account-page .header-icon {
-            position: relative;
-            display: grid;
-            width: 36px;
-            height: 36px;
-            place-items: center;
-            border-radius: 50%;
-            color: var(--account-green-dark);
-            transition: background .2s ease, transform .2s ease;
-        }
-        .account-page .header-icon:hover { background: var(--account-green-soft); transform: translateY(-1px); }
-        .account-page .header-icon svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
-        .account-page .cart-count-badge {
-            position: absolute;
-            top: 1px;
-            right: 0;
-            min-width: 15px;
-            height: 15px;
-            padding: 0 3px;
-            border: 2px solid #fff;
-            border-radius: 10px;
-            background: #d65b43;
-            color: #fff;
-            font-size: 8px;
-            line-height: 11px;
-            text-align: center;
-        }
-        .account-page .menu-toggle {
-            display: none;
-            width: 38px;
-            height: 38px;
-            padding: 9px;
-            border: 1px solid var(--account-line);
-            border-radius: 9px;
-            background: #fff;
-            cursor: pointer;
-        }
-        .account-page .menu-toggle span { display: block; height: 2px; margin: 4px 0; border-radius: 2px; background: var(--account-green-dark); }
-
-        .account-main {
-            width: min(100% - 48px, 1040px);
-            min-height: 710px;
-            margin: 0 auto;
-            padding: 36px 0 92px;
-        }
-        .account-layout { display: grid; grid-template-columns: 252px minmax(0, 1fr); align-items: start; gap: 22px; }
-        .account-sidebar,
-        .account-content {
-            overflow: hidden;
-            border: 1px solid rgba(222,232,224,.8);
-            border-radius: 16px;
-            background: var(--account-surface);
-            box-shadow: 0 8px 26px rgba(27,65,46,.055);
-        }
-        .account-sidebar { position: sticky; top: 20px; }
-        .account-identity { position: relative; z-index: 1; padding: 30px 20px 19px; text-align: center; }
-        .account-avatar {
-            display: grid;
-            width: 76px;
-            height: 76px;
-            margin: 0 auto 12px;
-            place-items: center;
-            border: 4px solid #f0f5ed;
-            border-radius: 50%;
-            background: linear-gradient(145deg, #9abb8c, #548a68);
-            box-shadow: 0 5px 14px rgba(27,65,46,.13);
-            color: #fff;
-            font-family: var(--font-heading, Georgia, serif);
-            font-size: 25px;
-            font-weight: 700;
-        }
-        .account-identity h2 { margin: 0; color: #173a2d; font-family: var(--font-heading, Georgia, serif); font-size: 17px; font-weight: 600; }
-        .account-identity p { margin: 4px 0 0; color: var(--account-muted); font-size: 11px; }
-        .account-nav { position: relative; z-index: 1; display: grid; gap: 4px; padding: 8px 14px 24px; }
-        .account-tab {
-            display: flex;
-            min-height: 39px;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 10px;
-            border: 0;
-            border-radius: 8px;
-            background: transparent;
-            color: #59685f;
-            cursor: pointer;
-            font-size: 11px;
-            font-weight: 500;
-            text-align: left;
-            transition: background .18s ease, color .18s ease, transform .18s ease;
-        }
-        .account-tab:hover { background: #f4f7f3; color: var(--account-green); transform: translateX(2px); }
-        .account-tab[aria-selected="true"] { background: #e4eee0; color: #174b39; font-weight: 700; }
-        .account-tab-icon { width: 17px; color: #68796e; font-size: 14px; text-align: center; }
-        .account-tab[aria-selected="true"] .account-tab-icon { color: var(--account-green); }
-        .account-signout {
+        .auth-art-copy { width: min(100%, 430px); }
+        .auth-art-kicker {
             display: flex;
             align-items: center;
             gap: 9px;
-            margin: 1px 14px 0;
-            padding: 15px 10px;
-            border: 0;
-            border-top: 1px solid #edf0ec;
-            background: transparent;
-            color: #c85c45 !important;
-            cursor: pointer;
+            margin: 0 0 14px;
+            color: #f3c76e;
             font-size: 11px;
-            font-weight: 600;
-        }
-        .account-signout:hover { color: #9e3828 !important; }
-        .account-content { min-height: 520px; padding: 27px 28px 30px; }
-        .account-panel[hidden] { display: none !important; }
-        .panel-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin: 0 0 19px; }
-        .panel-heading h1,
-        .panel-heading h2 {
-            position: relative;
-            margin: 0;
-            padding-left: 18px;
-            color: #234a38;
-            font-family: var(--font-heading, Georgia, serif);
-            font-size: clamp(21px, 2.4vw, 26px);
-            font-weight: 600;
             line-height: 1.3;
+            font-weight: 700;
+            letter-spacing: 1.2px;
         }
-        .panel-heading h1::before,
-        .panel-heading h2::before { position: absolute; top: 12px; left: 0; width: 11px; height: 2px; background: var(--account-gold); content: ""; }
-        .panel-heading p { margin: 6px 0 0 18px; color: var(--account-muted); font-size: 11px; line-height: 1.6; }
-        .subheading { margin: 21px 0 9px; color: #315440; font-family: var(--font-heading, Georgia, serif); font-size: 16px; }
-        .panel-card { margin-bottom: 10px; padding: 16px; border: 1px solid var(--account-line); border-radius: 11px; background: #fff; }
-        .panel-card:last-child { margin-bottom: 0; }
-        .card-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 11px; border-bottom: 1px solid #edf0ec; }
-        .card-heading h3 { margin: 0; color: #294d3a; font-family: var(--font-heading, Georgia, serif); font-size: 14px; font-weight: 600; }
-        .card-heading p { margin: 3px 0 0; color: var(--account-muted); font-size: 10px; }
-        .text-button { padding: 5px 10px; border: 1px solid #9db9a8; border-radius: 7px; background: white; color: var(--account-green) !important; cursor: pointer; font-size: 10px; font-weight: 700; transition: background .18s ease, color .18s ease; }
-        .text-button:hover { background: var(--account-green); color: white !important; }
-        .primary-button {
-            display: inline-flex;
-            min-height: 38px;
+        .auth-art-kicker::before { width: 23px; height: 1px; background: currentColor; content: ""; }
+        .auth-art h1 {
+            margin: 0;
+            color: #fff;
+            font-family: var(--font-heading, Georgia, serif);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 500;
+            line-height: 1.12;
+            letter-spacing: -.7px;
+        }
+        .auth-art h1 em { color: #f0c46b; font-weight: 500; }
+        .auth-art-description {
+            max-width: 390px;
+            margin: 9px 0 0;
+            color: rgba(255,255,255,.82);
+            font-size: 14px;
+            line-height: 1.65;
+        }
+        .auth-art-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 12px 0 0;
+            color: #f2d594;
+            font-family: var(--font-heading, Georgia, serif);
+            font-size: 13px;
+            font-style: italic;
+        }
+        .auth-art-note span { color: #f0be55; font-size: 19px; }
+
+        .auth-panel {
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 9px 16px;
-            border: 1px solid var(--account-green);
-            border-radius: 8px;
-            background: var(--account-green);
-            color: #fff !important;
-            cursor: pointer;
-            font-size: 11px;
-            font-weight: 700;
-            white-space: nowrap;
-            transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+            padding: clamp(28px, 4vw, 48px);
         }
-        .primary-button:hover { transform: translateY(-1px); background: #0c4030; box-shadow: 0 5px 14px rgba(18,81,61,.18); }
-        .secondary-button { background: #fff; color: var(--account-green) !important; }
-        .secondary-button:hover { background: #f1f7f2; color: var(--account-green) !important; }
-
-        .profile-form { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 15px; padding-top: 14px; }
-        .form-field { display: grid; gap: 6px; }
-        .form-field.full-width { grid-column: 1 / -1; }
-        .form-field label { color: #4a5e52; font-size: 10px; font-weight: 700; }
-        .form-field input,
-        .form-field select {
+        .auth-panel-inner { width: min(100%, 430px); }
+        .auth-view:not([hidden]) { animation: auth-panel-in .36s ease both; }
+        .auth-eyebrow {
+            margin: 0 0 3px;
+            color: #c28a24;
+            font-size: 10px;
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+        }
+        .auth-title {
+            margin: 0;
+            color: #193d30;
+            font-family: var(--font-heading, Georgia, serif);
+            font-size: clamp(28px, 3vw, 36px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.4px;
+        }
+        .auth-title em { color: var(--auth-green); font-weight: 500; }
+        .auth-intro { margin: 6px 0 12px; color: var(--auth-muted); font-size: 13px; line-height: 1.5; }
+        .auth-form { display: grid; gap: 8px; }
+        .auth-fields { display: grid; gap: 8px; }
+        .auth-fields-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .auth-field { min-width: 0; }
+        .auth-field label {
+            display: block;
+            margin-bottom: 4px;
+            color: #3d5046;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .auth-field label .required { color: #c47445; }
+        .auth-input-wrap { position: relative; }
+        .auth-field input {
+            display: block;
             width: 100%;
-            min-height: 39px;
-            padding: 9px 11px;
-            border: 1px solid #e1e8e1;
+            min-height: 42px;
+            padding: 0 12px;
+            border: 1px solid #e3eae4;
             border-radius: 7px;
             outline: 0;
-            background: #fff;
-            color: var(--account-text);
-            font-size: 11px;
-            transition: border-color .2s ease, box-shadow .2s ease;
+            background: #fbfcfa;
+            color: #263b32;
+            font-size: 13px;
+            transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
         }
-        .form-field input:focus,
-        .form-field select:focus { border-color: #6b9b80; box-shadow: 0 0 0 3px rgba(61,131,91,.12); }
-        .profile-footer { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 15px; }
-        .profile-footer .primary-button { min-height: 34px; padding: 7px 12px; font-size: 10px; line-height: 1.4; }
-        .form-note { min-height: 17px; margin: 0; color: var(--account-muted); font-size: 10px; }
-        .avatar-upload { display: flex; align-items: center; gap: 12px; padding: 12px 0 2px; }
-        .avatar-upload .account-avatar { width: 54px; height: 54px; margin: 0; font-size: 18px; }
-        .avatar-upload p { margin: 0 0 5px; color: #53655a; font-size: 10px; }
-        .file-button { position: relative; overflow: hidden; }
-        .file-button input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
-
-        .filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 0 0 16px; }
-        .filter-chip {
-            min-height: 30px;
-            padding: 6px 11px;
-            border: 1px solid #e0e8e1;
-            border-radius: 18px;
-            background: #fff;
-            color: #56675d;
-            cursor: pointer;
-            font-size: 10px;
-            font-weight: 600;
-            transition: all .18s ease;
-        }
-        .filter-chip:hover { border-color: #9db9a8; color: var(--account-green); }
-        .filter-chip[aria-pressed="true"] { border-color: var(--account-green); background: var(--account-green); color: #fff; }
-        .experience-source-note { margin: -7px 0 14px; color: var(--account-muted); font-size: 10px; line-height: 1.6; }
-        .experience-list { display: grid; gap: 10px; }
-        .experience-card {
+        .auth-field input::placeholder { color: #a4ada6; }
+        .auth-field input:hover { border-color: #c7d6ca; }
+        .auth-field input:focus { border-color: #6a9c7d; background: #fff; box-shadow: 0 0 0 3px rgba(62,126,82,.12); }
+        .auth-field input[aria-invalid="true"] { border-color: #c66b54; box-shadow: 0 0 0 3px rgba(198,107,84,.1); }
+        .auth-field .auth-input-wrap input { padding-right: 40px; }
+        .auth-password-toggle {
+            position: absolute;
+            top: 50%;
+            right: 6px;
             display: grid;
-            grid-template-columns: 126px minmax(0,1fr);
-            overflow: hidden;
-            border: 1px solid #e8eee8;
-            border-radius: 12px;
-            background: #fff;
-            box-shadow: 0 3px 12px rgba(31,67,48,.045);
-            transition: box-shadow .2s ease, transform .2s ease;
+            width: 34px;
+            height: 34px;
+            place-items: center;
+            transform: translateY(-50%);
+            border: 0;
+            border-radius: 6px;
+            background: transparent;
+            color: #819087;
+            cursor: pointer;
+            line-height: 1;
+            transition: background .2s ease, color .2s ease;
         }
-        .experience-card:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(31,67,48,.09); }
-        .experience-card[hidden] { display: none; }
-        .experience-photo { min-height: 125px; background: #e5eee5; }
-        .experience-photo img { width: 100%; height: 100%; min-height: 125px; object-fit: cover; }
-        .experience-info { min-width: 0; padding: 13px 14px; }
-        .experience-topline { display: flex; align-items: flex-start; justify-content: space-between; gap: 9px; }
-        .experience-info h3 { margin: 0; color: #24513b; font-family: var(--font-heading, Georgia, serif); font-size: 16px; font-weight: 600; line-height: 1.35; }
-        .experience-meta { display: flex; flex-wrap: wrap; gap: 7px 12px; margin: 7px 0; color: #68786e; font-size: 9px; }
-        .experience-meta span { white-space: nowrap; }
-        .experience-location { display: block; overflow: hidden; color: #617167; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
-        .experience-actions { display: flex; align-items: center; justify-content: flex-end; gap: 7px; margin-top: 10px; }
-        .status-badge { flex: 0 0 auto; padding: 4px 8px; border-radius: 20px; background: #edf4d8; color: #547331; font-size: 9px; font-weight: 700; white-space: nowrap; }
-        .status-badge.completed { background: #e4f0f6; color: #357093; }
-        .status-badge.cancelled { background: #fbe9e5; color: #b94f3d; }
-        .quiet-button { display: inline-flex; min-height: 31px; align-items: center; justify-content: center; padding: 6px 10px; border: 1px solid #91b5a1; border-radius: 7px; background: #fff; color: var(--account-green) !important; cursor: pointer; font-size: 9px; font-weight: 700; }
-        .quiet-button:hover { background: #eff6f0; }
-        .empty-results { padding: 30px 15px; border: 1px dashed #dce6dc; border-radius: 10px; color: var(--account-muted); font-size: 12px; text-align: center; }
-
-        .journey-list { display: grid; gap: 13px; }
-        .journey-card { overflow: hidden; border: 1px solid #e4ebe4; border-radius: 12px; background: #fff; box-shadow: 0 3px 13px rgba(31,67,48,.045); }
-        .journey-card[hidden] { display: none; }
-        .journey-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 15px 15px 11px; }
-        .journey-title-wrap { display: flex; align-items: flex-start; gap: 10px; }
-        .journey-number { display: grid; width: 27px; height: 27px; flex: 0 0 27px; place-items: center; border-radius: 8px; background: #eaf2e8; color: var(--account-green); font-size: 10px; font-weight: 800; }
-        .journey-title-wrap h3 { margin: 0; color: #24513b; font-family: var(--font-heading, Georgia, serif); font-size: 16px; font-weight: 600; line-height: 1.35; }
-        .journey-title-wrap p { margin: 3px 0 0; color: var(--account-muted); font-size: 9px; }
-        .journey-card-body { padding: 0 15px 13px; }
-        .journey-facts { display: flex; flex-wrap: wrap; gap: 7px 13px; margin: 0 0 10px; color: #68786e; font-size: 9px; }
-        .journey-route { padding: 10px 12px; border-radius: 8px; background: #f3f7f1; color: #526358; font-size: 10px; line-height: 1.7; }
-        .journey-route strong { color: #365845; }
-        .stop-list { display: grid; gap: 0; margin-top: 9px; }
-        .stop-row { display: grid; grid-template-columns: 24px minmax(0,1fr) auto; align-items: center; gap: 8px; padding: 9px 0; border-bottom: 1px solid #edf0ec; }
-        .stop-row:last-child { border-bottom: 0; }
-        .stop-index { display: grid; width: 21px; height: 21px; place-items: center; border-radius: 50%; background: #eff5ed; color: #52775d; font-size: 9px; font-weight: 700; }
-        .stop-row strong { display: block; color: #3b5547; font-size: 10px; font-weight: 700; }
-        .stop-row small { display: block; margin-top: 2px; color: #869188; font-size: 9px; }
-        .stop-state { color: #548064; font-size: 9px; font-weight: 700; white-space: nowrap; }
-        .journey-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 9px; border-top: 1px solid #edf0ec; }
-        .journey-card-footer small { color: var(--account-muted); font-size: 9px; }
-        .pagination { display: flex; justify-content: center; gap: 5px; margin-top: 16px; }
-        .pagination button { width: 30px; height: 30px; border: 1px solid #e1e8e1; border-radius: 7px; background: #fff; color: #54645a; cursor: pointer; font-size: 10px; }
-        .pagination button:hover:not(:disabled) { border-color: #8eaf98; color: var(--account-green); }
-        .pagination button[aria-current="page"] { border-color: var(--account-green); background: var(--account-green); color: #fff; }
-        .pagination button:disabled { opacity: .4; cursor: not-allowed; }
-
-        .settings-card { margin-bottom: 10px; padding: 15px 16px 5px; border: 1px solid var(--account-line); border-radius: 11px; background: #fff; }
-        .settings-card > .card-heading { margin-bottom: 1px; }
-        .settings-row { display: flex; min-height: 52px; align-items: center; justify-content: space-between; gap: 14px; padding: 8px 0; border-bottom: 1px solid #eff2ee; }
-        .settings-row:last-child { border-bottom: 0; }
-        .setting-copy { min-width: 0; }
-        .setting-copy strong { display: block; color: #465a4d; font-size: 10px; font-weight: 700; }
-        .setting-copy small { display: block; margin-top: 3px; color: #8a948d; font-size: 9px; line-height: 1.5; }
-        .toggle-control { position: relative; display: inline-flex; flex: 0 0 auto; align-items: center; }
-        .toggle-control input { position: absolute; width: 1px; height: 1px; opacity: 0; }
-        .toggle-track { position: relative; width: 35px; height: 20px; border-radius: 20px; background: #d8e0d9; cursor: pointer; transition: background .2s ease; }
-        .toggle-track::after { position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px #0002; content: ""; transition: transform .2s ease; }
-        .toggle-control input:checked + .toggle-track { background: var(--account-green); }
-        .toggle-control input:checked + .toggle-track::after { transform: translateX(15px); }
-        .toggle-control input:focus-visible + .toggle-track { outline: 3px solid rgba(61,131,91,.22); outline-offset: 2px; }
-        .settings-select { min-width: 122px; min-height: 34px; padding: 6px 9px; border: 1px solid #e1e8e1; border-radius: 7px; background: #fff; color: #4a5e52; font-size: 10px; }
-        .danger-card { border-color: #f0dfda; }
-        .danger-card .card-heading h3,
-        .danger-card .setting-copy strong { color: #a64c3c; }
-        .danger-card .quiet-button { border-color: #e5b3a8; color: #ad4b3b !important; }
-        .settings-footer { display: flex; align-items: center; justify-content: flex-end; gap: 9px; padding-top: 3px; }
-
-        .account-page .closing-banner {
-            position: relative;
+        .auth-password-toggle:hover { background: #edf4ee; color: var(--auth-green); }
+        .auth-password-toggle:focus-visible { outline: 2px solid #71a081; outline-offset: 1px; }
+        .auth-password-toggle svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
+        .auth-options { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 2px 0; }
+        .auth-options > * { line-height: 1.25; }
+        .auth-check {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 7px;
+            color: #68776e;
+            font-size: 11px;
+            line-height: 1.4;
+            cursor: pointer;
+        }
+        .auth-check input { width: 16px; height: 16px; flex: 0 0 16px; margin: 1px 0 0; accent-color: var(--auth-green); }
+        .auth-text-link { padding: 0; border: 0; background: transparent; color: var(--auth-green) !important; cursor: pointer; font-size: 12px; font-weight: 700; }
+        .auth-text-link:hover { color: #bd8420 !important; text-decoration: underline; text-underline-offset: 3px; }
+        .auth-submit {
             display: flex;
-            min-height: 190px;
+            width: 100%;
+            min-height: 46px;
             align-items: center;
-            overflow: hidden;
-            background: url("images/footer-banner.jpg") center 48% / cover no-repeat;
-            color: #fff;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1px;
+            border: 0;
+            border-radius: 7px;
+            background: linear-gradient(100deg, #075b43, #0d684c);
+            box-shadow: 0 5px 12px rgba(7,91,67,.12);
+            color: #fff !important;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.2;
+            transition: box-shadow .2s ease, transform .2s ease, background .2s ease;
         }
-        .account-page .closing-banner::before { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,48,35,.88), rgba(12,48,35,.45)); content: ""; }
-        .closing-content { position: relative; width: min(100% - 48px, 840px); margin: auto; padding: 30px 0; }
-        .closing-content .eyebrow { margin: 0 0 8px; color: #e9b34b; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
-        .closing-content h2 { margin: 0; font-family: var(--font-heading, Georgia, serif); font-size: clamp(23px, 3vw, 31px); line-height: 1.2; }
-        .closing-content p:last-child { max-width: 440px; margin: 8px 0 0; color: #e0eae3; font-size: 10px; }
-        .account-page .site-footer { padding: 32px 0 15px; background: #102a20; color: #dce6de; }
-        .account-page .footer-grid { width: min(100% - 48px, 840px); margin: auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 25px; }
-        .footer-brand .brand { color: #fff; }
-        .footer-brand p { max-width: 250px; margin: 10px 0 0; color: #b8c8bc; font-size: 9px; line-height: 1.7; }
-        .footer-column { display: grid; align-content: start; gap: 8px; }
-        .footer-column h2 { margin: 2px 0 4px; color: #fff; font-size: 9px; letter-spacing: .7px; }
-        .footer-column a { color: #b8c8bc; font-size: 9px; }
-        .footer-column a:hover { color: #f0bd5a; }
-        .account-page .footer-bottom { width: min(100% - 48px, 840px); display: flex; justify-content: space-between; gap: 15px; margin: 25px auto 0; padding-top: 13px; border-top: 1px solid rgba(255,255,255,.11); color: #a8b9ae; font-size: 8px; }
-        .footer-bottom p { margin: 0; }
-        .footer-bottom a:hover { color: #fff; }
-
-        .account-toast {
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-            z-index: 50;
-            max-width: min(370px, calc(100vw - 32px));
-            padding: 12px 16px;
-            border: 1px solid rgba(255,255,255,.16);
-            border-radius: 10px;
-            background: #143d30;
-            box-shadow: 0 10px 30px rgba(15,42,30,.2);
-            color: #fff;
+        .auth-submit:hover { transform: translateY(-1px); background: linear-gradient(100deg, #064c39, #09563f); box-shadow: 0 8px 18px rgba(7,91,67,.2); }
+        .auth-submit:active { transform: translateY(0); }
+        .auth-submit:focus-visible { outline: 3px solid rgba(7,91,67,.25); outline-offset: 3px; }
+        .auth-submit svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; transition: transform .2s ease; }
+        .auth-submit:hover svg { transform: translateX(3px); }
+        .auth-submit:disabled { opacity: .7; cursor: wait; transform: none; }
+        .auth-feedback {
+            min-height: 0;
+            margin: 0;
+            color: #9c573f;
             font-size: 12px;
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(10px);
-            transition: opacity .22s ease, transform .22s ease;
+            line-height: 1.6;
         }
-        .account-toast.is-visible { opacity: 1; transform: translateY(0); }
+        .auth-feedback:not(:empty) { padding: 7px 9px; border: 1px solid #f0ddd5; border-radius: 6px; background: #fff8f5; }
+        .auth-divider { display: flex; align-items: center; gap: 12px; color: #87958c; font-size: 11px; white-space: nowrap; }
+        .auth-divider::before, .auth-divider::after { height: 1px; flex: 1; background: #e8eee8; content: ""; }
+        .auth-social-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+        .auth-social-button {
+            display: flex;
+            min-width: 0;
+            min-height: 42px;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 7px 8px;
+            border: 1px solid #e8a447;
+            border-radius: 7px;
+            background: #fff;
+            color: #28332d;
+            cursor: pointer;
+            font-size: clamp(10px, 1.1vw, 12px);
+            font-weight: 700;
+            line-height: 1.2;
+            transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+        }
+        .auth-social-button:hover { transform: translateY(-1px); background: #fffdf9; box-shadow: 0 4px 10px rgba(95,65,21,.1); }
+        .auth-social-button:focus-visible { outline: 2px solid rgba(7,91,67,.35); outline-offset: 2px; }
+        .auth-social-button svg { width: 18px; height: 18px; flex: 0 0 18px; }
+        .auth-social-button span { text-align: left; }
+        .auth-bottom-rule { height: 1px; margin: 4px 0 0; background: #edf0ed; }
+        .auth-copyright { margin: 0; color: #a0aaa3; font-size: 9px; line-height: 1.4; text-align: center; }
+        .auth-switch {
+            margin: 3px 0 0;
+            color: #78857e;
+            font-size: 12px;
+            text-align: center;
+        }
+        .auth-switch a { margin-left: 4px; color: var(--auth-green) !important; font-weight: 700; }
+        .auth-switch a:hover { color: #bd8420 !important; text-decoration: underline; text-underline-offset: 3px; }
+
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+        @keyframes auth-arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes auth-image-in { from { transform: scale(1.045); } to { transform: scale(1); } }
+        @keyframes auth-panel-in { from { opacity: .35; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 900px) {
-            .account-page .header-inner { gap: 14px; }
-            .account-page .main-nav { gap: 13px; }
-            .account-page .nav-link { font-size: 10px; }
-            .account-layout { grid-template-columns: 220px minmax(0,1fr); gap: 16px; }
-            .account-content { padding: 23px 20px; }
+            .auth-main { width: 100%; padding: 42px 0 52px; }
+            .auth-art { padding: 28px; }
+            .auth-panel { padding: 28px; }
+            .auth-art h1 { font-size: clamp(28px, 4vw, 36px); }
+            .auth-social-button { gap: 5px; padding-right: 6px; padding-left: 6px; }
         }
-        @media (max-width: 720px) {
-            .account-page .header-inner { width: min(100% - 32px, 1120px); min-height: 60px; }
-            .account-page .menu-toggle { display: block; order: 3; }
-            .account-page .main-nav {
-                position: absolute;
-                top: calc(100% + 1px);
-                right: 0;
-                left: 0;
-                display: none;
-                align-items: stretch;
-                gap: 0;
-                padding: 7px 20px 13px;
-                border-bottom: 1px solid var(--account-line);
-                background: #fff;
-                box-shadow: 0 8px 18px rgba(24,56,39,.08);
-            }
-            .account-page .main-nav.is-open { display: grid; }
-            .account-page .nav-link { padding: 12px 4px; font-size: 12px; }
-            .account-page .nav-link[aria-current="page"]::after { display: none; }
-            .account-page .header-actions { margin-left: auto; }
-            .account-main { width: min(100% - 32px, 600px); min-height: auto; padding: 21px 0 55px; }
-            .account-layout { grid-template-columns: 1fr; gap: 14px; }
-            .account-sidebar { position: static; min-height: 0; }
-            .account-identity { display: flex; align-items: center; gap: 13px; padding: 13px 15px 10px; text-align: left; }
-            .account-identity .account-avatar { width: 52px; height: 52px; flex: 0 0 52px; margin: 0; font-size: 18px; }
-            .account-identity h2 { font-size: 15px; }
-            .account-nav { display: flex; overflow-x: auto; gap: 5px; padding: 6px 11px 12px; scrollbar-width: thin; }
-            .account-tab { flex: 0 0 auto; min-height: 35px; padding: 7px 9px; font-size: 10px; }
-            .account-tab:hover { transform: none; }
-            .account-tab-icon { display: none; }
-            .account-signout { position: absolute; top: 14px; right: 0; margin: 0 11px 0 0; padding: 7px 3px 7px 8px; border: 0; font-size: 10px; }
-            .account-content { min-height: 450px; padding: 21px 17px; }
-            .account-page .footer-grid { width: min(100% - 32px, 600px); grid-template-columns: 1fr 1fr; gap: 22px 18px; }
-            .footer-brand { grid-column: 1 / -1; }
-            .account-page .footer-bottom { width: min(100% - 32px, 600px); }
-            .closing-content { width: min(100% - 32px, 600px); }
+        @media (max-width: 760px) {
+            .auth-main { width: min(100% - 36px, 500px); padding: 32px 0 52px; }
+            .auth-card { width: 100%; min-height: 0; grid-template-columns: 1fr; border-radius: 14px; }
+            .auth-art { min-height: 250px; padding: 28px; }
+            .auth-art > img { object-position: 52% 43%; }
+            .auth-art h1 { max-width: 420px; font-size: 36px; }
+            .auth-art-kicker { margin-bottom: 10px; font-size: 11px; }
+            .auth-art-description { max-width: 470px; margin-top: 10px; font-size: 13px; }
+            .auth-art-note { display: none; }
+            .auth-panel { padding: 32px clamp(22px, 7vw, 42px) 36px; }
+            .auth-panel-inner { max-width: 480px; }
+            .auth-intro { margin-bottom: 14px; }
         }
-        @media (max-width: 480px) {
-            .account-main { width: calc(100% - 24px); padding-top: 13px; }
-            .account-content { padding: 18px 12px; border-radius: 12px; }
-            .panel-heading { margin-bottom: 15px; }
-            .panel-heading h1, .panel-heading h2 { font-size: 21px; }
-            .panel-heading p { font-size: 10px; }
-            .profile-form { grid-template-columns: 1fr; gap: 11px; }
-            .form-field.full-width { grid-column: auto; }
-            .profile-footer { align-items: flex-start; flex-direction: column; }
-            .experience-card { grid-template-columns: 89px minmax(0,1fr); }
-            .experience-photo, .experience-photo img { min-height: 119px; }
-            .experience-info { padding: 10px 9px; }
-            .experience-info h3 { font-size: 13px; }
-            .experience-meta { gap: 4px 7px; margin: 5px 0; font-size: 8px; }
-            .experience-actions { flex-wrap: wrap; gap: 5px; margin-top: 7px; }
-            .quiet-button { min-height: 28px; padding: 5px 7px; font-size: 8px; }
-            .status-badge { padding: 4px 6px; font-size: 8px; }
-            .journey-card-header { padding: 12px 10px 9px; }
-            .journey-card-body { padding: 0 10px 10px; }
-            .journey-title-wrap h3 { font-size: 14px; }
-            .journey-title-wrap p { font-size: 8px; }
-            .journey-route { font-size: 9px; }
-            .stop-row { grid-template-columns: 21px minmax(0,1fr) auto; gap: 6px; }
-            .stop-row strong, .stop-state { font-size: 8px; }
-            .stop-row small { font-size: 8px; }
-            .settings-card { padding: 12px 11px 4px; }
-            .settings-row { gap: 8px; }
-            .settings-select { min-width: 102px; max-width: 125px; font-size: 9px; }
-            .account-page .footer-grid { width: calc(100% - 32px); }
-            .account-page .footer-bottom { width: calc(100% - 32px); flex-direction: column; gap: 5px; }
-            .closing-content { width: calc(100% - 32px); }
-            .closing-content h2 { font-size: 24px; }
-            .account-toast { right: 12px; bottom: 12px; }
+        @media (max-width: 420px) {
+            .auth-main { width: calc(100% - 24px); padding-top: 22px; }
+            .auth-art { min-height: 220px; padding: 22px; }
+            .auth-art h1 { font-size: 32px; }
+            .auth-art-description { max-width: 330px; }
+            .auth-panel { padding: 27px 19px 29px; }
+            .auth-title { font-size: 30px; }
+            .auth-fields-two { grid-template-columns: 1fr; }
+            .auth-social-buttons { grid-template-columns: 1fr; }
+            .auth-options { align-items: flex-start; }
         }
         @media (prefers-reduced-motion: reduce) {
-            .account-page *, .account-page *::before, .account-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+            .account-page *, .account-page *::before, .account-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
         }
     </style>
 </head>
-<body class="account-page">
+<body class="account-page explore-page">
+    <div class="account-frame">
     <div class="announcement-bar">
         <p>VĂN HÓA KHÔNG CHỈ ĐỂ NGẮM NHÌN <span>— HÃY TRỰC TIẾP TRẢI NGHIỆM.</span></p>
     </div>
-
     <header class="site-header" id="top">
-        <div class="header-inner">
+        <div class="container header-inner">
             <a class="brand" href="index.html" aria-label="Nét Việt — Trang chủ">
                 <img src="images/logo-icon.jpg" alt="">
                 <span>Nét Việt</span>
             </a>
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Mở menu">
+            <button class="menu-toggle auth-menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Mở menu">
                 <span></span><span></span><span></span>
             </button>
             <nav class="main-nav" id="main-nav" aria-label="Điều hướng chính">
@@ -521,208 +344,150 @@
                 <a class="nav-link" href="products.html#cam-nang">Cẩm nang</a>
                 <a class="nav-link" href="about.html">Về chúng tôi</a>
             </nav>
-            <div class="header-actions">
-                <a class="header-icon" href="products.html#tim-kiem" aria-label="Tìm kiếm trải nghiệm">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
-                </a>
-                <a class="header-icon" href="#profile" data-open-tab="profile" aria-label="Tài khoản của tôi" aria-current="page">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.7-3.2 3.2-5 7-5s6.3 1.8 7 5"></path></svg>
-                </a>
-                <a class="header-icon cart-link" href="cart.html" aria-label="Giỏ hàng">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.5L22 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
-                    <span id="cart-count-badge" class="cart-count-badge" aria-live="polite">0</span>
-                </a>
-            </div>
+            <a class="header-search" href="products.html#tim-kiem" aria-label="Tìm trải nghiệm">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+            </a>
+            <a class="cart-link" href="cart.html" aria-label="Giỏ hàng, 0 sản phẩm">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.5L22 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+                <span id="cart-count-badge" class="cart-count-badge" aria-live="polite">0</span>
+            </a>
         </div>
     </header>
 
-    <main class="account-main">
-        <div class="account-layout">
-            <aside class="account-sidebar" aria-label="Khu vực tài khoản">
-                <div class="account-identity">
-                    <div class="account-avatar" data-avatar-initials aria-hidden="true">NA</div>
-                    <div><h2 data-profile-name>Nguyễn Văn A</h2><p>Thành viên Nét Việt</p></div>
+    <main class="auth-main">
+        <div class="auth-card">
+            <aside class="auth-art" aria-label="Cảm hứng hành trình Nét Việt">
+                <img src="images/about-landscape.jpg" alt="Dòng sông xanh len giữa núi đá và rừng nhiệt đới Việt Nam" fetchpriority="high">
+                <div class="auth-art-copy">
+                    <p class="auth-art-kicker">HÀNH TRÌNH CHẠM ĐẾN BẢN SẮC</p>
+                    <h1>Mỗi vùng đất,<br><em>một câu chuyện.</em></h1>
+                    <p class="auth-art-description">Gặp gỡ con người bản địa, tự tay trải nghiệm làng nghề và khám phá những câu chuyện làm nên vẻ đẹp văn hóa Việt Nam.</p>
+                    <p class="auth-art-note"><span aria-hidden="true">✦</span> Đi để hiểu. Trải nghiệm để nhớ.</p>
                 </div>
-                <nav class="account-nav" role="tablist" aria-label="Các mục tài khoản" aria-orientation="vertical">
-                    <button class="account-tab" id="tab-profile" type="button" role="tab" aria-selected="true" aria-controls="profile" tabindex="0" data-tab="profile"><span class="account-tab-icon" aria-hidden="true">♙</span>Thông tin cá nhân</button>
-                    <button class="account-tab" id="tab-journeys" type="button" role="tab" aria-selected="false" aria-controls="journeys" tabindex="-1" data-tab="journeys"><span class="account-tab-icon" aria-hidden="true">⌖</span>Hành trình của tôi</button>
-                    <button class="account-tab" id="tab-experiences" type="button" role="tab" aria-selected="false" aria-controls="experiences" tabindex="-1" data-tab="experiences"><span class="account-tab-icon" aria-hidden="true">▧</span>Trải nghiệm của tôi</button>
-                    <button class="account-tab" id="tab-settings" type="button" role="tab" aria-selected="false" aria-controls="settings" tabindex="-1" data-tab="settings"><span class="account-tab-icon" aria-hidden="true">⚙</span>Cài đặt tài khoản</button>
-                </nav>
-                <button class="account-signout" type="button" data-signout>Đăng xuất</button>
             </aside>
 
-            <div class="account-content">
-                <section class="account-panel" id="profile" role="tabpanel" aria-labelledby="tab-profile" tabindex="0" data-panel="profile">
-                    <div class="panel-heading">
-                        <div><h1>Thông tin cá nhân</h1><p>Cập nhật thông tin để Nét Việt đồng hành cùng bạn tốt hơn.</p></div>
-                    </div>
-                    <section class="panel-card" aria-labelledby="profile-details-title">
-                        <div class="card-heading"><div><h3 id="profile-details-title">Hồ sơ của bạn</h3><p>Thông tin chỉ dùng cho trải nghiệm cá nhân trên trang.</p></div></div>
-                        <div class="avatar-upload">
-                            <div class="account-avatar" data-avatar-initials aria-hidden="true">NA</div>
-                            <div><p>Ảnh đại diện</p><label class="text-button file-button">Chọn ảnh<input type="file" id="avatar-file" accept="image/png,image/jpeg,image/webp" aria-label="Chọn ảnh đại diện"></label></div>
-                        </div>
-                        <form class="profile-form" id="profile-form">
-                            <div class="form-field"><label for="profile-name">Họ và tên</label><input id="profile-name" name="name" autocomplete="name" maxlength="80" required value="Nguyễn Văn A"></div>
-                            <div class="form-field"><label for="profile-email">Email</label><input id="profile-email" name="email" type="email" autocomplete="email" maxlength="120" required value="nguyenvana@example.com"></div>
-                            <div class="form-field"><label for="profile-phone">Số điện thoại</label><input id="profile-phone" name="phone" type="tel" autocomplete="tel" maxlength="20" placeholder="Ví dụ: 090 123 4567"></div>
-                            <div class="form-field"><label for="profile-birthday">Ngày sinh</label><input id="profile-birthday" name="birthday" type="date" autocomplete="bday"></div>
-                            <div class="form-field"><label for="profile-gender">Giới tính</label><select id="profile-gender" name="gender"><option value="">Chọn giới tính</option><option value="female">Nữ</option><option value="male">Nam</option><option value="other">Khác</option><option value="undisclosed">Không muốn tiết lộ</option></select></div>
-                            <div class="form-field"><label for="profile-city">Tỉnh / thành phố</label><input id="profile-city" name="city" autocomplete="address-level2" maxlength="80" placeholder="Ví dụ: Hà Nội"></div>
-                            <div class="form-field full-width"><label for="profile-address">Địa chỉ</label><input id="profile-address" name="address" autocomplete="street-address" maxlength="180" placeholder="Số nhà, đường, phường / xã"></div>
-                            <div class="profile-footer full-width">
-                                <p class="form-note" id="profile-message" role="status" aria-live="polite">Thông tin mẫu được lưu trên thiết bị này.</p>
-                                <button class="primary-button" type="submit">Lưu thay đổi</button>
+            <section class="auth-panel" aria-label="Tài khoản Nét Việt">
+                <div class="auth-panel-inner">
+                    <section class="auth-view" id="login-view" data-auth-view="login" aria-labelledby="login-title">
+                        <p class="auth-eyebrow">CHÀO MỪNG BẠN TRỞ LẠI</p>
+                        <h2 class="auth-title" id="login-title" tabindex="-1">Đăng nhập <em>tài khoản</em></h2>
+                        <p class="auth-intro">Tiếp tục hành trình khám phá những nét đẹp văn hóa Việt.</p>
+                        <form class="auth-form" id="login-form" novalidate>
+                            <div class="auth-fields">
+                                <div class="auth-field">
+                                    <label for="login-email">Email <span class="required" aria-hidden="true">*</span></label>
+                                    <input id="login-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" maxlength="120" required>
+                                </div>
+                                <div class="auth-field">
+                                    <label for="login-password">Mật khẩu <span class="required" aria-hidden="true">*</span></label>
+                                    <div class="auth-input-wrap">
+                                        <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu của bạn" required>
+                                        <button class="auth-password-toggle" type="button" data-password-toggle="login-password" aria-label="Hiện mật khẩu" aria-pressed="false">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.2-6 9.5-6 9.5 6 9.5 6-3.2 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.6"></circle></svg>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="auth-options">
+                                <label class="auth-check"><input type="checkbox" name="remember" id="remember-email"><span>Ghi nhớ email</span></label>
+                                <button class="auth-text-link" type="button" data-password-reset>Quên mật khẩu?</button>
+                            </div>
+                            <button class="auth-submit" type="submit">Đăng nhập <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+                            <div class="auth-divider"><span>Hoặc đăng nhập bằng</span></div>
+                            <div class="auth-social-buttons">
+                                <button class="auth-social-button" type="button" data-social-provider="Google">
+                                    <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.5l6.8-6.8C35.8 2.4 30.4 0 24 0 14.6 0 6.5 5.4 2.6 13.3l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5Z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.7 6.9l7.6 5.9c4.4-4.1 6.8-10.1 6.8-17.3Z"/><path fill="#34A853" d="M24 48c6.1 0 11.3-2 15.1-5.5l-7.6-5.9c-2.1 1.4-4.6 2.2-7.5 2.2-6.1 0-11.3-4.1-13.2-9.6l-8 6.2C6.7 42.8 14.7 48 24 48Z"/><path fill="#FBBC05" d="M10.8 29.2a14.8 14.8 0 0 1 0-10.4l-8-6.2a24 24 0 0 0 0 22.8l8-6.2Z"/></svg>
+                                    <span>Đăng nhập với Google</span>
+                                </button>
+                                <button class="auth-social-button" type="button" data-social-provider="Facebook">
+                                    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#1877F2"/><path fill="#fff" d="M18.1 27V17.4h3.2l.5-3.7h-3.7v-2.4c0-1.1.3-1.9 1.9-1.9H22V6.1c-.4-.1-1.6-.2-3-.2-3 0-5.1 1.8-5.1 5.2v2.6h-3.4v3.7h3.4V27h4.2Z"/></svg>
+                                    <span>Đăng nhập với Facebook</span>
+                                </button>
+                            </div>
+                            <p class="auth-feedback" id="login-feedback" role="status" aria-live="polite"></p>
+                            <p class="auth-switch">Bạn chưa có tài khoản? <a href="account.html?mode=register" data-auth-mode="register">Tạo tài khoản mới</a></p>
+                            <div class="auth-bottom-rule"></div>
+                            <p class="auth-copyright">© 2026 Nét Việt. Lan tỏa giá trị văn hóa Việt Nam.</p>
                         </form>
                     </section>
-                </section>
 
-                <section class="account-panel" id="journeys" role="tabpanel" aria-labelledby="tab-journeys" tabindex="0" data-panel="journeys" hidden>
-                    <div class="panel-heading">
-                        <div><h1>Hành trình của tôi</h1><p>Lưu giữ kế hoạch, điểm dừng và dấu ấn trên mỗi chuyến đi.</p></div>
-                    </div>
-                    <div class="filter-row" role="group" aria-label="Lọc hành trình">
-                        <button class="filter-chip" type="button" data-journey-filter="all" aria-pressed="true">Tất cả (3)</button>
-                        <button class="filter-chip" type="button" data-journey-filter="planned" aria-pressed="false">Sắp diễn ra (1)</button>
-                        <button class="filter-chip" type="button" data-journey-filter="ongoing" aria-pressed="false">Đang trải nghiệm (1)</button>
-                        <button class="filter-chip" type="button" data-journey-filter="completed" aria-pressed="false">Đã hoàn thành (1)</button>
-                    </div>
-                    <div class="journey-list" id="journey-list">
-                        <article class="journey-card" data-journey-status="planned">
-                            <div class="journey-card-header">
-                                <div class="journey-title-wrap"><span class="journey-number">01</span><div><h3>Hành trình Bát Tràng</h3><p>HÀ NỘI · 2 NGÀY 1 ĐÊM</p></div></div>
-                                <span class="status-badge">Sắp diễn ra</span>
-                            </div>
-                            <div class="journey-card-body">
-                                <div class="journey-facts"><span>▣ 16/11/2026 – 17/11/2026</span><span>♧ 2 người</span><span>◷ 850.000đ/người</span></div>
-                                <div class="journey-route"><strong>Lộ trình:</strong> Chợ gốm → Làm gốm thủ công → Ăn trưa tại Bát Tràng → Bảo tàng Bát Tràng</div>
-                                <div class="stop-list">
-                                    <div class="stop-row"><span class="stop-index">01</span><div><strong>Khám phá chợ gốm Bát Tràng</strong><small>08:30 · Tìm hiểu lịch sử làng nghề</small></div><span class="stop-state">Đã lên lịch</span></div>
-                                    <div class="stop-row"><span class="stop-index">02</span><div><strong>Tự tay làm gốm thủ công</strong><small>10:00 · Gặp gỡ nghệ nhân địa phương</small></div><span class="stop-state">Đã lên lịch</span></div>
-                                    <div class="stop-row"><span class="stop-index">03</span><div><strong>Thưởng thức ẩm thực Bát Tràng</strong><small>12:00 · Bữa trưa món địa phương</small></div><span class="stop-state">Đã lên lịch</span></div>
-                                    <div class="stop-row"><span class="stop-index">04</span><div><strong>Tham quan Bảo tàng Bát Tràng</strong><small>14:00 · Khám phá câu chuyện gốm Việt</small></div><span class="stop-state">Đã lên lịch</span></div>
+                    <section class="auth-view" id="register-view" data-auth-view="register" aria-labelledby="register-title" hidden>
+                        <p class="auth-eyebrow">KHỞI ĐẦU HÀNH TRÌNH CỦA BẠN</p>
+                        <h2 class="auth-title" id="register-title" tabindex="-1">Tạo tài khoản <em>mới</em></h2>
+                        <p class="auth-intro">Lưu lại những trải nghiệm và dấu ấn trên mỗi chuyến đi.</p>
+                        <form class="auth-form" id="register-form" novalidate>
+                            <div class="auth-fields">
+                                <div class="auth-field">
+                                    <label for="register-name">Họ và tên <span class="required" aria-hidden="true">*</span></label>
+                                    <input id="register-name" name="name" type="text" autocomplete="name" placeholder="Nguyễn Minh Anh" maxlength="80" required>
                                 </div>
-                                <div class="journey-card-footer"><small>Cập nhật lần cuối: 12/10/2026</small><a class="quiet-button" href="product-detail.html?id=2">Xem trải nghiệm ↗</a></div>
-                            </div>
-                        </article>
-                        <article class="journey-card" data-journey-status="ongoing">
-                            <div class="journey-card-header">
-                                <div class="journey-title-wrap"><span class="journey-number">02</span><div><h3>Khám phá Sa Pa</h3><p>LÀO CAI · 3 NGÀY 2 ĐÊM</p></div></div>
-                                <span class="status-badge completed">Đang trải nghiệm</span>
-                            </div>
-                            <div class="journey-card-body">
-                                <div class="journey-facts"><span>▣ 12/10/2026 – 15/10/2026</span><span>♧ 4 người</span><span>◷ 3.200.000đ/người</span></div>
-                                <div class="journey-route"><strong>Lộ trình:</strong> Ruộng bậc thang Lao Chải → Bản Tả Van → Homestay bản địa → Bản Cát Cát</div>
-                                <div class="stop-list">
-                                    <div class="stop-row"><span class="stop-index">01</span><div><strong>Ngắm ruộng bậc thang Lao Chải</strong><small>08:00 · Tìm hiểu văn hóa người H'Mông</small></div><span class="stop-state">Đã hoàn thành</span></div>
-                                    <div class="stop-row"><span class="stop-index">02</span><div><strong>Ghé thăm bản Tả Van</strong><small>11:00 · Gặp gỡ gia đình bản địa</small></div><span class="stop-state">Hôm nay</span></div>
-                                    <div class="stop-row"><span class="stop-index">03</span><div><strong>Trải nghiệm homestay bản địa</strong><small>15:00 · Nghỉ lại giữa thung lũng</small></div><span class="stop-state">Sắp tới</span></div>
-                                    <div class="stop-row"><span class="stop-index">04</span><div><strong>Khám phá bản Cát Cát</strong><small>09:00 · Tìm hiểu nghề thủ công truyền thống</small></div><span class="stop-state">Sắp tới</span></div>
+                                <div class="auth-fields auth-fields-two">
+                                    <div class="auth-field">
+                                        <label for="register-email">Email <span class="required" aria-hidden="true">*</span></label>
+                                        <input id="register-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" maxlength="120" required>
+                                    </div>
+                                    <div class="auth-field">
+                                        <label for="register-phone">Số điện thoại</label>
+                                        <input id="register-phone" name="phone" type="tel" autocomplete="tel" placeholder="090 123 4567" maxlength="20">
+                                    </div>
                                 </div>
-                                <div class="journey-card-footer"><small>Cập nhật lần cuối: 12/10/2026</small><a class="quiet-button" href="products.html">Khám phá thêm ↗</a></div>
-                            </div>
-                        </article>
-                        <article class="journey-card" data-journey-status="completed">
-                            <div class="journey-card-header">
-                                <div class="journey-title-wrap"><span class="journey-number">03</span><div><h3>Khám phá ẩm thực Huế</h3><p>THỪA THIÊN HUẾ · 1 NGÀY</p></div></div>
-                                <span class="status-badge cancelled">Đã hoàn thành</span>
-                            </div>
-                            <div class="journey-card-body">
-                                <div class="journey-facts"><span>▣ 02/11/2026 – 04/11/2026</span><span>♧ 2 người</span><span>◷ 650.000đ/người</span></div>
-                                <div class="journey-route"><strong>Lộ trình:</strong> Chợ Đông Ba → Lớp học nấu món Huế → Ẩm thực cung đình</div>
-                                <div class="stop-list">
-                                    <div class="stop-row"><span class="stop-index">01</span><div><strong>Khám phá chợ Đông Ba</strong><small>08:00 · Chọn nguyên liệu cùng người địa phương</small></div><span class="stop-state">Đã xong</span></div>
-                                    <div class="stop-row"><span class="stop-index">02</span><div><strong>Lớp học nấu món Huế</strong><small>10:00 · Tự tay chế biến món ăn truyền thống</small></div><span class="stop-state">Đã xong</span></div>
-                                    <div class="stop-row"><span class="stop-index">03</span><div><strong>Thưởng thức ẩm thực cung đình</strong><small>13:00 · Khép lại hành trình vị giác</small></div><span class="stop-state">Đã xong</span></div>
+                                <div class="auth-field">
+                                    <label for="register-password">Mật khẩu <span class="required" aria-hidden="true">*</span></label>
+                                    <div class="auth-input-wrap">
+                                        <input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="Tối thiểu 8 ký tự" minlength="8" required aria-describedby="password-hint">
+                                        <button class="auth-password-toggle" type="button" data-password-toggle="register-password" aria-label="Hiện mật khẩu" aria-pressed="false">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.2-6 9.5-6 9.5 6 9.5 6-3.2 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.6"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <span class="sr-only" id="password-hint">Mật khẩu cần ít nhất 8 ký tự.</span>
                                 </div>
-                                <div class="journey-card-footer"><small>Chuyến đi đã hoàn thành</small><a class="quiet-button" href="product-detail.html?id=5">Xem trải nghiệm ↗</a></div>
+                                <div class="auth-field">
+                                    <label for="register-confirm">Nhập lại mật khẩu <span class="required" aria-hidden="true">*</span></label>
+                                    <div class="auth-input-wrap">
+                                        <input id="register-confirm" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Nhập lại mật khẩu" minlength="8" required>
+                                        <button class="auth-password-toggle" type="button" data-password-toggle="register-confirm" aria-label="Hiện mật khẩu" aria-pressed="false">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.2-6 9.5-6 9.5 6 9.5 6-3.2 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.6"></circle></svg>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </article>
-                    </div>
-                    <p class="empty-results" id="journey-empty" hidden>Chưa có hành trình ở trạng thái này.</p>
-                    <nav class="pagination" id="journey-pagination" aria-label="Phân trang hành trình"></nav>
-                </section>
-
-                <section class="account-panel" id="experiences" role="tabpanel" aria-labelledby="tab-experiences" tabindex="0" data-panel="experiences" hidden>
-                    <div class="panel-heading">
-                        <div><h1>Trải nghiệm của tôi</h1><p>Theo dõi lịch đặt chỗ và xem lại những trải nghiệm đã lưu.</p></div>
-                    </div>
-                    <p class="experience-source-note">Tên, ảnh, địa điểm và giá được lấy trực tiếp từ danh mục Khám phá. Lịch và trạng thái bên dưới là dữ liệu minh họa vì chức năng đặt chỗ chưa kết nối máy chủ.</p>
-                    <div class="filter-row" role="group" aria-label="Lọc trải nghiệm">
-                        <button class="filter-chip" type="button" data-experience-filter="all" aria-pressed="true">Tất cả</button>
-                        <button class="filter-chip" type="button" data-experience-filter="upcoming" aria-pressed="false">Sắp diễn ra</button>
-                        <button class="filter-chip" type="button" data-experience-filter="ongoing" aria-pressed="false">Đang trải nghiệm</button>
-                        <button class="filter-chip" type="button" data-experience-filter="completed" aria-pressed="false">Đã hoàn thành</button>
-                        <button class="filter-chip" type="button" data-experience-filter="cancelled" aria-pressed="false">Đã hủy</button>
-                    </div>
-                    <div class="experience-list" id="experience-list"></div>
-                    <p class="empty-results" id="experience-empty" hidden>Không có trải nghiệm phù hợp với bộ lọc này.</p>
-                </section>
-
-                <section class="account-panel" id="settings" role="tabpanel" aria-labelledby="tab-settings" tabindex="0" data-panel="settings" hidden>
-                    <div class="panel-heading">
-                        <div><h1>Cài đặt tài khoản</h1><p>Quản lý quyền riêng tư, thông báo và tùy chọn cá nhân.</p></div>
-                    </div>
-                    <form id="settings-form">
-                        <section class="settings-card" aria-labelledby="account-settings-title">
-                            <div class="card-heading"><div><h3 id="account-settings-title">Tài khoản & bảo mật</h3><p>Kiểm soát quyền truy cập và thông tin của bạn.</p></div></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Địa chỉ email</strong><small data-settings-email>nguyenvana@example.com · Dùng để nhận thông tin tài khoản.</small></div><button class="text-button" type="button" data-open-tab="profile">Cập nhật hồ sơ</button></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Mật khẩu</strong><small>Đổi mật khẩu định kỳ để bảo vệ tài khoản.</small></div><button class="text-button" type="button" data-password>Đổi mật khẩu</button></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Ngôn ngữ hiển thị</strong><small>Chọn ngôn ngữ sử dụng trên Nét Việt.</small></div><select class="settings-select" name="language" aria-label="Ngôn ngữ hiển thị"><option value="vi">Tiếng Việt</option><option value="en">English</option></select></div>
-                        </section>
-                        <section class="settings-card" aria-labelledby="notifications-title">
-                            <div class="card-heading"><div><h3 id="notifications-title">Cài đặt thông báo</h3><p>Chọn loại thông tin bạn muốn nhận.</p></div></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Thông báo đặt chỗ</strong><small>Nhắc lịch và cập nhật trạng thái trải nghiệm.</small></div><label class="toggle-control"><input type="checkbox" name="bookingNotifications" checked><span class="toggle-track"></span><span class="sr-only">Bật thông báo đặt chỗ</span></label></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Ưu đãi và trải nghiệm mới</strong><small>Nhận tin về hành trình mới và ưu đãi phù hợp.</small></div><label class="toggle-control"><input type="checkbox" name="offersNotifications" checked><span class="toggle-track"></span><span class="sr-only">Bật thông báo ưu đãi</span></label></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Tin tức & bản tin</strong><small>Câu chuyện văn hóa và gợi ý khám phá từ Nét Việt.</small></div><label class="toggle-control"><input type="checkbox" name="newsletterNotifications"><span class="toggle-track"></span><span class="sr-only">Bật bản tin</span></label></div>
-                        </section>
-                        <section class="settings-card" aria-labelledby="privacy-title">
-                            <div class="card-heading"><div><h3 id="privacy-title">Quyền riêng tư</h3><p>Bạn có thể thay đổi các lựa chọn này bất cứ lúc nào.</p></div></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Hiển thị hồ sơ</strong><small>Cho phép hồ sơ của bạn hiển thị công khai.</small></div><label class="toggle-control"><input type="checkbox" name="publicProfile"><span class="toggle-track"></span><span class="sr-only">Hiển thị hồ sơ công khai</span></label></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Chia sẻ hành trình</strong><small>Cho phép chia sẻ hành trình đã hoàn thành.</small></div><label class="toggle-control"><input type="checkbox" name="shareJourneys" checked><span class="toggle-track"></span><span class="sr-only">Cho phép chia sẻ hành trình</span></label></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Lịch sử hoạt động</strong><small>Xem các lựa chọn quyền riêng tư đã lưu trên thiết bị.</small></div><button class="text-button" type="button" data-view-privacy>Xem cài đặt</button></div>
-                        </section>
-                        <section class="settings-card" aria-labelledby="preferences-title">
-                            <div class="card-heading"><div><h3 id="preferences-title">Tùy chọn tài khoản</h3><p>Cá nhân hóa những nội dung Nét Việt gợi ý cho bạn.</p></div></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Nhận gợi ý trải nghiệm</strong><small>Ưu tiên những hành trình phù hợp sở thích.</small></div><label class="toggle-control"><input type="checkbox" name="personalizedSuggestions" checked><span class="toggle-track"></span><span class="sr-only">Bật gợi ý cá nhân hóa</span></label></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Khu vực yêu thích</strong><small>Chọn vùng miền bạn muốn khám phá.</small></div><select class="settings-select" name="favoriteRegion" aria-label="Khu vực yêu thích"><option value="">Chưa chọn</option><option value="north">Miền Bắc</option><option value="central">Miền Trung</option><option value="south">Miền Nam</option></select></div>
-                        </section>
-                        <section class="settings-card danger-card" aria-labelledby="danger-title">
-                            <div class="card-heading"><div><h3 id="danger-title">Quản lý tài khoản</h3><p>Các thao tác liên quan đến tài khoản của bạn.</p></div></div>
-                            <div class="settings-row"><div class="setting-copy"><strong>Xóa tài khoản</strong><small>Yêu cầu xóa tài khoản và dữ liệu liên quan.</small></div><button class="quiet-button" type="button" data-delete-account>Yêu cầu xóa</button></div>
-                        </section>
-                        <div class="settings-footer">
-                            <p class="form-note" id="settings-message" role="status" aria-live="polite"></p>
-                            <button class="primary-button" type="submit">Lưu cài đặt <span aria-hidden="true">→</span></button>
-                        </div>
-                    </form>
-                </section>
-            </div>
+                            <label class="auth-check"><input id="register-consent" type="checkbox" name="consent" required><span>Tôi xác nhận thông tin đăng ký là chính xác.</span></label>
+                            <button class="auth-submit" type="submit">Tạo tài khoản <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+                            <p class="auth-feedback" id="register-feedback" role="status" aria-live="polite"></p>
+                            <p class="auth-switch">Đã có tài khoản? <a href="account.html?mode=login" data-auth-mode="login">Đăng nhập</a></p>
+                            <div class="auth-bottom-rule"></div>
+                            <p class="auth-copyright">© 2026 Nét Việt. Lan tỏa giá trị văn hóa Việt Nam.</p>
+                        </form>
+                    </section>
+                </div>
+            </section>
         </div>
     </main>
 
     <section class="closing-banner" aria-label="Khám phá Nét Việt">
-        <div class="closing-content">
-            <p class="eyebrow">HÀNH TRÌNH TIẾP THEO ĐANG CHỜ BẠN</p>
-            <h2>Một chuyến đi. Nhiều điều<br>để khám phá.</h2>
-            <p>Thêm một trải nghiệm mới vào câu chuyện của riêng bạn.</p>
+        <div class="container closing-content">
+            <p class="eyebrow light-eyebrow">MỖI HÀNH TRÌNH, MỘT CÂU CHUYỆN</p>
+            <h2>Một chuyến đi.<br><em>Nhiều điều để khám phá.</em></h2>
+            <p>Để Nét Việt đồng hành cùng bạn trên hành trình chạm đến những giá trị bản địa.</p>
+            <a class="button button-gold" href="products.html">Tìm trải nghiệm của bạn <span aria-hidden="true">→</span></a>
         </div>
     </section>
 
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-brand"><a class="brand" href="index.html"><img src="images/logo-icon.jpg" alt=""><span>Nét Việt</span></a><p>Kết nối bạn với những trải nghiệm văn hóa bản địa, nơi mỗi vùng đất đều có câu chuyện đáng để khám phá.</p></div>
-            <div class="footer-column"><h2>NÉT VIỆT</h2><a href="index.html">Trang chủ</a><a href="about.html">Về chúng tôi</a><a href="account.html#journeys">Hành trình của tôi</a></div>
-            <div class="footer-column"><h2>KHÁM PHÁ</h2><a href="products.html">Tất cả trải nghiệm</a><a href="products.html#hanh-trinh">Hành trình gợi ý</a><a href="products.html#cam-nang">Cẩm nang du lịch</a></div>
-            <div class="footer-column"><h2>KẾT NỐI</h2><a href="mailto:hello@netviet.vn">hello@netviet.vn</a><a href="about.html#contact">Liên hệ hỗ trợ</a></div>
+    <footer class="site-footer" id="ve-net-viet">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a class="brand footer-logo" href="index.html"><img src="images/logo-icon.jpg" alt=""><span>Nét Việt</span></a>
+                <p>Kết nối bạn với những trải nghiệm văn hóa bản địa, nơi mỗi vùng đất đều có câu chuyện đáng để khám phá.</p>
+            </div>
+            <div class="footer-column"><h2>NÉT VIỆT</h2><a href="index.html">Trang chủ</a><a href="about.html">Về chúng tôi</a><a href="products.html#hanh-trinh">Hành trình</a></div>
+            <div class="footer-column"><h2>KHÁM PHÁ</h2><a href="products.html">Tất cả trải nghiệm</a><a href="products.html?category=craft#danh-sach">Làng nghề thủ công</a><a href="products.html?category=food#danh-sach">Ẩm thực địa phương</a></div>
+            <div class="footer-column"><h2>KẾT NỐI</h2><a href="mailto:hello@netviet.vn">hello@netviet.vn</a><a href="products.html#cam-nang">Cẩm nang du lịch</a><a href="about.html#contact">Liên hệ hỗ trợ</a></div>
         </div>
-        <div class="footer-bottom"><p>© 2026 Nét Việt. Lan tỏa giá trị văn hóa Việt Nam.</p><a href="#top">Lên đầu trang ↑</a></div>
+        <div class="container footer-bottom"><p>© 2026 Nét Việt. Lan tỏa giá trị văn hóa Việt Nam.</p><a href="#top">Lên đầu trang ↑</a></div>
     </footer>
+    </div>
 
-    <div class="account-toast" id="account-toast" role="status" aria-live="polite"></div>
-    <script src="js/products.js" defer></script>
+    <script src="js/cart.js"></script>
     <script src="js/account.js" defer></script>
 </body>
 </html>
