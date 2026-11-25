@@ -11,78 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .home-page .search-panel {
-            gap: 16px;
-            padding: 18px 22px;
-            border-radius: 12px;
-        }
-
-        .home-page .search-title {
-            margin-bottom: -5px;
-            font-size: 10px;
-        }
-
-        .home-page .field {
-            gap: 6px;
-            padding-right: 14px;
-        }
-
-        .home-page .field label {
-            font-size: 9px;
-        }
-
-        .home-page .field input,
-        .home-page .field select {
-            min-height: 28px;
-            font-size: 12px;
-        }
-
-        .home-page .search-submit {
-            min-height: 42px;
-            padding: 0 19px;
-            border-radius: 6px;
-            font-size: 11px;
-        }
-
-        @media (max-width: 900px) {
-            .home-page .search-panel {
-                gap: 12px;
-                padding: 16px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .home-page .search-panel {
-                gap: 10px;
-                padding: 13px;
-            }
-
-            .home-page .search-title {
-                font-size: 9px;
-            }
-
-            .home-page .field {
-                gap: 5px;
-                padding-right: 8px;
-            }
-
-            .home-page .field label {
-                font-size: 8px;
-            }
-
-            .home-page .field input,
-            .home-page .field select {
-                min-height: 24px;
-                font-size: 10px;
-            }
-
-            .home-page .search-submit {
-                min-height: 40px;
-                font-size: 10px;
-            }
-        }
-    </style>
 </head>
 <body class="home-page">
 
@@ -103,8 +31,13 @@
                 <ul>
                     <li><a class="nav-link active" href="index.html" aria-current="page">Trang chủ</a></li>
                     <li><a class="nav-link" href="products.html">Khám phá trải nghiệm</a></li>
+<<<<<<< Updated upstream
+                    <li><a class="nav-link" href="#hanh-trinh">Hành trình</a></li>
+                    <li><a class="nav-link" href="#cam-nang">Cẩm nang</a></li>
+=======
                     <li><a class="nav-link" href="journey.html">Hành trình</a></li>
-                    <li><a class="nav-link" href="cam-nang.html">Cẩm nang</a></li>
+                    <li><a href="guide.html" class="nav-link active" aria-current="page">Cẩm nang</a></li> 
+>>>>>>> Stashed changes
                     <li><a class="nav-link" href="about.html">Về chúng tôi</a></li>
                 </ul>
             </nav>
@@ -115,10 +48,6 @@
                 </a>
                 <a class="icon-button" href="about.html#contact" aria-label="Liên hệ Nét Việt">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>
-                </a>
-                <a class="cart-link" href="cart.html" aria-label="Giỏ hàng, 0 sản phẩm">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.5L22 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
-                    <span id="cart-count-badge" class="cart-count-badge" aria-live="polite">0</span>
                 </a>
             </div>
         </div>
@@ -151,31 +80,33 @@
             <div class="container search-container">
                 <form class="search-panel" action="products.html" method="get">
                     <div class="search-title">BẠN MUỐN KHÁM PHÁ ĐIỀU GÌ?</div>
-                    <div class="field keyword-field">
-                        <label for="keyword">TỪ KHÓA</label>
-                        <input id="keyword" name="keyword" type="text"
-                               placeholder="Ví dụ: làm gốm, ẩm thực, làng nghề...">
+                    <div class="search-grid">
+                        <div class="field keyword-field">
+                            <label for="keyword">TỪ KHÓA</label>
+                            <input id="keyword" name="keyword" type="text"
+                                   placeholder="Ví dụ: làm gốm, ẩm thực, làng nghề...">
+                        </div>
+                        <div class="field">
+                            <label for="location">ĐỊA ĐIỂM</label>
+                            <select id="location" name="region">
+                                <option value="">Tất cả địa điểm</option>
+                                <option value="north">Miền Bắc</option>
+                                <option value="central">Miền Trung</option>
+                                <option value="south">Miền Nam</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="type">LOẠI TRẢI NGHIỆM</label>
+                            <select id="type" name="category">
+                                <option value="">Tất cả loại hình</option>
+                                <option value="craft">Làng nghề thủ công</option>
+                                <option value="food">Ẩm thực địa phương</option>
+                                <option value="culture">Văn hóa và di sản</option>
+                                <option value="nature">Thiên nhiên và khám phá</option>
+                            </select>
+                        </div>
+                        <button class="button search-submit" type="submit">Tìm trải nghiệm <span>→</span></button>
                     </div>
-                    <div class="field">
-                        <label for="location">ĐỊA ĐIỂM</label>
-                        <select id="location" name="region">
-                            <option value="">Tất cả địa điểm</option>
-                            <option value="north">Miền Bắc</option>
-                            <option value="central">Miền Trung</option>
-                            <option value="south">Miền Nam</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <label for="type">LOẠI TRẢI NGHIỆM</label>
-                        <select id="type" name="category">
-                            <option value="">Tất cả loại hình</option>
-                            <option value="craft">Làng nghề thủ công</option>
-                            <option value="food">Ẩm thực địa phương</option>
-                            <option value="culture">Văn hóa và di sản</option>
-                            <option value="nature">Thiên nhiên và khám phá</option>
-                        </select>
-                    </div>
-                    <button class="button search-submit" type="submit">Tìm trải nghiệm <span>→</span></button>
                 </form>
             </div>
         </section>
@@ -192,7 +123,7 @@
                 <a class="journey-card journey-planner" href="products.html">
                     <span class="card-index">01 · LÊN KẾ HOẠCH</span>
                     <span class="round-arrow">↗</span>
-                    <div><h3>Nét Việt Tour Planner</h3><p>Tạo tour thông minh phù hợp với thời gian, sở thích và ngân sách.</p><span class="text-link">KHÁM PHÁ NGAY →</span></div>
+                    <div><h3>Nét Việt Tour Planner</h3><p>Tìm kiếm và lựa chọn trải nghiệm phù hợp với thời gian, sở thích và ngân sách.</p><span class="text-link">KHÁM PHÁ NGAY →</span></div>
                 </a>
                 <a class="journey-card journey-route" href="products.html">
                     <span class="card-index">02 · HÀNH TRÌNH</span>
@@ -202,7 +133,7 @@
                 <a class="journey-card journey-memory" href="#cam-nang">
                     <span class="card-index">03 · LƯU DẤU ẤN</span>
                     <span class="round-arrow">↗</span>
-                    <div><h3>Hành Trình Giải Mã</h3><p>Giải mã những câu chuyện, phong tục và nét văn hóa ẩn sau mỗi vùng đất.</p><span class="text-link">ĐỌC CÂU CHUYỆN →</span></div>
+                    <div><h3>Hành Trình Giải Mã</h3><p>Khám phá những câu chuyện, phong tục và nét văn hóa ẩn sau mỗi vùng đất.</p><span class="text-link">ĐỌC CÂU CHUYỆN →</span></div>
                 </a>
             </div>
         </section>
@@ -344,46 +275,46 @@
 
                 <div class="product-grid">
                     <article class="product-card">
-                        <a href="product-detail.html?id=4" class="product-visual visual-halong" aria-label="Xem trải nghiệm khám phá vịnh Hạ Long">
+                        <a href="products.html#danh-sach" class="product-visual visual-halong" aria-label="Xem trải nghiệm khám phá vịnh Hạ Long">
                             <span class="product-badge">THIÊN NHIÊN</span><span class="heart">♡</span>
                         </a>
                         <div class="product-info">
                             <small>⌖ Vịnh Hạ Long, Quảng Ninh</small>
                             <h3>Chèo kayak &amp; ngắm hoàng hôn Vịnh Di Sản</h3>
-                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>350.000đ <small>/ người</small></strong></span><a href="product-detail.html?id=4">Xem chi tiết <span aria-hidden="true">→</span></a></div>
+                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>350.000đ <small>/ người</small></strong></span><a href="products.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
                         </div>
                     </article>
 
                     <article class="product-card">
-                        <a href="product-detail.html?id=2" class="product-visual visual-pottery" aria-label="Xem chi tiết trải nghiệm làm gốm Bát Tràng">
+                        <a href="product-detail.html" class="product-visual visual-pottery" aria-label="Xem chi tiết trải nghiệm làm gốm Bát Tràng">
                             <span class="product-badge">LÀNG NGHỀ</span><span class="heart">♡</span>
                         </a>
                         <div class="product-info">
                             <small>⌖ Bát Tràng, Hà Nội</small>
                             <h3>Khám phá nghệ thuật làm gốm Bát Tràng</h3>
-                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>250.000đ <small>/ người</small></strong></span><a href="product-detail.html?id=2">Xem chi tiết <span aria-hidden="true">→</span></a></div>
+                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>250.000đ <small>/ người</small></strong></span><a href="product-detail.html">Xem chi tiết <span aria-hidden="true">→</span></a></div>
                         </div>
                     </article>
 
                     <article class="product-card">
-                        <a href="product-detail.html?id=7" class="product-visual visual-food" aria-label="Xem trải nghiệm khám phá ẩm thực">
+                        <a href="products.html#danh-sach" class="product-visual visual-food" aria-label="Xem trải nghiệm khám phá ẩm thực">
                             <span class="product-badge">ẨM THỰC</span><span class="heart">♡</span>
                         </a>
                         <div class="product-info">
                             <small>⌖ Hội An, Quảng Nam</small>
                             <h3>Khám phá hương vị phố cổ</h3>
-                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>320.000đ <small>/ người</small></strong></span><a href="product-detail.html?id=7">Xem chi tiết <span aria-hidden="true">→</span></a></div>
+                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>320.000đ <small>/ người</small></strong></span><a href="products.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
                         </div>
                     </article>
 
                     <article class="product-card">
-                        <a href="product-detail.html?id=6" class="product-visual visual-coast" aria-label="Xem trải nghiệm khám phá miền biển">
+                        <a href="products.html#danh-sach" class="product-visual visual-coast" aria-label="Xem trải nghiệm khám phá miền biển">
                             <span class="product-badge">THIÊN NHIÊN</span><span class="heart">♡</span>
                         </a>
                         <div class="product-info">
-                            <small>⌖ Cần Thơ</small>
-                            <h3>Bình minh trên chợ nổi Cái Răng</h3>
-                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>390.000đ <small>/ người</small></strong></span><a href="product-detail.html?id=6">Xem chi tiết <span aria-hidden="true">→</span></a></div>
+                            <small>⌖ Côn Đảo</small>
+                            <h3>Lặn ngắm san hô &amp; khám phá đảo hoang sơ</h3>
+                            <div class="product-bottom"><span class="product-price"><small>Giá tham khảo từ</small><strong>450.000đ <small>/ người</small></strong></span><a href="products.html#danh-sach">Xem chi tiết <span aria-hidden="true">→</span></a></div>
                         </div>
                     </article>
                 </div>
@@ -458,6 +389,5 @@
     </footer>
  <!-- Nạp file dữ liệu sản phẩm dùng chung -->
    <script src="js/products.js"></script>
-   <script src="js/cart.js"></script>
 </body>
 </html>

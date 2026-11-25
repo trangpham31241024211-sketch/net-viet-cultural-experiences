@@ -2604,51 +2604,6 @@ gallery-thumbs .thumb-item img,
   display: none;
 }
 
-/* Biểu tượng giỏ hàng dùng chung trên các trang. */
-.cart-link {
-  position: relative;
-  display: inline-grid;
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
-  place-items: center;
-  color: var(--primary-green);
-  text-decoration: none;
-  border-radius: 50%;
-}
-
-.cart-link:hover,
-.cart-link:focus-visible {
-  background: #edf4ee;
-}
-
-.cart-link svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.6;
-}
-
-.cart-count-badge {
-  position: absolute;
-  top: -2px;
-  right: -3px;
-  min-width: 17px;
-  height: 17px;
-  padding: 0 4px;
-  border-radius: 999px;
-  background: #b35e27;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 17px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
 .explore-page .hero {
   position: relative;
   min-height: 430px;
@@ -2769,76 +2724,87 @@ gallery-thumbs .thumb-item img,
   bottom: -34px;
   left: 0;
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr auto;
-  align-items: end;
-  gap: 16px;
-  padding: 18px 22px;
+  grid-template-columns: 1.25fr 1fr 1fr auto;
+  align-items: center;
+  gap: 0;
+  padding: 13px 15px;
   border: 1px solid rgba(17, 58, 43, .06);
-  border-radius: 12px;
+  border-radius: 9px;
   background: #fff;
   box-shadow: 0 12px 32px rgba(22, 52, 39, .13);
 }
 
-.explore-page .search-title {
-  grid-column: 1 / -1;
-  margin-bottom: -5px;
-  color: var(--primary-green);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.explore-page .field {
+.explore-page .search-field {
   min-width: 0;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-right: 14px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
   border-right: 1px solid var(--border-light);
+  cursor: text;
 }
 
-.explore-page .field label {
+.explore-page .search-field:first-child {
+  padding-left: 5px;
+}
+
+.explore-page .field-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  flex: 0 0 28px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--primary-green);
+  background: #edf4ee;
+  font-size: 17px;
+}
+
+.explore-page .field-copy {
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.explore-page .field-label {
   color: #718078;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 800;
-  letter-spacing: .8px;
+  letter-spacing: .55px;
 }
 
-.explore-page .field input,
-.explore-page .field select {
+.explore-page .field-copy input,
+.explore-page .field-copy select {
   width: 100%;
-  min-height: 28px;
+  min-height: 22px;
   padding: 0;
   border: 0;
   outline: 0;
   color: var(--text-dark);
   background: transparent;
-  font: 500 12px var(--font-body);
+  font: 500 10px var(--font-body);
 }
 
-.explore-page .field input::placeholder {
+.explore-page .field-copy input::placeholder {
   color: #87958e;
 }
 
 .explore-page .search-submit {
-  min-height: 42px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 19px;
+  min-height: 38px;
+  margin-left: 12px;
+  padding: 0 15px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #fff;
   background: var(--primary-green);
-  font: 700 11px var(--font-body);
-  line-height: 1.2;
+  font: 700 10px var(--font-body);
   cursor: pointer;
-  transition: background .2s ease, color .2s ease, transform .2s ease, border-color .2s ease;
+  transition: background .2s ease;
 }
 
 .explore-page .search-submit:hover {
-  transform: translateY(-2px);
   background: #1b513c;
 }
 
@@ -3489,18 +3455,6 @@ gallery-thumbs .thumb-item img,
   }
 }
 
-@media (max-width: 900px) {
-  .explore-page .search-panel {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding: 16px;
-  }
-
-  .explore-page .search-title {
-    grid-column: 1 / -1;
-  }
-}
-
 @media (max-width: 680px) {
   .explore-page .container,
   .explore-page .hero-content {
@@ -3627,6 +3581,39 @@ gallery-thumbs .thumb-item img,
 
   .explore-page .search-panel {
     bottom: -112px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 0;
+    padding: 12px;
+  }
+
+  .explore-page .search-field {
+    gap: 7px;
+    padding: 0 7px;
+  }
+
+  .explore-page .search-field:first-child {
+    padding-left: 0;
+  }
+
+  .explore-page .search-field:nth-child(3) {
+    border-right: 0;
+  }
+
+  .explore-page .field-icon {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+    font-size: 14px;
+  }
+
+  .explore-page .field-copy input,
+  .explore-page .field-copy select {
+    font-size: 8px;
+  }
+
+  .explore-page .search-submit {
+    grid-column: 1 / -1;
+    margin: 0;
   }
 
   .explore-page .experiences-section {
@@ -3712,39 +3699,6 @@ gallery-thumbs .thumb-item img,
   .explore-page .footer-bottom {
     flex-direction: column;
     gap: 6px;
-  }
-}
-
-@media (max-width: 640px) {
-  .explore-page .search-panel {
-    bottom: -130px;
-    gap: 10px;
-    padding: 13px;
-  }
-
-  .explore-page .search-title {
-    font-size: 9px;
-  }
-
-  .explore-page .field {
-    gap: 5px;
-    padding-right: 8px;
-  }
-
-  .explore-page .field label {
-    font-size: 8px;
-  }
-
-  .explore-page .field input,
-  .explore-page .field select {
-    min-height: 24px;
-    font-size: 10px;
-  }
-
-  .explore-page .search-submit {
-    min-height: 40px;
-    font-size: 10px;
-    grid-column: 1 / -1;
   }
 }
 
@@ -3888,6 +3842,9 @@ gallery-thumbs .thumb-item img,
 /* Hiệu ứng đường gạch chân khi hover */
 .nav-menu a:hover::after {
     width: 100%;
+<<<<<<< Updated upstream
+}
+=======
 }
 <<<<<<< Updated upstream
 =======
@@ -4196,4 +4153,1029 @@ gallery-thumbs .thumb-item img,
 body.about-page main > section.bg-light:first-of-type {
   background-color: #ECF3EE !important;
 }
+/* --- Custom Layout cho trang Cẩm nang (guide.html) --- */
+.guide-page {
+  background-color: #F4F8F5;
+  color: var(--text-dark);
+}
 
+.guide-page .guide-hero {
+  position: relative;
+  min-height: 430px;
+  padding: 76px 24px 96px;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.guide-page .guide-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 42, 31, 0.9) 0%, rgba(12, 49, 36, 0.68) 52%, rgba(12, 49, 36, 0.35) 100%);
+  z-index: 1;
+}
+
+.guide-page .guide-hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.guide-page .guide-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 4.4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.guide-page .guide-hero-title em {
+  display: block;
+  color: var(--accent-gold);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.guide-page .guide-hero-desc {
+  max-width: 560px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #DCE8E2;
+  margin-bottom: 18px;
+}
+
+.guide-page .guide-hero-note {
+  font-size: 0.8rem;
+  color: #B9CFC4;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.guide-page .guide-hero-note::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+}
+
+/* Thanh tìm kiếm & lọc chủ đề */
+.guide-page .guide-filter-wrap {
+  position: relative;
+  z-index: 5;
+  margin-top: -36px;
+  padding: 0 24px;
+}
+
+.guide-page .guide-search-bar {
+  display: grid;
+  grid-template-columns: 1.8fr 0.7fr auto;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 10px 12px;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 12px 30px rgba(12, 42, 32, 0.08);
+}
+
+.guide-page .guide-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px;
+  border-right: 1px solid var(--border-light);
+}
+
+.guide-page .guide-search-input-wrap i {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.guide-page .guide-search-input-wrap input,
+.guide-page .guide-search-bar select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+}
+
+.guide-page .guide-search-btn {
+  background: var(--accent-gold);
+  color: #0C2A20;
+  font-weight: 700;
+  font-size: 0.84rem;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 22px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.guide-page .guide-search-btn:hover {
+  background: var(--accent-gold-hover);
+}
+
+.guide-page .guide-topic-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.guide-page .guide-topic-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.guide-page .guide-topic-pill {
+  padding: 6px 15px;
+  border-radius: 999px;
+  border: 1px solid #D5E0D9;
+  background: #ffffff;
+  color: var(--text-dark);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.guide-page .guide-topic-pill.active,
+.guide-page .guide-topic-pill:hover {
+  background: var(--primary-green);
+  color: #ffffff;
+  border-color: var(--primary-green);
+}
+
+/* Section & Tiêu đề */
+.guide-page .guide-section {
+  padding: 48px 24px;
+}
+
+.guide-page .guide-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #B84A39;
+  margin-bottom: 6px;
+}
+
+.guide-page .guide-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.guide-page .guide-heading {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  line-height: 1.25;
+}
+
+.guide-page .guide-heading em {
+  font-style: italic;
+  color: #195E45;
+  font-weight: 500;
+}
+
+.guide-page .guide-subtext {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.guide-page .guide-view-all {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+/* Bài viết nổi bật */
+.guide-page .featured-story-card {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(12, 42, 32, 0.05);
+}
+
+.guide-page .featured-story-media {
+  position: relative;
+  min-height: 310px;
+}
+
+.guide-page .featured-story-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.guide-page .featured-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--primary-green);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.guide-page .featured-story-body {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.guide-page .story-category-meta {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #B84A39;
+  margin-bottom: 10px;
+}
+
+.guide-page .featured-story-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  line-height: 1.3;
+  color: var(--primary-green);
+  margin-bottom: 14px;
+}
+
+.guide-page .featured-story-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.guide-page .story-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.guide-page .story-read-link {
+  font-weight: 700;
+  color: var(--primary-green);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.guide-page .story-read-link:hover {
+  color: #B84A39;
+}
+
+/* Lưới bài viết mới nhất (3 cột) */
+.guide-page .stories-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.guide-page .story-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guide-page .story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(12, 42, 32, 0.08);
+}
+
+.guide-page .story-card[hidden] {
+  display: none !important;
+}
+
+.guide-page .story-card-thumb {
+  position: relative;
+  height: 195px;
+  overflow: hidden;
+}
+
+.guide-page .story-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.guide-page .story-tag-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(12, 42, 32, 0.9);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+}
+
+.guide-page .story-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.guide-page .story-card-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  line-height: 1.38;
+  color: var(--primary-green);
+  margin-bottom: 10px;
+}
+
+.guide-page .story-card-content p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+/* Phân trang */
+.guide-page .guide-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 34px;
+}
+
+.guide-page .page-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid #D3DFD8;
+  background: #ffffff;
+  color: var(--text-dark);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.guide-page .page-btn.active {
+  background: var(--primary-green);
+  color: #ffffff;
+  border-color: var(--primary-green);
+}
+
+/* Dải cam kết biên tập */
+.guide-page .editorial-strip {
+  background: #EAF2EC;
+  border-top: 1px solid #DCE7DF;
+  padding: 36px 24px;
+}
+
+.guide-page .editorial-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.guide-page .editorial-lead h3 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  line-height: 1.3;
+  color: var(--primary-green);
+}
+
+.guide-page .editorial-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.guide-page .editorial-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--primary-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  border: 1px solid #D6E3DA;
+}
+
+.guide-page .editorial-item h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 3px;
+}
+
+.guide-page .editorial-item p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* CTA & Footer đồng bộ */
+.guide-page .cta-banner {
+  text-align: left;
+  padding: 56px 24px !important;
+}
+
+.guide-page .cta-banner .cta-content {
+  margin: 0;
+  max-width: 520px;
+  text-align: left;
+}
+
+.guide-page .cta-banner .section-heading {
+  color: #ffffff;
+}
+
+.guide-page .cta-banner p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.guide-page .site-footer {
+  background-color: #1B3124;
+  padding: 44px 24px 28px !important;
+}
+
+.guide-page .footer-grid {
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+}
+
+.guide-page .footer-col h5 {
+  color: #ffffff;
+}
+
+.guide-page .footer-bottom {
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  .guide-page .featured-story-card,
+  .guide-page .editorial-grid {
+    grid-template-columns: 1fr;
+  }
+  .guide-page .stories-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .guide-page .guide-search-bar {
+    grid-template-columns: 1fr;
+  }
+  .guide-page .guide-search-input-wrap {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .guide-page .stories-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+/* --- Custom Layout cho trang Chính sách (policies.html) --- */
+.policies-page {
+  background-color: #F4F8F5;
+  color: var(--text-dark);
+}
+
+.policies-page .policy-hero {
+  background: #D4E1D9;
+  padding: 56px 24px;
+}
+
+.policies-page .policy-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.policies-page .policy-hero-kicker {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #C48A1C;
+  margin-bottom: 10px;
+}
+
+.policies-page .policy-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  line-height: 1.15;
+  color: var(--primary-green);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.policies-page .policy-hero-title em {
+  display: block;
+  font-style: italic;
+  color: #1A6B47;
+  font-weight: 500;
+}
+
+.policies-page .policy-hero-desc {
+  font-size: 0.88rem;
+  color: #54665D;
+  max-width: 440px;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.policies-page .policy-updated {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #195E45;
+}
+
+.policies-page .policy-hero-card {
+  position: relative;
+  border-radius: 76px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(12, 42, 32, 0.12);
+  height: 245px;
+}
+
+.policies-page .policy-hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.policies-page .policy-hero-card-caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: rgba(12, 42, 32, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.policies-page .policy-hero-card-caption small {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--accent-gold);
+  margin-bottom: 2px;
+}
+
+.policies-page .policy-hero-card-caption strong {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Tiêu đề giới thiệu */
+.policies-page .policy-intro {
+  padding: 54px 24px 24px;
+  text-align: center;
+}
+
+.policies-page .policy-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #B84A39;
+  margin-bottom: 8px;
+}
+
+.policies-page .policy-intro h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 3.2vw, 2.4rem);
+  color: var(--primary-green);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.policies-page .policy-intro h2 em {
+  display: block;
+  font-style: italic;
+  color: #195E45;
+  font-weight: 500;
+}
+
+.policies-page .policy-intro p {
+  max-width: 660px;
+  margin: 0 auto;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Bố cục 2 cột: Danh mục trái + 6 thẻ chính sách phải */
+.policies-page .policy-main-section {
+  padding: 28px 24px 72px;
+}
+
+.policies-page .policy-layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.policies-page .policy-sidebar {
+  position: sticky;
+  top: 88px;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 20px 16px;
+  box-shadow: 0 6px 20px rgba(12, 42, 32, 0.04);
+}
+
+.policies-page .policy-sidebar-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--primary-green);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.policies-page .policy-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.policies-page .policy-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.policies-page .policy-nav-link span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.policies-page .policy-nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #BAC8C0;
+  flex-shrink: 0;
+}
+
+.policies-page .policy-nav-link:hover,
+.policies-page .policy-nav-link.active {
+  background: #EAF2EC;
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.policies-page .policy-nav-link.active .policy-nav-dot {
+  background: var(--primary-green);
+}
+
+.policies-page .policy-help-box {
+  margin-top: 18px;
+  padding: 14px;
+  background: #F4F8F5;
+  border: 1px solid #DCE7DF;
+  border-radius: 8px;
+}
+
+.policies-page .policy-help-box h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.policies-page .policy-help-box p {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.policies-page .policy-help-box a {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #195E45;
+}
+
+/* Nội dung chính sách bên phải */
+.policies-page .policy-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.policies-page .policy-content-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--primary-green);
+}
+
+.policies-page .policy-count-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.policies-page .policy-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.policies-page .policy-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 28px 32px;
+  box-shadow: 0 4px 18px rgba(12, 42, 32, 0.035);
+  scroll-margin-top: 92px;
+}
+
+.policies-page .policy-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #EDF2EE;
+}
+
+.policies-page .policy-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #EAF2EC;
+  color: var(--primary-green);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.policies-page .policy-kicker {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: #B84A39;
+  margin-bottom: 4px;
+}
+
+.policies-page .policy-card-top h4 {
+  font-family: var(--font-heading);
+  font-size: 1.32rem;
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.policies-page .policy-card-lead {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.policies-page .policy-clause {
+  margin-bottom: 16px;
+}
+
+.policies-page .policy-clause:last-child {
+  margin-bottom: 0;
+}
+
+.policies-page .policy-clause h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 6px;
+}
+
+.policies-page .policy-clause p,
+.policies-page .policy-clause li {
+  font-size: 0.84rem;
+  color: #46574F;
+  line-height: 1.6;
+}
+
+.policies-page .policy-clause ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 4px;
+}
+
+.policies-page .policy-clause li {
+  margin-bottom: 4px;
+}
+
+/* 4 phương thức thanh toán ở mục 02 */
+.policies-page .payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.policies-page .payment-method-box {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 14px 10px;
+  text-align: center;
+  background: #FAFBF9;
+}
+
+.policies-page .payment-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  margin: 0 auto 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.policies-page .payment-badge.momo {
+  background: #A50064;
+}
+
+.policies-page .payment-badge.vnpay {
+  background: #005BAA;
+}
+
+.policies-page .payment-badge.zalopay {
+  background: #0068FF;
+}
+
+.policies-page .payment-badge.bank {
+  background: #D98E1A;
+}
+
+.policies-page .payment-method-box span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* CTA & Footer đồng bộ */
+.policies-page .cta-banner {
+  text-align: left;
+  padding: 56px 24px !important;
+}
+
+.policies-page .cta-banner .cta-content {
+  margin: 0;
+  max-width: 520px;
+  text-align: left;
+}
+
+.policies-page .cta-banner .section-heading {
+  color: #ffffff;
+}
+
+.policies-page .cta-banner p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.policies-page .site-footer {
+  background-color: #1B3124;
+  padding: 44px 24px 28px !important;
+}
+
+.policies-page .footer-grid {
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+}
+
+.policies-page .footer-col h5 {
+  color: #ffffff;
+}
+
+.policies-page .footer-bottom {
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .policies-page .policy-hero-grid,
+  .policies-page .policy-layout {
+    grid-template-columns: 1fr;
+  }
+  .policies-page .policy-sidebar {
+    position: static;
+  }
+  .policies-page .payment-methods-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* Đổi màu chữ khối nội dung chính sách cho khớp tông thiết kế */
+.policies-page .policy-kicker {
+  color: #D98E1A;
+}
+
+.policies-page .policy-card-top h4,
+.policies-page .policy-clause h5 {
+  color: var(--primary-green);
+}
+
+.policies-page .policy-card-lead,
+.policies-page .policy-clause p,
+.policies-page .policy-clause li {
+  color: var(--text-muted);
+}
+.policies-page .policy-clause h5 {
+  color: #1A6B47;
+}
+/* Thu nhỏ icon thanh toán và thu gọn thẻ cho khớp ảnh mẫu */
+.policies-page .payment-methods-grid {
+  gap: 14px;
+}
+
+.policies-page .payment-method-box {
+  background: #ffffff;
+  border: 1px solid #DCE6DF;
+  border-radius: 10px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 92px;
+}
+
+.policies-page .payment-logo {
+  width: 36px;
+  height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+  display: block;
+}
+
+.policies-page .payment-method-box span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #55665D;
+}
