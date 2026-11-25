@@ -1,12 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const pool = require('./config/database');
+const experienceRoutes = require('./routes/experienceRoutes');
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use('/api/experiences', experienceRoutes);
 
 // Kiểm tra Backend
 app.get('/', (req, res) => {
