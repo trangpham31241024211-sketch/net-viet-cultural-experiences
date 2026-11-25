@@ -26,20 +26,20 @@ Thông tin cần ghi nhận bao gồm:
 
 ## 3. Danh sách lỗi phát sinh
 
-### BUG-001: Lỗi giao diện Header sau khi Merge Pull Request
+### BUG-001: Lỗi giao diện Header và điều hướng trang sau khi Merge Pull Request
 
 | Trường thông tin | Nội dung |
 |---|---|
 | Bug ID | BUG-001 |
 | Ngày phát hiện | 25/11/2026 |
 | Người phát hiện | Trang |
-| Khu vực chức năng | Header – Trang chủ |
+| Khu vực chức năng | Header, Trang chủ, Cẩm nang, Chính sách |
 | Mức độ ưu tiên | Cao |
-| Người phụ trách sửa lỗi | Ngọc |
+| Người sửa lỗi | Ngọc |
 | Người kiểm tra giao diện | An |
 | Người review và Merge | Trang |
 | Người kiểm thử | Ngân |
-| Trạng thái | To do |
+| Trạng thái | Verified |
 
 **Mô tả lỗi:**
 
@@ -64,10 +64,9 @@ Nguyên nhân cụ thể khiến hai trang Cẩm nang và Chính sách không hi
 
 **Kết quả xử lý:**
 
-Đang chờ sửa lỗi, review Pull Request và kiểm thử lại trên GitHub Pages.
-
----
-
+- Thanh Header đã hiển thị bình thường, không còn xuất hiện các ký tự đánh dấu xung đột Git.
+- Hai trang Cẩm nang và Chính sách đã hiển thị và truy cập được trên website.
+- Website đã được cập nhật và kiểm tra lại sau khi sửa lỗi.
 ## 4. Quy trình xử lý lỗi
 
 Nhóm thống nhất quy trình xử lý lỗi như sau:
