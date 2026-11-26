@@ -782,8 +782,8 @@ let currentPage = 0;
  * @param {Array} productList - Mảng các sản phẩm cần hiển thị
  */
 function renderProducts(productList, showNextPage = false) {
-  const container = document.getElementById('products-grid');
-  const emptyMessage = document.getElementById('no-products-message');
+  const container = document.getElementById('product-grid');
+  const emptyMessage = document.getElementById('empty-state');
   const loadMoreButton = document.getElementById('load-more');
 
   // Nếu trang hiện tại không có container (ví dụ trang about hoặc cart) thì thoát
