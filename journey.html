@@ -6,6 +6,7 @@
   <meta name="description" content="Tự thiết kế hành trình khám phá văn hóa Việt cùng Nét Việt.">
   <title>Hành trình của bạn - Nét Việt</title>
   <link rel="stylesheet" href="css/style.css">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="about-page">
@@ -125,18 +126,18 @@
                 </div>
                 <div class="form-group">
                   <label for="destination">Điểm đến</label>
-                  <input id="destination" name="destination" type="text" placeholder="Nhập điểm đến" value="Bát Tràng, Gia Lâm, Hà Nội" required>
+                  <input id="destination" name="destination" type="text" placeholder="Nhập điểm đến hoặc để trống để tìm theo khu vực" value="Bát Tràng, Gia Lâm, Hà Nội">
                 </div>
               </div>
 
               <div class="form-group-row">
                 <div class="form-group">
                   <label for="start-date">Ngày bắt đầu</label>
-                  <input id="start-date" name="startDate" type="date" value="2026-11-15" required>
+                  <input id="start-date" name="startDate" type="date" required>
                 </div>
                 <div class="form-group">
                   <label for="end-date">Ngày kết thúc</label>
-                  <input id="end-date" name="endDate" type="date" value="2026-11-15" required>
+                  <input id="end-date" name="endDate" type="date" required>
                 </div>
               </div>
 
@@ -191,10 +192,10 @@
                 <div class="form-group">
                   <label for="budget">Ngân sách dự kiến</label>
                   <select id="budget" name="budget">
-                    <option value="850.000đ/người" selected>500.000đ - 1.000.000đ</option>
-                    <option value="1.800.000đ/người">1.000.000đ - 3.000.000đ</option>
-                    <option value="3.500.000đ/người">3.000.000đ - 5.000.000đ</option>
-                    <option value="5.500.000đ/người">Trên 5.000.000đ</option>
+                    <option value="850000" selected>500.000đ - 1.000.000đ</option>
+                    <option value="1800000">1.000.000đ - 3.000.000đ</option>
+                    <option value="3500000">3.000.000đ - 5.000.000đ</option>
+                    <option value="5500000">Trên 5.000.000đ</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -204,6 +205,7 @@
               </div>
 
               <button type="submit" class="btn-block-dark">GỢI Ý HÀNH TRÌNH CỦA TÔI</button>
+              <p class="journey-form-hint">Lịch trình bên dưới sẽ tự cập nhật khi bạn thay đổi tiêu chí.</p>
               <p id="journeyMessage" role="status" aria-live="polite"></p>
             </form>
           </div>
@@ -238,7 +240,10 @@
             <span class="section-label">— GỢI Ý DÀNH CHO BẠN</span>
             <h2 class="section-heading">Hành trình đề xuất</h2>
           </div>
-          <span class="fit-badge">+ PHÙ HỢP VỚI BẠN</span>
+          <div class="suggested-status">
+            <span id="suggestedCount" class="suggested-count" aria-live="polite">Đang tìm trải nghiệm phù hợp…</span>
+            <span class="fit-badge" id="fitBadge">+ PHÙ HỢP VỚI BẠN</span>
+          </div>
         </div>
 
         <div class="product-stats-grid summary-strip">
@@ -259,117 +264,34 @@
             <span class="stat-value" id="suggestedTravellers">2 người</span>
           </div>
         </div>
+        <p class="journey-budget-note" id="suggestedBudgetNote" aria-live="polite">Chi phí được tính theo các trải nghiệm đang hiển thị.</p>
 
         <div class="grid-2 suggested-layout">
-          <div id="suggestedTimeline" class="timeline-list">
-            <div class="timeline-step">
-              <div class="timeline-hour">08:30</div>
-              <div class="timeline-axis">
-                <span class="timeline-dot"></span>
-                <span class="timeline-line"></span>
-              </div>
-              <div class="timeline-body">
-                <h4>Tham quan chợ gốm Bát Tràng</h4>
-                <p><i class="fa-solid fa-location-dot"></i> <strong>Địa chỉ:</strong> Làng gốm Bát Tràng, Gia Lâm, Hà Nội</p>
-                <p><i class="fa-regular fa-clock"></i> <strong>Thời lượng:</strong> 1 giờ 30 phút</p>
-                <p><i class="fa-solid fa-ticket"></i> <strong>Chi phí tham khảo:</strong> Miễn phí</p>
-                <span class="transit-pill">Di chuyển đến điểm tiếp theo: 5 phút (khoảng 1.5 km)</span>
-              </div>
-              <img class="timeline-thumb" src="images/gate.jpg" alt="Chợ gốm Bát Tràng">
-            </div>
-
-            <div class="timeline-step">
-              <div class="timeline-hour">10:30</div>
-              <div class="timeline-axis">
-                <span class="timeline-dot"></span>
-                <span class="timeline-line"></span>
-              </div>
-              <div class="timeline-body">
-                <h4>Trải nghiệm làm gốm thủ công</h4>
-                <p><i class="fa-solid fa-location-dot"></i> <strong>Địa chỉ:</strong> Làng gốm Bát Tràng, Gia Lâm, Hà Nội</p>
-                <p><i class="fa-regular fa-clock"></i> <strong>Thời lượng:</strong> 1 giờ 30 phút</p>
-                <p><i class="fa-solid fa-ticket"></i> <strong>Chi phí tham khảo:</strong> 300.000đ/người</p>
-                <span class="transit-pill">Di chuyển đến điểm tiếp theo: 10 phút (khoảng 3 km)</span>
-              </div>
-              <img class="timeline-thumb" src="images/pottery-main.jpg" alt="Làm gốm thủ công">
-            </div>
-
-            <div class="timeline-step">
-              <div class="timeline-hour">13:30</div>
-              <div class="timeline-axis">
-                <span class="timeline-dot"></span>
-                <span class="timeline-line"></span>
-              </div>
-              <div class="timeline-body">
-                <h4>Thưởng thức ẩm thực cổ Bát Tràng</h4>
-                <p><i class="fa-solid fa-location-dot"></i> <strong>Địa chỉ:</strong> Khu ẩm thực Bát Tràng, Gia Lâm, Hà Nội</p>
-                <p><i class="fa-regular fa-clock"></i> <strong>Thời lượng:</strong> 1 giờ 30 phút</p>
-                <p><i class="fa-solid fa-ticket"></i> <strong>Chi phí tham khảo:</strong> 200.000đ/người</p>
-                <span class="transit-pill">Di chuyển đến điểm tiếp theo: 15 phút (khoảng 7 km)</span>
-              </div>
-              <img class="timeline-thumb" src="images/am-thuc-co-bat-trang.webp" alt="Ẩm thực cổ Bát Tràng">
-            </div>
-
-            <div class="timeline-step">
-              <div class="timeline-hour">15:30</div>
-              <div class="timeline-axis">
-                <span class="timeline-dot"></span>
-                <span class="timeline-line"></span>
-                <span class="timeline-dot"></span>
-              </div>
-              <div class="timeline-body">
-                <h4>Tham quan Bảo tàng gốm Bát Tràng</h4>
-                <p><i class="fa-solid fa-location-dot"></i> <strong>Địa chỉ:</strong> Số 28, thôn 5, Bát Tràng, Gia Lâm, Hà Nội</p>
-                <p><i class="fa-regular fa-clock"></i> <strong>Thời lượng:</strong> 1 giờ 30 phút</p>
-                <p><i class="fa-solid fa-ticket"></i> <strong>Chi phí tham khảo:</strong> 350.000đ/người</p>
-              </div>
-              <img class="timeline-thumb" src="images/product-hero.jpg" alt="Bảo tàng gốm Bát Tràng">
-            </div>
+          <div id="suggestedTimeline" class="timeline-list" aria-live="polite">
+            <p class="timeline-loading">Đang xây dựng lịch trình phù hợp với lựa chọn của bạn…</p>
           </div>
 
           <div class="contact-box map-box">
             <div class="map-header">
               <div>
-                <h3>Bản đồ hành trình</h3>
-                <p>Khám phá các điểm dừng trên bản đồ</p>
+                <h3 id="journeyMapTitle">Bản đồ hành trình</h3>
+                <p id="journeyMapSubtitle">Các điểm dừng được sắp xếp theo thứ tự gợi ý</p>
               </div>
-              <button type="button" class="icon-btn" aria-label="Chỉnh sửa bản đồ"><i class="fa-solid fa-pen"></i></button>
+              <button type="button" class="icon-btn" id="editJourneyMap" aria-label="Điều chỉnh tiêu chí hành trình"><i class="fa-solid fa-pen"></i></button>
             </div>
 
-            <svg viewBox="0 0 600 350" role="img" aria-label="Bản đồ minh họa bốn điểm dừng chân tại Bát Tràng">
+            <svg id="journeyMapSvg" viewBox="0 0 600 350" role="img" aria-label="Sơ đồ minh họa các điểm dừng của hành trình">
               <rect width="600" height="350" fill="#E8F1DC"/>
               <path d="M475 0 Q435 105 495 190 T520 350 L600 350 L600 0 Z" fill="#BCE0DD"/>
-              <ellipse cx="145" cy="95" rx="58" ry="26" fill="#C4DCB4"/>
-              <ellipse cx="350" cy="72" rx="64" ry="28" fill="#C4DCB4"/>
-              <ellipse cx="125" cy="285" rx="52" ry="22" fill="#C4DCB4"/>
-              <ellipse cx="365" cy="292" rx="68" ry="28" fill="#C4DCB4"/>
               <path d="M0 135 L485 105 M0 245 L495 215 M95 0 L165 350 M290 0 L245 350 M405 0 L435 350" stroke="#FFFFFF" stroke-width="11" fill="none"/>
-              <path d="M225 118 C275 105 350 112 375 152 C395 186 275 212 245 232 C222 248 345 272 415 245" fill="none" stroke="#14533E" stroke-width="4.5" stroke-dasharray="9 7" stroke-linecap="round"/>
-              <g transform="translate(225,118)">
-                <circle r="17" fill="#C97A2B" stroke="#FFFFFF" stroke-width="3"/>
-                <path d="M-7 1 L0 -6 L7 1 V7 H-7 Z" fill="#14533E"/>
-              </g>
-              <g transform="translate(375,152)">
-                <circle r="17" fill="#C97A2B" stroke="#FFFFFF" stroke-width="3"/>
-                <path d="M-7 1 L0 -6 L7 1 V7 H-7 Z" fill="#14533E"/>
-              </g>
-              <g transform="translate(245,232)">
-                <circle r="17" fill="#C97A2B" stroke="#FFFFFF" stroke-width="3"/>
-                <path d="M-7 1 L0 -6 L7 1 V7 H-7 Z" fill="#14533E"/>
-              </g>
-              <g transform="translate(415,245)">
-                <circle r="17" fill="#C97A2B" stroke="#FFFFFF" stroke-width="3"/>
-                <path d="M-7 1 L0 -6 L7 1 V7 H-7 Z" fill="#14533E"/>
-              </g>
-              <text x="108" y="172" fill="#2E5442" font-size="14" font-weight="700">Làng gốm</text>
-              <text x="112" y="189" fill="#2E5442" font-size="14" font-weight="700">Bát Tràng</text>
-              <text x="530" y="175" fill="#3B7A78" font-size="13" font-weight="600" transform="rotate(82 530 175)">Sông Hồng</text>
             </svg>
 
-            <div class="map-legend">
+            <div class="map-legend" id="journeyMapLegend">
+              <span>Ⓢ Điểm xuất phát</span>
               <span>● Điểm trải nghiệm</span>
               <span>--- Tuyến di chuyển gợi ý</span>
             </div>
+            <p class="map-disclaimer">Sơ đồ minh họa thứ tự điểm dừng, không phải bản đồ chỉ đường theo tọa độ thực tế.</p>
             <a class="map-more-link" href="products.html">Khám phá các địa điểm khác &rarr;</a>
           </div>
         </div>
@@ -480,57 +402,6 @@
   <script src="js/app.js" defer></script>
   <script src="js/products.js" defer></script>
   <script src="js/cart.js" defer></script>
-  <script>
-    document.querySelectorAll('.chip-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        const targetId = btn.getAttribute('data-target');
-        const value = btn.getAttribute('data-value');
-        document.querySelectorAll('.chip-btn[data-target="' + targetId + '"]').forEach(function (item) {
-          item.classList.remove('active');
-        });
-        btn.classList.add('active');
-        const selectEl = document.getElementById(targetId);
-        if (selectEl) selectEl.value = value;
-      });
-    });
-
-    function formatDisplayDate(isoDate) {
-      if (!isoDate || !isoDate.includes('-')) return isoDate;
-      const parts = isoDate.split('-');
-      return parts[2] + '/' + parts[1] + '/' + parts[0];
-    }
-
-    document.getElementById('journeyForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-      const start = document.getElementById('start-date').value;
-      const end = document.getElementById('end-date').value;
-      const message = document.getElementById('journeyMessage');
-      if (end < start) {
-        message.textContent = 'Ngày kết thúc cần sau ngày bắt đầu. Vui lòng kiểm tra lại.';
-        return;
-      }
-
-      const region = document.getElementById('region').value;
-      const destination = document.getElementById('destination').value.trim() || 'Bát Tràng, Gia Lâm, Hà Nội';
-      const travellers = document.getElementById('travellers').value || '2';
-      const budgetText = document.getElementById('budget').value;
-
-      document.getElementById('suggestedRegion').textContent = region + ' – ' + destination;
-      document.getElementById('suggestedTime').textContent = formatDisplayDate(start) + ' - ' + formatDisplayDate(end);
-      document.getElementById('suggestedBudget').textContent = budgetText;
-      document.getElementById('suggestedTravellers').textContent = travellers + ' người';
-
-      message.textContent = 'Thông tin hành trình đã được ghi nhận. Bạn có thể xem lịch trình gợi ý bên dưới.';
-      document.getElementById('hanh-trinh-goi-y').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    document.getElementById('editJourney').addEventListener('click', function () {
-      document.getElementById('tao-hanh-trinh').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    document.getElementById('confirmJourney').addEventListener('click', function () {
-      document.getElementById('confirmMessage').textContent = 'Hành trình đã được xác nhận trên bản demo.';
-    });
-  </script>
+  <script src="js/journey.js" defer></script>
 </body>
 </html>
