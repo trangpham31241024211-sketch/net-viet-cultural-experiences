@@ -2,8 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const pool = require('./config/database');
 const experienceRoutes = require('./routes/experienceRoutes');
-
 const app = express();
+const scheduleRoutes = require('./routes/scheduleRoutes');
+app.use('/api', scheduleRoutes);
+
 
 // Middleware
 app.use(cors());
